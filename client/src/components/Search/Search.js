@@ -1,4 +1,11 @@
-import React, { Component } from 'react'
+import React, {Component} from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+import "./Search.css";
+
 
 class Search extends Component {
  state = {
@@ -25,4 +32,4 @@ class Search extends Component {
  }
 }
 
-export default Search
+export default Search; 
