@@ -1,21 +1,44 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+import { Helmet } from "react-helmet";
+import Blog from "./pages/Blog";
+import About from "./pages/About";
+import Cart from "./pages/Cart";
+import FAQs from "./pages/FAQs";
+import Search from "./components/Search";
+import Account from "./pages/Account";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Jumbotron from "./components/Jumbotron";
+import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
+import Wrapper from "./components/Wrapper";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Navbar>
+        <Route exact path="/about" component={About} />
+        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/account" component={Account} />
+        <Route exact path="/cart" component={Cart} />
+        <Search />
+      </Navbar>
+      <Wrapper>
+        <Route exact path="/" component={Home} />
+        <Jumbotron />
+      </Wrapper>
+      <Footer >
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/FAQs" component={FAQs} />
+      </Footer>
+    </div>
+  </Router>
+);
 
 export default App;
+
