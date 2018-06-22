@@ -1,0 +1,30 @@
+.navbar {
+    background-color: white !important;
+    color: black !important; 
+    border-bottom: solid gray!important; 
+}
+
+.nav-link:hover {
+    color: black !important; 
+    background-color: lightgray;
+}
+
+.nav-link:visited {
+    color: black !important; 
+}
+
+.nav-link:link {
+    color: black !important; 
+}
+
+.nav-link:visted {
+    color: black !important; 
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+}
+
+.nav-link {
+    font-size: 1.15rem;
+}

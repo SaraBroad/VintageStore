@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import CartCard from "../components/CartCard";
 
-class Search extends Component {
-
-
+class Cart extends Component {
     render() {
         return (
+            <CartCard>
             <p>Hello</p>
-        );
+            </CartCard>
+           
+        )
     }
 }
 
-
-export default Search;
+export default Cart;
