@@ -5,7 +5,7 @@ import Search from "../Search";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
     <Link className="navbar-brand" to="/">
       Vintage Store
     </Link>
@@ -14,7 +14,7 @@ const Navbar = props => (
         <li
           className={
             window.location.pathname === "/" ||
-            window.location.pathname === "/about"
+              window.location.pathname === "/about"
               ? "nav-item active"
               : "nav-item"
           }
@@ -56,11 +56,14 @@ const Navbar = props => (
             Cart
           </Link>
         </li>
-        <li>
-          < Search />
-        </li>
       </ul>
     </div>
+    <div>
+      <span>
+        < Search />
+      </span>
+    </div>
+
   </nav>
 );
 
