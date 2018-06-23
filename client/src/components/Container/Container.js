@@ -5,7 +5,7 @@ import "./Container.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Container = props => (
-  <div>
+  <div className="storeTitle">
     <Link className="homelink" to="/home">
       <h2>Vintage Store</h2>
     </Link>
