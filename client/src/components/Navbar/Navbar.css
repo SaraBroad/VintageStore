@@ -1,7 +1,7 @@
 .navbar {
-    background-color: white !important;
-    color: black !important; 
-    border-bottom: solid gray!important; 
+    background-color: gray !important;
+    color: white !important; 
+    border-bottom: solid black !important; 
 }
 
 .nav-link:hover {
@@ -27,4 +27,9 @@
 
 .nav-link {
     font-size: 1.15rem;
+}
+
+nav li {
+    padding-right: 10px; 
+    padding-left: 8px; 
 }

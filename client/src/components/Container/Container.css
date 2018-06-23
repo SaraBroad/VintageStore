@@ -1,0 +1,10 @@
+h2 {
+    font-size: 6rem !important; 
+    text-align: center;
+    color: black; 
+    padding: 20px; 
+}
+
+.homelink:hover {
+    text-decoration: none; 
+}
