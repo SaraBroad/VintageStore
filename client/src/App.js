@@ -18,18 +18,46 @@ import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 
+
+// ORIGINAL CODE
+// const App = () => (
+//   <Router>
+//     <div>
+//       <Navbar>
+//         <Route exact path="/about" component={About} />
+//         <Route exact path="/blog" component={Blog} />
+//         <Route exact path="/account" component={Account} />
+//         <Route exact path="/cart" component={Cart} />
+//         <Search />
+//       </Navbar>
+//       <Wrapper>
+//         <Route exact path="/" component={Home} />
+//         <Jumbotron />
+//       </Wrapper>
+//       <Footer >
+//         <Route exact path="/contact" component={Contact} />
+//         <Route exact path="/FAQs" component={FAQs} />
+//       </Footer>
+//     </div>
+//   </Router>
+// );
+
+// export default App;
+
+
+//this code renders home, cart, and likely any page that contains components
 const App = () => (
   <Router>
     <div>
-      <Navbar>
+      <Navbar />
+      <Wrapper>
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
-        <Search />
-      </Navbar>
-      <Wrapper>
         <Route exact path="/" component={Home} />
+        {/* Search is already in Navbar.css */}
+        {/* <Search /> */}
         <Jumbotron />
       </Wrapper>
       <Footer >
@@ -41,4 +69,3 @@ const App = () => (
 );
 
 export default App;
-
