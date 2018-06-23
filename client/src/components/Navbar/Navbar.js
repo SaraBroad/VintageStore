@@ -5,21 +5,33 @@ import Search from "../Search";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-    <Link className="navbar-brand" to="/">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <Link className="navbar-brand" to="/home">
       Vintage Store
     </Link>
     <div>
       <ul className="navbar-nav">
         <li
           className={
-            window.location.pathname === "/" ||
+            window.location.pathname === "/all" ||
+              window.location.pathname === "/all"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/all" className="nav-link">
+            All Items
+          </Link>
+        </li>
+        <li
+          className={
+            window.location.pathname === "/about" ||
               window.location.pathname === "/about"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/about" className="nav-link">
             About
           </Link>
         </li>

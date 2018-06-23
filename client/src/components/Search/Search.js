@@ -28,7 +28,8 @@ class Search extends Component {
          onChange={this.handleInputChange}
        />
        <p>{this.state.query}</p>
-       <button className="btn btn-outline-secondary btn-sm my-2 my-sm-0" type="submit">Search</button>
+       {' '}
+       <button type="submit" class="searchbtn">Search</button>
      </form>
    )
  }

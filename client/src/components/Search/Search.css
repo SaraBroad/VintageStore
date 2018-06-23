@@ -1,0 +1,8 @@
+.searchbtn {
+    border-radius: .25rem; 
+}
+
+.searchbtn:hover {
+    color: black !important; 
+    background-color: lightgray;
+}
