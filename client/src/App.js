@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import "./App.css";
 import { Helmet } from "react-helmet";
 import All from "./pages/All";
 import Blog from "./pages/Blog";
@@ -14,17 +15,17 @@ import Search from "./components/Search";
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
 
 
+
 //this code renders home, cart, and likely any page that contains components
 const App = () => (
   <Router>
-    <div>
+    <div className="app">
       <Navbar />
       <Container />
       <Wrapper>
@@ -34,9 +35,6 @@ const App = () => (
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/home" component={Home} />
-        {/* Search is already in Navbar.css */}
-        {/* <Search /> */}
-        <Jumbotron />
       </Wrapper>
       <Footer >
         <Route exact path="/contact" component={Contact} />
