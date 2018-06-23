@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import CartCard from "../components/CartCard";
+import CartCheckoutBar from "../components/CartCheckoutBar"
 
 class Cart extends Component {
     render() {
         return (
-            <CartCard>
-            <p>Hello</p>
-            </CartCard>
+        <div>
+            <CartCard />
+            <CartCheckoutBar />
+        </div>
            
         )
     }
