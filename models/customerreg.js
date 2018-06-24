@@ -1,6 +1,7 @@
 var Sequelize = require("sequelize");
 //need connection to db
 
+//table for customers to register for an account
 module.exports = function (sequelize, DataTypes) {
     var Customer = sequelize.define("customer", {
         firstName: {

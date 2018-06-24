@@ -1,5 +1,6 @@
 var Sequelize = require("sequelize");
 
+//table to input items
 module.exports = function (sequelize, DataTypes) {
     var Items = sequelize.define("items", {
 
