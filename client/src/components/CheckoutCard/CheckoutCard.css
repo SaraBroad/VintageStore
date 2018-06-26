@@ -11,8 +11,8 @@
     margin-top: 40px;
     width: 650px;
     margin-left: 20px;
-    line-height: 200%;
 }
+
 .bill-info {
     margin-top: 40px;
     width: 650px;
@@ -30,6 +30,10 @@ input {
     width: 75%;
 }
 
-.btn {
-    margin-left: 230px;
+.log-btn {
+    margin-left: 100px;
+}
+
+.submit {
+    margin-left: 100px;
 }
