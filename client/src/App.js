@@ -59,14 +59,16 @@ const App = () => (
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/" component={Home} />
         <Route exact path="/checkout" component={Checkout} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/FAQs" component={FAQs} />
         {/* Search is already in Navbar.css */}
         {/* <Search /> */}
         <Jumbotron />
       </Wrapper>
       
       <Footer >
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/FAQs" component={FAQs} />
+        {/* <Route exact path="/contact" component={Contact} /> */}
+        {/* <Route exact path="/FAQs" component={FAQs} /> */}
       </Footer>
     </div>
   </Router>
