@@ -13,6 +13,7 @@ import Search from "./components/Search";
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
@@ -49,6 +50,7 @@ import Wrapper from "./components/Wrapper";
 const App = () => (
   <Router>
     <div>
+      
       <Navbar />
       <Wrapper>
         <Route exact path="/about" component={About} />
@@ -56,10 +58,12 @@ const App = () => (
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/" component={Home} />
+        <Route exact path="/checkout" component={Checkout} />
         {/* Search is already in Navbar.css */}
         {/* <Search /> */}
         <Jumbotron />
       </Wrapper>
+      
       <Footer >
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />

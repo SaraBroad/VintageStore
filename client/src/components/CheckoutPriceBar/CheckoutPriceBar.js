@@ -1,7 +1,7 @@
 import React from "react";
 import "./CartCheckoutBar.css";
 
-const CartCheckoutBar  = props => (
+const CheckoutPriceBar  = props => (
 <div className ="checkout-bar">
 <h1 className="total-heading">Total</h1>
     <div className="sub-total">
@@ -20,4 +20,4 @@ const CartCheckoutBar  = props => (
 </div>
 );
 
-export default CartCheckoutBar;
+export default CheckoutPriceBar;

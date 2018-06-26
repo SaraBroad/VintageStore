@@ -1,13 +1,13 @@
 import React from "react";
 import "./CheckoutCard.css";
 
-const CartCard = props => (
+const CheckoutCard = props => (
     <div className="checkout-card">
         {/* insert modal */}
         <button type="button" className="btn btn-primary">Log-in or Register</button>
         {/* checkout as guest */}
         <div className="cust-info">
-        <h3>Enter your customer information</h3>
+        <h3>Shipping Information</h3>
             <label htmlFor="cust-name">Name</label>
             <input
                 className="custinput-bar"
@@ -82,8 +82,8 @@ const CartCard = props => (
             />
         </div>
 
-         <div className="cust-info">
-         <h3>Enter your billing information</h3>
+         <div className="bill-info">
+         <h3>Billing Information</h3>
          <label htmlFor="billcust-name">Name</label>
             <input
                 className="custinput-bar"
@@ -159,6 +159,7 @@ const CartCard = props => (
         </div>
 
         <div className="charge-info">
+        <h3>Payment Information</h3>
         <label htmlFor="card-name">Name on card</label>
             <input
                 className="custinput-bar"
