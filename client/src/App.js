@@ -15,6 +15,8 @@ import Search from "./components/Search";
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
+import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
@@ -34,11 +36,16 @@ const App = () => (
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
-        <Route exact path="/home" component={Home} />
-      </Wrapper>
-      <Footer >
+        <Route exact path="/" component={Home} />
+        <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
+        <Jumbotron />
+      </Wrapper>
+      
+      <Footer >
+        {/* <Route exact path="/contact" component={Contact} /> */}
+        {/* <Route exact path="/FAQs" component={FAQs} /> */}
       </Footer>
     </div>
   </Router>
