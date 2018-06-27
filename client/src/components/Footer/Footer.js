@@ -1,12 +1,15 @@
-import React, {Component} from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.css";
+
 
 const Footer = props => (
-    []
-  );
-  
-  export default Footer;
+  <footer className="footer">
+    <div className="footerFodder">
+      Insert Footer Fodder Here
+    </div>
+  </footer>
+);
+
+export default Footer;
+

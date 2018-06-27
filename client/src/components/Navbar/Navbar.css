@@ -1,24 +1,24 @@
 .navbar {
-    background-color: white !important;
-    color: black !important; 
-    border-bottom: solid gray!important; 
+    background-color: black !important;
+    color: white !important; 
+    border-bottom: solid black !important; 
 }
 
 .nav-link:hover {
-    color: black !important; 
+    color: white!important; 
     background-color: lightgray;
 }
 
 .nav-link:visited {
-    color: black !important; 
+    color: white !important; 
 }
 
 .nav-link:link {
-    color: black !important; 
+    color: white !important; 
 }
 
 .nav-link:visted {
-    color: black !important; 
+    color: white !important; 
 }
 
 .navbar-brand {
@@ -27,4 +27,9 @@
 
 .nav-link {
     font-size: 1.15rem;
+}
+
+nav li {
+    padding-right: 10px; 
+    padding-left: 8px; 
 }
