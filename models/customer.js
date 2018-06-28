@@ -1,9 +1,9 @@
 var Sequelize = require("sequelize");
 //need connection to db
 
-//table for guests to input shipping information without creating an account
+//table for customers to register for an account
 module.exports = function (sequelize, DataTypes) {
-    var Guest = sequelize.define("guest", {
+    var Customer = sequelize.define("customer", {
         firstName: {
             type: DataTypes.STRING,
             allowNull: false
@@ -42,5 +42,8 @@ module.exports = function (sequelize, DataTypes) {
             isEmail: true
         }
     });
-    return Guest;
+    return Customer;
 };
+
+
+//add foreign key of purchase history
