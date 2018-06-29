@@ -1,4 +1,4 @@
-var Sequelize = require("sequelize");
+// var Sequelize = require("sequelize");
 //need connection to db
 
 //table for customers to register for an account

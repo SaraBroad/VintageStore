@@ -103,7 +103,6 @@ const CheckoutCard = props => (
                 className="custinput-bar form-control"
                 name="zip"
                 type="text"
-                className="form-control"
                 placeholder="Zip Code"
                 id="zip"
             />
@@ -237,7 +236,6 @@ const CheckoutCard = props => (
                 className="custinput-bar form-control"
                 name="bill-email"
                 type="email"
-                className="form-control"
                 placeholder="E-mail"
                 id="bill-email"
             />

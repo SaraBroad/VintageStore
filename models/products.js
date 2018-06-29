@@ -1,4 +1,4 @@
-var Sequelize = require("sequelize");
+// var Sequelize = require("sequelize");
 
 //table to input items
 module.exports = function (sequelize, DataTypes) {
