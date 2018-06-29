@@ -15,12 +15,14 @@ import Search from "./components/Search";
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Register from "./pages/RegisterPage";
 import Checkout from "./pages/Checkout";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
+
 
 
 
@@ -40,6 +42,7 @@ const App = () => (
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
+        <Route exact path="/register" component={RegisterPage} />
         <Jumbotron />
       </Wrapper>
       
