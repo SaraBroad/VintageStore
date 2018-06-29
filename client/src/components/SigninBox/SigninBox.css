@@ -1,6 +1,8 @@
 .signin-form {
     border: 1px solid black;
+    box-shadow: 1px 2px;
     width: 500px;
+    height: 320px;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 165px;
