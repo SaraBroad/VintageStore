@@ -1,8 +1,39 @@
 .checkout-card {
     width: 715px;
-    height: 500px;
+    height: 100%;
     border: 2px solid black;
     margin-top: 50px;
     margin-left: 50px;
     float: left;
+}
+
+.cust-info {
+    margin-top: 40px;
+    width: 650px;
+    margin-left: 20px;
+}
+
+.bill-info {
+    margin-top: 40px;
+    width: 650px;
+    margin-left: 20px;
+}
+
+.charge-info {
+    padding-top: 50px;
+    width: 650px;
+    margin-left: 20px;
+    padding-bottom: 30px;
+}
+
+input {
+    width: 75%;
+}
+
+.log-btn {
+    margin-left: 100px;
+}
+
+.submit {
+    margin-left: 100px;
 }
