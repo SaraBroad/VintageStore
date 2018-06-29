@@ -1,0 +1,23 @@
+.signin-form {
+    border: 1px solid black;
+    width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 165px;
+    padding: 20px;
+}
+
+.sign-group {
+    width: 450px;
+  
+}
+
+.sign-heading {
+    /* margin-left: 65px; */
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.submitsign-btn {
+    margin-left: 190px;
+}

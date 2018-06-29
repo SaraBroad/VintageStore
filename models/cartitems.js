@@ -6,27 +6,21 @@
 //         //CartItemsID
 //         //productID
 //         //productprice
-//   
+
 
 //     })
 
 //     CartItems.associate = function (models) {
 //         CartItems.belongsTo(models.Cart, {
 //             foreignKey: {
-//                 allowNull:false
-//             },
-        
-            //get productID to attach to CartItems
-            //get productPrice from productID
-
-            //CartItems.hasOne(models.Product, {
-            // foreignKey: {
-                // allowNull: false
-            // }
-            // })
-
-
-//         })
+//                 allowNull: false
+//             }
+//         }),
+//             CartItems.hasOne(models.Products, {
+//                 foreignKey: {
+//                     allowNull: false
+//                 }
+//             })
 //     }
 //     return CartItems;
 // };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SigninBox from "../components/SigninBox";
-import RegisterBox from "../components/RegisterBox";
+// import RegisterBox from "../components/RegisterBox";
 
 //sign-in box
 //register link
@@ -11,8 +11,10 @@ class Account extends Component {
         return (
             <div>
                 <SigninBox />
-                <RegisterBox />
+                {/* <RegisterBox /> */}
             </div>
         )
     }
 }
+
+export default Account;
