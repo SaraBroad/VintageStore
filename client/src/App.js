@@ -16,12 +16,14 @@ import Privacy from "./pages/PrivacyPolicy"
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import RegisterPage from "./pages/RegisterPage";
 import Checkout from "./pages/Checkout";
 import Jumbotron from "./components/Jumbotron";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
+import Gallery from "./components/Gallery";
 
 
 
@@ -32,7 +34,7 @@ const App = () => (
       <Navbar />
       <Container />
       <Wrapper>
-        <Route exact path="/products" component={All} />
+        <Route exact path="/All" component={All} />
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/account" component={Account} />
@@ -41,7 +43,9 @@ const App = () => (
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
-        <Route exact path="/privacy" component={Privacy} />
+        <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/Privacy" component={Privacy} />
+        <Jumbotron />
       </Wrapper>
      
       <Footer/>
