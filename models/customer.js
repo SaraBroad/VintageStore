@@ -3,7 +3,7 @@ var Sequelize = require("sequelize");
 
 //table for customers to register for an account
 module.exports = function (sequelize, DataTypes) {
-    var Customer = sequelize.define("customer", {
+    var Customer = sequelize.define("Customer", {
         firstName: {
             type: DataTypes.STRING,
             allowNull: false

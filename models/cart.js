@@ -6,5 +6,13 @@ module.exports = function (sequelize, DataTypes) {
 
 
     });
+
+    Cart.associate = function(models) {
+        Cart.belongsTo(models.Customer, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+    }
     return Cart;
 };
