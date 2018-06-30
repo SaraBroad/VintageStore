@@ -27,7 +27,6 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Product.associate = function (models) {
- 
         Product.belongsToMany(models.Cart, {
             through: "CartProduct",
             as: "CartCartProduct",
