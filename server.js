@@ -1,8 +1,11 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const passport = require("passport");
+const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
 
 var db = require("./models");
 
@@ -20,9 +23,6 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-// app.listen(PORT, function() {
-//   console.log(`🌎 ==> Server now on port ${PORT}!`);
-// });
 
 // add when ready to sync with sequelize
 db.sequelize.sync({ force: true }).then(function() {

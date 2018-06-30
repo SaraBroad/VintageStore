@@ -118,6 +118,14 @@ const RegForm = props => (
                     placeholder="E-mail"
                     id="email"
                 />
+                 <label htmlFor="password">Password</label>
+                <input
+                    className="custinput-bar form-control"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    id="password"
+                />
             </form>
         </div>
     </div>
