@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./PrivacyPolicy.css";
+import "./privacyPolicy.css";
 
 const privacyPolicy = props => (
     <div className="privacyPolicy">

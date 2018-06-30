@@ -44,8 +44,7 @@ const App = () => (
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
         <Route exact path="/register" component={RegisterPage} />
-        <Route exact path="/Privacy" component={Privacy} />
-        <Jumbotron />
+        <Route exact path="/privacy" component={Privacy} />
       </Wrapper>
      
       <Footer/>
