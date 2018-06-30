@@ -23,6 +23,10 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 
 // add when ready to sync with sequelize
 db.sequelize.sync({ force: true }).then(function() {

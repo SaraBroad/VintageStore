@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./privacyPolicy.css";
 
 const privacyPolicy = props => (
-    <div className="PrivacyPolicy">
+    <div className="privacyPolicy">
 
     <h1>Privacy Policy</h1>
 

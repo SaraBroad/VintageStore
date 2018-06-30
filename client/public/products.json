@@ -4,7 +4,9 @@
     "name": "The Navy Audrey",
     "Size": "2",
     "Description": "This 60's navy beauty, originally sourced in an NYC thrift shop, has such an elegant cut. The fabric drapes and hugs your body in all the right places. Originally a long gown, it has been hemmed to a length that is perfect for a date night, or an office party.",
-    "Image1": "...public/images/1.jpg", "Image2":"...public/images/2.jpg"
+    "Image1": "...public/images/1.jpg", 
+    "Image2":"...public/images/2.jpg",
+    "SEO-Terms": ""
   },
   {
     "id": 2,

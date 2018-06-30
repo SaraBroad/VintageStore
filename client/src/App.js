@@ -46,9 +46,9 @@ const App = () => (
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/privacy" component={Privacy} />
       </Wrapper>
-      
-      <Footer />
-        
+     
+      <Footer/>
+
     </div>
   </Router>
 );
