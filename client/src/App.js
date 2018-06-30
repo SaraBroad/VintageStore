@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import FAQs from "./pages/FAQs";
 import Search from "./components/Search";
+import Privacy from "./pages/PrivacyPolicy"
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -22,27 +23,28 @@ import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
-
+import Gallery from "./components/Gallery";
 
 
 
 //this code renders home, cart, and likely any page that contains components
 const App = () => (
-  <Router>
+  <Router path="/home">
     <div className="app">
       <Navbar />
       <Container />
       <Wrapper>
-        <Route exact path="/all" component={All} />
+        <Route exact path="/All" component={All} />
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
         <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/Privacy" component={Privacy} />
         <Jumbotron />
       </Wrapper>
       
