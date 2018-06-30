@@ -1,0 +1,8 @@
+.productImage {
+    height: 400px;
+    width: 300px;
+}
+
+.container {
+    width: 100% !important; 
+}

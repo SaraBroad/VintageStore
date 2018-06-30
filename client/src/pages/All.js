@@ -1,30 +1,33 @@
 import React, { Component } from "react";
-import images from "./images.json";
+import data from "./images.json";
 import Gallery from "../components/Gallery";
+
 
 class All extends Component {
   state = {
-    images
+    data
   };
 
   componentDidMount() {
-    this.setState({ images: this.state.images });
+    this.setState({ data: this.state.data });
   }
 
 
   render() {
     return (
-      <div>
-        {this.state.images.map(item => (
-          <Gallery
-            image2={item.image2}
-            name={item.name}
-            id={item.id}
-            size={item.Size}
-            description={item.description}
-          />
-        ))}
+      <div className="container">
+        <div className="row text-center text-lg-left">
+          {this.state.data.map(item => (
+            <Gallery
+              src={item.Image2}
+              name={item.name}
+              id={item.id}
+              size={item.Size}
+              description={item.Description}
+            />
 
+          ))}
+        </div>
       </div>
     );
   }
