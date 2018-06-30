@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./PrivacyPolicy.css";
 
-const PrivacyPolicy = props => (
-    <div className="PrivacyPolicy">
+const privacyPolicy = props => (
+    <div className="privacyPolicy">
 
     <h1>Privacy Policy</h1>
 
@@ -121,4 +121,4 @@ const PrivacyPolicy = props => (
     </div>
 );
 
-export default PrivacyPolicy;
+export default privacyPolicy;

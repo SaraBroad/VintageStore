@@ -47,11 +47,9 @@ const App = () => (
         <Route exact path="/Privacy" component={Privacy} />
         <Jumbotron />
       </Wrapper>
-      
-      <Footer >
-        {/* <Route exact path="/contact" component={Contact} /> */}
-        {/* <Route exact path="/FAQs" component={FAQs} /> */}
-      </Footer>
+     
+      <Footer/>
+
     </div>
   </Router>
 );
