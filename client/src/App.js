@@ -22,7 +22,7 @@ import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 import Container from "./components/Container";
-
+import Gallery from "./components/Gallery";
 
 
 //this code renders home, cart, and likely any page that contains components
@@ -32,7 +32,11 @@ const App = () => (
       <Navbar />
       <Container />
       <Wrapper>
+<<<<<<< HEAD
+        <Route exact path="/All" component={All} />
+=======
         <Route exact path="/products" component={All} />
+>>>>>>> master
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/account" component={Account} />
