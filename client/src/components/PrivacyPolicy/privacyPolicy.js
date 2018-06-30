@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./privacyPolicy.css";
+import "./PrivacyPolicy.css";
 
-const Footer = props => (
-    <div className="privacyPolicy">
+const PrivacyPolicy = props => (
+    <div className="PrivacyPolicy">
 
     <h1>Privacy Policy</h1>
 
@@ -121,4 +121,4 @@ const Footer = props => (
     </div>
 );
 
-export default privacyPolicy;
+export default PrivacyPolicy;
