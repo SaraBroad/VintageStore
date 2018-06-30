@@ -7,7 +7,7 @@ import Search from "../Search";
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
     <Link className="navbar-brand" to="/home">
-      Vintage Store
+      Madeleine
     </Link>
     <div>
       <ul className="navbar-nav">
