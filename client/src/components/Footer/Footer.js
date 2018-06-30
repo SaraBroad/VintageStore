@@ -8,8 +8,8 @@ const Footer = props => (
     <div className="footerFodder">
     <div className="Left">
     <li className={
-            window.location.pathname === "/Contact" ||
-              window.location.pathname === "/Contact"
+            window.location.pathname === "/contact" ||
+              window.location.pathname === "/contact"
               ? "footer-item active"
               : "footer-item"
           } 
@@ -19,13 +19,13 @@ const Footer = props => (
           </Link>
         </li>
         <li className={
-            window.location.pathname === "/Privacy" ||
-              window.location.pathname === "/Privacy"
+            window.location.pathname === "/privacy" ||
+              window.location.pathname === "/privacy"
               ? "footer-item active"
               : "footer-item"
           } 
           >
-          <Link to="/Privacy" className="nav-link">
+          <Link to="/privacy" className="nav-link">
              Privacy Policy
           </Link>
         </li>

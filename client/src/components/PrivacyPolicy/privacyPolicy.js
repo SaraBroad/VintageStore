@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./privacyPolicy.css";
 
-const Footer = props => (
+const privacyPolicy = props => (
     <div className="privacyPolicy">
 
     <h1>Privacy Policy</h1>

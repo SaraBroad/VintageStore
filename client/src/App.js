@@ -41,14 +41,11 @@ const App = () => (
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
-        <Route exact path="/Privacy" component={Privacy} />
-        <Jumbotron />
+        <Route exact path="/privacy" component={Privacy} />
       </Wrapper>
-      
-      <Footer >
-        {/* <Route exact path="/contact" component={Contact} /> */}
-        {/* <Route exact path="/FAQs" component={FAQs} /> */}
-      </Footer>
+     
+      <Footer/>
+
     </div>
   </Router>
 );

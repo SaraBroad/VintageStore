@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ContactCard from "../components/privacyPolicy";
-import privacyPolicy from '../components/privacyPolicy';
+import privacyPolicy from '../components/PrivacyPolicy';
 
 class Privacy extends Component {
     render () {
