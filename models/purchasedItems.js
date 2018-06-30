@@ -7,22 +7,5 @@ module.exports = function (sequelize, DataTypes) {
 
     })
 
-    PurchasedItems.associate = function (models) {
-        PurchasedItems.belongsTo(models.PurchasedHistory, {
-            foreignKey: {
-                allowNull: false
-            }
-        }),
-            PurchasedItems.hasOne(models.Products, {
-                foreignKey: {
-                    allowNull: false
-                }
-            })
-            // PurchasedItems.hasOne(models.Products, {
-            //     foreignKey: {
-            //         allowNull: false
-            //     }
-            // }) is productPrice a foreign key? 
-    }
     return PurchasedItems;
 };
