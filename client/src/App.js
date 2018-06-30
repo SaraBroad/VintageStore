@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { Redirect } from 'react-router'
 import "./App.css";
 import { Helmet } from "react-helmet";
 import All from "./pages/All";
@@ -29,11 +30,12 @@ import Gallery from "./components/Gallery";
 
 //this code renders home, cart, and likely any page that contains components
 const App = () => (
-  <Router path="/home">
+  <Router> 
     <div className="app">
       <Navbar />
       <Container />
       <Wrapper>
+      <Redirect from="/" to="home" />
         <Route exact path="/all" component={All} />
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
