@@ -2,9 +2,8 @@ var Sequelize = require("sequelize");
 
 //table to input items
 module.exports = function (sequelize, DataTypes) {
-    var Items = sequelize.define("items", {
-
-        itemName: {
+    var Products = sequelize.define("products", {
+        productName: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -26,5 +25,5 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     });
-    return Items;
+    return Products;
 }

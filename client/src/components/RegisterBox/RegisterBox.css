@@ -1,0 +1,21 @@
+.reg-box {
+    border: 1px solid black;
+    box-shadow: 0px 0px 1px 2px;
+    width: 500px;
+    height: 320px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.account-prompt {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 60px;
+}
+
+.reg-submit {
+    margin-top: 20px;
+    margin-left: 130px;
+    width: 200px;
+}
