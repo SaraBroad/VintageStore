@@ -41,9 +41,16 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             isEmail: true
         }
-    });
+    })
+
+    // Customer.associate = function(models) {
+    //     Customer.hasMany(models.PurchaseHistory, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     })
+    // }
     return Customer;
 };
 
 
-//add foreign key of purchase history
