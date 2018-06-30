@@ -2,7 +2,7 @@ var Sequelize = require("sequelize");
 
 //table to input items
 module.exports = function (sequelize, DataTypes) {
-    var Products = sequelize.define("products", {
+    var Products = sequelize.define("Products", {
         productName: {
             type: DataTypes.STRING,
             allowNull: false
