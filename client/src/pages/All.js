@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import data from "./images.json";
 import Gallery from "../components/Gallery";
@@ -35,3 +36,27 @@ class All extends Component {
 
 export default All;
 
+=======
+// import React, { Component } from "react";
+// import Product from "../components/Product";
+// import products from "../public/products.json"
+
+
+// class All extends Component {
+//         // Set this.state
+//         state = {
+//           products
+//         }
+        
+//         render() {
+
+//             return (
+//             <div>
+//                 <Product/>
+//             </div>
+               
+//             )
+//         }
+// }
+// export default All;
+>>>>>>> master

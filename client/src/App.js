@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import FAQs from "./pages/FAQs";
 import Search from "./components/Search";
+import Privacy from "./pages/PrivacyPolicy"
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -31,7 +32,11 @@ const App = () => (
       <Navbar />
       <Container />
       <Wrapper>
+<<<<<<< HEAD
         <Route exact path="/All" component={All} />
+=======
+        <Route exact path="/products" component={All} />
+>>>>>>> master
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/account" component={Account} />
@@ -40,7 +45,10 @@ const App = () => (
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
-      </Wrapper>   
+        <Route exact path="/Privacy" component={Privacy} />
+        <Jumbotron />
+      </Wrapper>
+      
       <Footer >
         {/* <Route exact path="/contact" component={Contact} /> */}
         {/* <Route exact path="/FAQs" component={FAQs} /> */}
