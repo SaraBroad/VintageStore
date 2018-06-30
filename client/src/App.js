@@ -27,7 +27,7 @@ import Container from "./components/Container";
 
 //this code renders home, cart, and likely any page that contains components
 const App = () => (
-  <Router>
+  <Router path="/home">
     <div className="app">
       <Navbar />
       <Container />
@@ -37,7 +37,7 @@ const App = () => (
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/FAQs" component={FAQs} />
