@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-  } from 'react-router-dom'
 import SigninBox from "../components/SigninBox";
 import RegisterBox from "../components/RegisterBox";
 
@@ -20,9 +15,9 @@ class Account extends Component {
                         <SigninBox />
                     </div>
                     <div className="col-md-6">
-                    <Link to="/register">
+                   
                         <RegisterBox />
-                    </Link>
+                
                     </div>
                 </div>
             </div>
