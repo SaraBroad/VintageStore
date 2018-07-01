@@ -126,6 +126,9 @@ const RegForm = props => (
                     placeholder="Password"
                     id="password"
                 />
+
+                 <button type="button" className="btn btn-primary reg-button">Submit</button>
+
             </form>
         </div>
     </div>

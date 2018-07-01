@@ -44,11 +44,11 @@ module.exports = function (sequelize, DataTypes) {
     })
 
     // Customer.associate = function(models) {
-    //     Customer.hasMany(models.PurchaseHistory, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
+    //     models.PurchaseHistory.hasMany(models.Customer, {
+    //         as: "CustPurchHist",
+    //         foreignKey: "CustPurchaseId"
     //     })
+
     // }
     return Customer;
 };

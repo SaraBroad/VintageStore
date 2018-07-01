@@ -21,13 +21,17 @@ module.exports = function (sequelize, DataTypes) {
         }
     })
 
-    PurchaseHistory.associate = function(models) {
+    PurchaseHistory.associate = function (models) {
         PurchaseHistory.belongsTo(models.Customer, {
             foreignKey: {
                 allowNull: false
             }
         })
+
+        // models.Customer.hasMany(models.PurchaseHistory, {
+        //     as: "CustPurchHist",
+        //     foreignKey: "CustPurchaseId"
+        // })
     }
-    
     return PurchaseHistory;
 }
