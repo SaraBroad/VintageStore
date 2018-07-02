@@ -7,12 +7,23 @@ import RegisterBox from "../components/RegisterBox";
 
 
 class Account extends Component {
+
+    state = {
+        username: "",
+        password: ""
+    };
+
+
     render() {
         return (
             <div className="regbox-container">
                 <div className="row">
                     <div className="col-md-6">
-                        <SigninBox />
+                        <SigninBox 
+                        
+                        // this.setState{username, password}
+                        
+                        />
                     </div>
                     <div className="col-md-6">
                    

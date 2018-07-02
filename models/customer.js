@@ -6,40 +6,67 @@ module.exports = function (sequelize, DataTypes) {
     var Customer = sequelize.define("Customer", {
         firstName: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1]
+              }
         },
         lastName: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1]
+              }
         },
         addressOne: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1]
+              }
         },
         addressTwo: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: true,
+            validate: {
+                len: [1]
+              }
         },
         city: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1]
+              }
         },
         state: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1]
+              }
         },
         zip: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1]
+              }
         },
         phone: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1]
+              }
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            isEmail: true
+            isEmail: true,
+            validate: {
+                len: [1]
+              }
         }
     })
 
