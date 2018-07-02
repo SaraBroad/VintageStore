@@ -1,8 +1,12 @@
 import axios from 'axios';
 
 export default {
-    custLogin: function () {
+    custLogin: function (signinData) {
         return axios.post("/api/signin", signinData);
+    },
+    
+    saveCustomer: function (customerData) {
+        return axios.post("/api/customer", customerData);
     }
 }
 
@@ -21,7 +25,7 @@ export default {
 
 
 
-
+// EXAMPLES
 // getBooks: function() {
 //     return axios.get("/api/books");
 //   },

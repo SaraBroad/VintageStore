@@ -10,6 +10,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="cust-name"
+                    onChange={props.handleName}
                     type="text"
                     placeholder="Name"
                     id="cust-name"
@@ -17,6 +18,7 @@ const RegForm = props => (
                 <label htmlFor="cust-address">Street Address 1</label>
                 <input
                     className="custinput-bar form-control"
+                    onChange={props.handleAddOne}
                     name="cust-address"
                     type="text"
                     placeholder="Street Address 1"
@@ -26,6 +28,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="cust-addresstwo"
+                    onChange={props.handleAddTwo}
                     type="text"
                     placeholder="Street Address 2"
                     id="cust-addresstwo"
