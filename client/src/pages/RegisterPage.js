@@ -4,6 +4,25 @@ import RegForm from "../components/RegForm";
 
 
 class RegisterPage extends Component {
+
+state = {
+    name: "",
+    addressOne: "",
+    addressTwo: "",
+    city: "",
+    state: "",
+    zip: "",
+    phone: "",
+    email: "",
+    password: ""
+}
+
+//handleSubmitName
+//handleSubmitaddressOne
+
+
+//handleSubmitForm
+
     render() {
         return (
             <div>

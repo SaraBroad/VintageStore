@@ -14,9 +14,8 @@ const CheckoutPriceBar = props => (
         </div>
         {/* {props.total} */}
         <p className="total">Total: </p>
-
-
-        <button type="button" className="btn btn-primary checkout-btn">Checkout</button>
+        {/* <button type="button" className="checkout-button">Checkout</button> */}
+        <button type="button" class="btn btn-primary">Submit</button>
     </div>
 );
 

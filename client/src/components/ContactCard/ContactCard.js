@@ -47,7 +47,7 @@ const ContactCard = props => (
                         rows="5"
                     />
                 </div>
-                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="submit" class="btn btn-primary contact-button">Submit</button>
             </form>
         </section>
     </div>
