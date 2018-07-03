@@ -5,6 +5,7 @@ const passport = require("passport");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const cors = require('cors');
 
 var db = require("./models");
 
@@ -17,9 +18,18 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+const CORS_WHITELIST = require('./constants/frontend');
+
+const corsOptions = {
+  origin: (origin, callback) =>
+    (CORS_WHITELIST.indexOf(origin) !== -1)
+      ? callback(null, true)
+      : callback(new Error('Not allowed by CORS'))
+};
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

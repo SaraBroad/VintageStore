@@ -45,9 +45,9 @@ const Footer = props => (
     <div className="right">
       <div id="social-test">
         <ul className="social">
-          <li><a href="https://facebook.com/colorlib"><i className="fa fa-facebook" aria-hidden="true"/></a></li>
-          <li><a href="https://twitter.com/colorlib"> <i className="fa fa-twitter" aria-hidden="true"/></a></li>
-          <li><a href="https://instagram.com/colorlib"><i className="fa fa-instagram" aria-hidden="true"/></a></li>
+          <li><a href="https://facebook.com/colorlib" alt="facebook"><i className="fa fa-facebook" aria-hidden="true"/></a></li>
+          <li><a href="https://twitter.com/colorlib" alt="twitter"> <i className="fa fa-twitter" aria-hidden="true"/></a></li>
+          <li><a href="https://instagram.com/colorlib" alt="instagram"><i className="fa fa-instagram" aria-hidden="true"/></a></li>
         </ul>
         </div>
         <div className="copyright">

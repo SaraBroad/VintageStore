@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import {
-  BrowserRouter as Router,
-  Route,
-  Link
+  BrowserRouter 
 } from 'react-router-dom'
 import "./Search.css";
 
@@ -29,7 +27,7 @@ class Search extends Component {
        />
        <p>{this.state.query}</p>
        {' '}
-       <button type="submit" class="searchbtn">Search</button>
+       <button type="submit" className="searchbtn">Search</button>
      </form>
    )
  }

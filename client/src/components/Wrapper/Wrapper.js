@@ -1,8 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 import {
-  BrowserRouter as Router,
-  Route,
-  Link
+  BrowserRouter 
 } from 'react-router-dom'
 import "./Wrapper.css"
 
