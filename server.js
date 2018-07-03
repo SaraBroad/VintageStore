@@ -8,7 +8,6 @@ const app = express();
 
 var db = require("./models");
 
-
 //what is secret code used for?
 app.use(session({
   secret: 'bootcamp project',
@@ -33,9 +32,12 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+
+
 // add when ready to sync with sequelize
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+

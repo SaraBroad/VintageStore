@@ -34,3 +34,9 @@
 .checkout-btn {
     margin-top: 75px;
 }
+
+.stripe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
