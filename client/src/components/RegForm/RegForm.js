@@ -37,6 +37,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="city"
+                    onChange={props.handleCity}
                     type="text"
                     placeholder="City"
                     id="city"
@@ -101,6 +102,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="zip"
+                    onChange={props.handleZip}
                     type="text"
                     placeholder="Zip Code"
                     id="zip"
@@ -109,28 +111,37 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="phone"
+                    onChange={props.handlePhone}
                     type="number"
                     placeholder="Phone Number"
+                    required
                     id="phone"
                 />
                 <label htmlFor="email">E-mail</label>
                 <input
                     className="custinput-bar form-control"
                     name="email"
+                    onChange={props.handleEmail}
                     type="email"
                     placeholder="E-mail"
                     id="email"
                 />
-                 <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <input
                     className="custinput-bar form-control"
                     name="password"
+                    onChange={props.handlePassword}
                     type="password"
                     placeholder="Password"
                     id="password"
                 />
 
-                 <button type="button" className="btn btn-primary reg-button">Submit</button>
+                <button
+                    onClick={props.handleFormSubmit}
+                    type="button"
+                    className="btn btn-primary reg-button">
+                    Submit
+                 </button>
 
             </form>
         </div>

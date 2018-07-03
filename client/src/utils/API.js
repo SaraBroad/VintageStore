@@ -8,6 +8,13 @@ export default {
     saveCustomer: function (customerData) {
         return axios.post("/api/customer", customerData);
     }
+
+    //api/cart
+
+    //addToCart
+
+    //
+
 }
 
 

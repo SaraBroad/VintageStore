@@ -70,13 +70,6 @@ module.exports = function (sequelize, DataTypes) {
         }
     })
 
-    // Customer.associate = function(models) {
-    //     models.PurchaseHistory.hasMany(models.Customer, {
-    //         as: "CustPurchHist",
-    //         foreignKey: "CustPurchaseId"
-    //     })
-
-    // }
     return Customer;
 };
 

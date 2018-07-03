@@ -21,17 +21,15 @@ module.exports = function (sequelize, DataTypes) {
         }
     })
 
+
+    //when query purchase history can query where customer = customerid
+
     PurchaseHistory.associate = function (models) {
         PurchaseHistory.belongsTo(models.Customer, {
             foreignKey: {
                 allowNull: false
             }
         })
-
-        // models.Customer.hasMany(models.PurchaseHistory, {
-        //     as: "CustPurchHist",
-        //     foreignKey: "CustPurchaseId"
-        // })
     }
     return PurchaseHistory;
 }
