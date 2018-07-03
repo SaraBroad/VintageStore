@@ -17,11 +17,7 @@ const CheckoutPriceBar = props => (
         {/* {props.total} */}
         <p className="total">Total: </p>
         <div className="stripe">
-        <Checkout
-            name={'Madeleine'}
-            description={'Click "Pay" to charge your credit card'}
-            amount={1}
-          />
+        <Checkout/>
         </div> 
     </div>
 
