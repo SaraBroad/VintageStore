@@ -31,6 +31,8 @@
    width: 275px;
 }
 
-.checkout-btn {
-    margin-top: 75px;
+.stripebutton {
+    display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./CheckoutPriceBar.css";
+import Checkout from "../Checkout";
 
 const CheckoutPriceBar = props => (
 <div className="checkoutprice-container">
@@ -15,8 +16,13 @@ const CheckoutPriceBar = props => (
         </div>
         {/* {props.total} */}
         <p className="total">Total: </p>
-        {/* <button type="button" className="checkout-button">Checkout</button> */}
-        <button type="button" class="btn btn-primary">Submit</button>
+        <div className="stripebutton">
+            <Checkout
+                name={props.name}
+                zipCode={props.zipCode}
+                amount={props.amount}
+            />
+        </div>
     </div>
 
     <div className="checkout-image">
