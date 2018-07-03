@@ -2,6 +2,7 @@ import React from "react";
 import "./CheckoutPriceBar.css";
 
 const CheckoutPriceBar = props => (
+<div className="checkoutprice-container">
     <div className="checkout-bar">
         <h1 className="total-heading">Total</h1>
         <div className="sub-total">
@@ -17,6 +18,12 @@ const CheckoutPriceBar = props => (
         {/* <button type="button" className="checkout-button">Checkout</button> */}
         <button type="button" class="btn btn-primary">Submit</button>
     </div>
+
+    <div className="checkout-image">
+    {/* //checkout image #9 goes here */}
+    </div>
+</div>
+
 );
 
 export default CheckoutPriceBar;
