@@ -16,12 +16,20 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         inStock: {
             type: DataTypes.STRING,
             inStock: true,
+            allowNull: false
+        },
+        imageOne: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        imageTwo: {
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

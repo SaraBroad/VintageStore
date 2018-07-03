@@ -2,7 +2,7 @@ var Sequelize = require("sequelize");
 
 //table to input items
 module.exports = function (sequelize, DataTypes) {
-    var purchaseHistory = sequelize.define("PurchaseHistory", {
+    var PurchaseHistory = sequelize.define("PurchaseHistory", {
         PaymentDate: {
             type: DataTypes.DATE,
             allowNull: false
@@ -19,7 +19,17 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DECIMAL,
             allowNull: false
         }
-    });
-    
-    return purchaseHistory;
+    })
+
+
+    //when query purchase history can query where customer = customerid
+
+    PurchaseHistory.associate = function (models) {
+        PurchaseHistory.belongsTo(models.Customer, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+    }
+    return PurchaseHistory;
 }

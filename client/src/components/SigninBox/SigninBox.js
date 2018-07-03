@@ -6,17 +6,21 @@ const SigninBox = props => (
         <form className="signin-form">
             <p className="sign-heading">Sign-in to your account here</p>
             <div className="form-group sign-group">
+                {/* {props.username} */}
                 <label for="email">Email address</label>
                 <input type="email"
                     className="form-control sign-input"
+                    // onChange={props.username}
                     id="email"
                     placeholder="Enter email"
                 />
             </div>
             <div className="form-group sign-group">
+            {/* {props.password} */}
                 <label for="password">Password</label>
                 <input type="password"
                     className="form-control sign-input"
+                    // onChange={props.password}
                     id="password"
                     placeholder="Enter password"
                 />

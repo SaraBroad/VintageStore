@@ -14,8 +14,13 @@
     margin-top: 60px;
 }
 
-.reg-submit {
+/* .reg-submit {
     margin-top: 20px;
     margin-left: 130px;
     width: 200px;
+} */
+
+.register-link {
+    border: 1px solid black;
+    text-align: center;
 }
