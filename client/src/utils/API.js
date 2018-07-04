@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 export default {
+
+    //get customer to see if in DB
+
     custLogin: function (signinData) {
         return axios.post("/api/signin", signinData);
     },
@@ -9,26 +12,12 @@ export default {
         return axios.post("/api/customer", customerData);
     }
 
-    //api/cart
-
-    //addToCart
-
-    //
+    
 
 }
 
 
-// $.ajax("/api/signin", {
-//     type: "POST",
-//     data: signin
-// }).then(
-//     function (response) {
-//         window.location.href = response.redirectTo;
-//     },
-//     function(error) {
-//         $this.find('.message:first').text('Username and/or password incorrect');
-//     }
-// );
+
 
 
 

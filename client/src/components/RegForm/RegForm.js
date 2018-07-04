@@ -6,11 +6,20 @@ const RegForm = props => (
         <div className="reg-info">
             <form className="reg-form">
                 <h3 className="reg-heading">Register</h3>
-                <label htmlFor="cust-name">Name</label>
+                <label htmlFor="cust-firstname">First Name</label>
                 <input
                     className="custinput-bar form-control"
-                    name="cust-name"
-                    onChange={props.handleName}
+                    name="cust-firstname"
+                    onChange={props.handleFirstName}
+                    type="text"
+                    placeholder="Name"
+                    id="cust-name"
+                />
+                <label htmlFor="cust-lastname">Last Name</label>
+                <input
+                    className="custinput-bar form-control"
+                    name="cust-lastname"
+                    onChange={props.handleLastName}
                     type="text"
                     placeholder="Name"
                     id="cust-name"

@@ -1,10 +1,7 @@
-const router = require("express").Router();
-//import individual routes pages here
-//ex. const articleRoutes = require("./articles");
+// const router = require("express").Router();
+// const passportRoutes = require("./passport_routes");
 
+// // Article routes
+// router.use("/articles", articleRoutes);
 
-//set-up routes here
-//ex. router.use("/articles", articleRoutes);
-
-
-module.exports = router;
+// module.exports = router;

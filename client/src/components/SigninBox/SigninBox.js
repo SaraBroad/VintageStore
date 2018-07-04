@@ -10,6 +10,7 @@ const SigninBox = props => (
                 <label for="email">Email address</label>
                 <input type="email"
                     className="form-control sign-input"
+                    required="required"
                     // onChange={props.username}
                     id="email"
                     placeholder="Enter email"
@@ -20,6 +21,7 @@ const SigninBox = props => (
                 <label for="password">Password</label>
                 <input type="password"
                     className="form-control sign-input"
+                    required="required"
                     // onChange={props.password}
                     id="password"
                     placeholder="Enter password"
