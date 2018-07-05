@@ -8,7 +8,7 @@ node_modules
 
 # production
 /build
-.env
+/constants
 
 # misc
 .DS_Store

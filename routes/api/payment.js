@@ -1,29 +1,23 @@
-const express = require("express");
-const stripe = require("stripe")(keySecret);
-const bodyParser = require("body-parser");
+const stripe = require('../../constants/stripe');
 
 const postStripeCharge = res => (stripeErr, stripeRes) => {
-  app.post("/charge", (req, res) => {
-    let amount = 500;
-  
-    stripe.customers.create({
-      email: req.body.email,
-      card: req.body.id
-    })
-    .then(customer =>
-      stripe.charges.create({
-        amount,
-        description: "Sample Charge",
-        currency: "usd",
-        customer: customer.id
-      }))
-    .then(charge => res.send(charge))
-    .catch(err => {
-      console.log("Error:", err);
-      res.status(500).send({error: "Purchase Failed"});
-    });
+  if (stripeErr) {
+    res.status(500).send({ error: stripeErr });
+  } else {
+    res.status(200).send({ success: stripeRes });
+  }
+}
+
+const paymentApi = app => {
+  app.get('/charge', (req, res) => {
+    res.send({ message: 'Hello Stripe checkout server!', timestamp: new Date().toISOString() })
   });
-  
+
+  app.post('/charge', (req, res) => {
+    stripe.charges.create(req.body, postStripeCharge(res));
+  });
+
+  return app;
 };
 
-module.exports = postStripeCharge;
+module.exports = paymentApi;
