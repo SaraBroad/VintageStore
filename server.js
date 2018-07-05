@@ -5,9 +5,13 @@ const passport = require("passport");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
+require("dotenv").config();
+const stripe = require("stripe")(keySecret);
 
 var db = require("./models");
 
+const keyPublishable = process.env.PUBLISHABLE_KEY;
+const keySecret = process.env.SECRET_KEY;
 
 //what is secret code used for?
 app.use(session({
@@ -18,7 +22,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-
+app.set("view engine", "pug");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -26,6 +30,10 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+require("./routes/stripe_routes")(app);
+
+
 
 // Send every request to the React app
 // Define any API routes before this runs
