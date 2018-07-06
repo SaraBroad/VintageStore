@@ -42,73 +42,69 @@ class RegisterPage extends Component {
             )
             .catch(err => console.log(err));
     };
-    // handleFirstName = (event) => {
-    //     this.setState({ firstName: event.target.value })
-    // };
+    handleFirstName = (event) => {
+        this.setState({ firstName: event.target.value })
+    };
 
-    // handleLastName = (event) => {
-    //     this.setState({ lastName: event.target.value })
-    // };
+    handleLastName = (event) => {
+        this.setState({ lastName: event.target.value })
+    };
 
-    // handleAddOne = (event) => {
-    //     this.setState({ addressOne: event.target.value })
-    // };
+    handleAddOne = (event) => {
+        this.setState({ addressOne: event.target.value })
+    };
 
-    // handleAddTwo = (event) => {
-    //     this.setState({ addressTwo: event.target.value })
-    // };
+    handleAddTwo = (event) => {
+        this.setState({ addressTwo: event.target.value })
+    };
 
-    // handleCity = (event) => {
-    //     this.setState({ city: event.target.value })
-    // };
+    handleCity = (event) => {
+        this.setState({ city: event.target.value })
+    };
 
-    // handleState = (event) => {
-    //     this.setState({ state: event.target.value })
-    // };
+    handleState = (event) => {
+        this.setState({ state: event.target.value })
+    };
 
-    // handleZip = (event) => {
-    //     this.setState({ zip: event.target.value })
-    // };
+    handleZip = (event) => {
+        this.setState({ zip: event.target.value })
+    };
 
-    // handlePhone = (event) => {
-    //     this.setState({ phone: event.target.value })
-    // };
+    handlePhone = (event) => {
+        this.setState({ phone: event.target.value })
+    };
 
-    // handleEmail = (event) => {
-    //     this.setState({ email: event.target.value })
-    // };
+    handleEmail = (event) => {
+        this.setState({ email: event.target.value })
+    };
 
-    // handlePassword = (event) => {
-    //     this.setState({ password: event.target.value })
-    // };
+    handlePassword = (event) => {
+        this.setState({ password: event.target.value })
+    };
 
    
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value
-        });
-      };
+    // handleInputChange = event => {
+    //     const { name, value } = event.target;
+    //     this.setState({
+    //       [name]: value
+    //     });
+    //   };
 
     handleFormSubmit = event => {
         event.preventDefault();
-        API.saveCustomer(
-            this.state.firstName,
-            this.state.lastName,
-            this.state.addressOne,
-            this.state.addressTwo,
-            this.state.city,
-            this.state.state,
-            this.state.zip,
-            this.state.phone,
-            this.state.email,
-            this.state.password
-        )
-            .then(res => {
-                console.log(res);
-                this.setState({ regInfo: res.data })
-            })
-            .catch(err => console.log(err));
+        API.saveCustomer({
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            addressOne: this.state.addressOne,
+            addressTwo: this.state.addressTwo,
+            city: this.state.city,
+            state: this.state.state,
+            zip: this.state.zip,
+            phone: this.state.phone,
+            email: this.state.email,
+            password: this.state.password
+        })
+    
     }
 
 
@@ -118,18 +114,18 @@ class RegisterPage extends Component {
         return (
             <div>
                 <RegForm
-                    // handleFirstName={this.handleFirstName}
-                    // handleLastName={this.handleLastName}
-                    // handleAddOne={this.handleAddOne}
-                    // handleAddTwo={this.handleAddTwo}
-                    // handleCity={this.handleCity}
-                    // handleState={this.handleState}
-                    // handleZip={this.handleZip}
-                    // handlePhone={this.handlePhone}
-                    // handleEmail={this.handleEmail}
-                    // handlePassword={this.handlePassword}
-                    // handleInputChange={this.handleInputChange}
+                    handleFirstName={this.handleFirstName}
+                    handleLastName={this.handleLastName}
+                    handleAddOne={this.handleAddOne}
+                    handleAddTwo={this.handleAddTwo}
+                    handleCity={this.handleCity}
+                    handleState={this.handleState}
+                    handleZip={this.handleZip}
+                    handlePhone={this.handlePhone}
+                    handleEmail={this.handleEmail}
+                    handlePassword={this.handlePassword}
                     handleInputChange={this.handleInputChange}
+                    // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
             </div>
