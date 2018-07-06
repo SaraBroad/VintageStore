@@ -10,9 +10,11 @@ export default {
     
     saveCustomer: function (customerData) {
         return axios.post("/api/customer", customerData);
-    }
+    },
 
-    
+    getSavedCust: function () {
+        return axios.get("/api/customer")
+    }
 
 }
 

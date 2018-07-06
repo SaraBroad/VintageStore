@@ -37,10 +37,10 @@ const App = () => (
       <Navbar />
       <Container />
       <Wrapper>
-        <Redirect from="/" to="/home" />
+        {/* <Redirect from="/" to="/home" /> */}
         <Route exact path="/all" component={All} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/blog" component={Blog} />
+        {/* <Route exact path="/blog" component={Blog} /> */}
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/home" component={Home} />
@@ -50,9 +50,7 @@ const App = () => (
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/privacy" component={Privacy} />
       </Wrapper>
-     
       <Footer/>
-
     </div>
   </Router>
 );

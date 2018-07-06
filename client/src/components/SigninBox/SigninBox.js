@@ -7,7 +7,7 @@ const SigninBox = props => (
             <p className="sign-heading">Sign-in to your account here</p>
             <div className="form-group sign-group">
                 {/* {props.username} */}
-                <label for="email">Email address</label>
+                <label htmlFor="email">Email address</label>
                 <input type="email"
                     className="form-control sign-input"
                     required="required"

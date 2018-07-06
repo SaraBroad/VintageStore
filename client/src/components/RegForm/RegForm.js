@@ -9,25 +9,34 @@ const RegForm = props => (
                 <label htmlFor="cust-firstname">First Name</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="cust-firstname"
-                    onChange={props.handleFirstName}
+                    value={props.state.firstName}
+                    // onChange={props.handleFirstName}
+                    onChange={props.handleInputChange}
                     type="text"
                     placeholder="Name"
-                    id="cust-name"
+                    id="cust-fname"
                 />
                 <label htmlFor="cust-lastname">Last Name</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="cust-lastname"
-                    onChange={props.handleLastName}
+                    // onChange={props.handleLastName}
+                    onChange={props.handleInputChange}
+                    value={props.state.lastName}
                     type="text"
                     placeholder="Name"
-                    id="cust-name"
+                    id="cust-lname"
                 />
                 <label htmlFor="cust-address">Street Address 1</label>
                 <input
                     className="custinput-bar form-control"
-                    onChange={props.handleAddOne}
+                    // onChange={props.handleAddOne}
+                    onChange={props.handleInputChange}
+                    value={props.state.addressOne}
+                    required="required"
                     name="cust-address"
                     type="text"
                     placeholder="Street Address 1"
@@ -36,8 +45,11 @@ const RegForm = props => (
                 <label htmlFor="cust-addresstwo">Street Address 2</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="cust-addresstwo"
-                    onChange={props.handleAddTwo}
+                    // onChange={props.handleAddTwo}
+                    onChange={props.handleInputChange}
+                    value={props.state.addressTwo}
                     type="text"
                     placeholder="Street Address 2"
                     id="cust-addresstwo"
@@ -45,14 +57,18 @@ const RegForm = props => (
                 <label htmlFor="city">City</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="city"
-                    onChange={props.handleCity}
+                    // onChange={props.handleCity}
+                    onChange={props.handleInputChange}
+                    value={props.state.city}
                     type="text"
                     placeholder="City"
                     id="city"
                 />
                 <label htmlFor="state">State</label>
-                <select className="form-control" id="state" name="state" required>
+                <select className="form-control" id="state" name="state" required="required" value={props.state.state}>
+
                     <option value="">N/A</option>
                     <option value="AK">Alaska</option>
                     <option value="AL">Alabama</option>
@@ -110,8 +126,11 @@ const RegForm = props => (
                 <label htmlFor="zip">Zip Code</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="zip"
-                    onChange={props.handleZip}
+                    // onChange={props.handleZip}
+                    onChange={props.handleInputChange}
+                    value={props.state.zip}
                     type="text"
                     placeholder="Zip Code"
                     id="zip"
@@ -119,8 +138,11 @@ const RegForm = props => (
                 <label htmlFor="phone">Phone Number</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="phone"
-                    onChange={props.handlePhone}
+                    // onChange={props.handlePhone}
+                    onChange={props.handleInputChange}
+                    value={props.state.phone}
                     type="number"
                     placeholder="Phone Number"
                     required
@@ -129,8 +151,11 @@ const RegForm = props => (
                 <label htmlFor="email">E-mail</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="email"
-                    onChange={props.handleEmail}
+                    // onChange={props.handleEmail}
+                    onChange={props.handleInputChange}
+                    value={props.state.email}
                     type="email"
                     placeholder="E-mail"
                     id="email"
@@ -138,8 +163,11 @@ const RegForm = props => (
                 <label htmlFor="password">Password</label>
                 <input
                     className="custinput-bar form-control"
+                    required="required"
                     name="password"
-                    onChange={props.handlePassword}
+                    // onChange={props.handlePassword}
+                    onChange={props.handleInputChange}
+                    value={props.state.password}
                     type="password"
                     placeholder="Password"
                     id="password"

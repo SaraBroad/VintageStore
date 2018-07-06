@@ -18,12 +18,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-// require('./controllers/passport_controller.js')(passport, db.passports);
-// require("./routes/api/passport_routes.js")(router, passport);
-var passportRoute = require('./routes/api/passport_routes.js')(app);
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+require('./controllers/passport_controller.js')(passport, db.passports);
+// require("./routes/api/passport_routes.js")(router, passport);
+var passportRoute = require('./routes/api/passport_routes.js')(app, passport);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
