@@ -39,32 +39,6 @@ class Account extends Component {
             .catch(err => console.log("error entering log-in data"))
     }
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     API.getArticles(
-    //         this.state.title,
-    //         this.state.startYear,
-    //         this.state.endYear
-    //     )
-    //         .then(res => {
-    //             console.log(res);
-    //             this.setState({ articles: res.data.response.docs });
-    //         })
-    //         .catch(err => console.log(err));
-    // }
-
-    // $.ajax("/api/signin", {
-//     type: "POST",
-//     data: signin
-// }).then(
-//     function (response) {
-//         window.location.href = response.redirectTo;
-//     },
-//     function(error) {
-//         $this.find('.message:first').text('Username and/or password incorrect');
-//     }
-// );
-
     render() {
         return (
             <div className="regbox-container">

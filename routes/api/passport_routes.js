@@ -1,9 +1,12 @@
 const router = require("express").Router();
 const passportController = require("../../controllers/passport_controller");
-const db = require("../../models");
+const db = require("../../models")
 
-module.exports = function(app, passport) {
-    router.post('/api/signin', passport.authenticate('local-signin', {
+module.exports = function(router, passport) {
+
+    // router.get("/signup", passportController.signup);
+
+    router.post('/api/signup', passport.authenticate('local-signup', {
         failWithError: true
     }),
         (req, res, next) => {
@@ -33,10 +36,20 @@ module.exports = function(app, passport) {
     }
   );
 
+  // logout, redirect to home page
+  router.get('/logout', function (req, res) {
+    req.session.destroy(function (err) {
+      res.redirect('/');
+    });
+  });
+
+  // checks if logged in and authenticated  
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+      return next();
+    res.redirect('/');
+  }
 };
 
-
-
-// module.exports = function(app, passport) {
 
 

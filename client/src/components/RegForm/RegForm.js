@@ -3,6 +3,7 @@ import "./RegForm.css";
 
 const RegForm = props => (
     <div className="reg-container">
+       {props.children}
         <div className="reg-info">
             <form className="reg-form">
                 <h3 className="reg-heading">Register</h3>
@@ -23,7 +24,6 @@ const RegForm = props => (
                     required="required"
                     name="cust-lastname"
                     onChange={props.handleLastName}
-                    // onChange={props.handleInputChange}
                     type="text"
                     placeholder="Name"
                     id="cust-lname"
@@ -137,7 +137,6 @@ const RegForm = props => (
                     // onChange={props.handleInputChange}
                     type="number"
                     placeholder="Phone Number"
-                    required
                     id="phone"
                 />
                 <label htmlFor="email">E-mail</label>
@@ -146,7 +145,7 @@ const RegForm = props => (
                     required="required"
                     name="email"
                     onChange={props.handleEmail}
-                                        // onChange={props.handleInputChange}
+                    // onChange={props.handleInputChange}
 
                     type="email"
                     placeholder="E-mail"
@@ -164,7 +163,7 @@ const RegForm = props => (
                 />
 
                 <button
-                    onClick={props.handleFormSubmit}
+                    onClick={() => props.handleFormSubmit(props.id)}
                     type="button"
                     className="btn btn-primary reg-button">
                     Submit

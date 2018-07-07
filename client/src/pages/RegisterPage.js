@@ -18,30 +18,23 @@ class RegisterPage extends Component {
         phone: "",
         email: "",
         password: "",
-        registeredCusts: []
+        savedCusts: [],
+        regCust: []
+        
     }
 
-    // state = {
-    //     regData: {
-    //         name
-    //     }
+    // componentDidMount() {
+    //     this.getRegCustomers();
     // }
-
-    //es6
-
-    componentDidMount() {
-        this.getRegCustomers;
-    }
-
-  
 
     getRegCustomers = () => {
         API.getSavedCust()
             .then(res =>
-                this.setState({ registeredCusts: res.data, firstName: "", lastName: "", addressOne: "", addressTwo: "", city: "", state: "", zip: "", phone: "", email: "", password: "" })
+                this.setState({ savedCusts: res.data })
             )
             .catch(err => console.log(err));
     };
+
     handleFirstName = (event) => {
         this.setState({ firstName: event.target.value })
     };
@@ -83,16 +76,29 @@ class RegisterPage extends Component {
     };
 
    
-    // handleInputChange = event => {
-    //     const { name, value } = event.target;
-    //     this.setState({
-    //       [name]: value
-    //     });
-    //   };
+  
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        API.saveCustomer({
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     API.saveCustomer({
+    //         firstName: this.state.firstName,
+    //         lastName: this.state.lastName,
+    //         addressOne: this.state.addressOne,
+    //         addressTwo: this.state.addressTwo,
+    //         city: this.state.city,
+    //         state: this.state.state,
+    //         zip: this.state.zip,
+    //         phone: this.state.phone,
+    //         email: this.state.email,
+    //         password: this.state.password
+    //     })
+    //     .then(res => this.getRegCustomers())
+    //     .catch(err => console.log(err));
+    // }
+
+
+    handleFormSubmit = id => {
+        let newCustomer = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             addressOne: this.state.addressOne,
@@ -103,10 +109,13 @@ class RegisterPage extends Component {
             phone: this.state.phone,
             email: this.state.email,
             password: this.state.password
+        }
+    API.saveCustomer(newCustomer)
+        .then(() => {
+            window.location.href = '/home'
         })
-    
     }
-
+    
 
     //WHERE SHOULD THIS BE REDIRECTED TO?
 
@@ -124,7 +133,7 @@ class RegisterPage extends Component {
                     handlePhone={this.handlePhone}
                     handleEmail={this.handleEmail}
                     handlePassword={this.handlePassword}
-                    handleInputChange={this.handleInputChange}
+                    // handleInputChange={this.handleInputChange}
                     // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />

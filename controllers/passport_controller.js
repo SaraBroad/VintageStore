@@ -1,5 +1,7 @@
 //load bcrypt
+var path = require("path");
 var bCrypt = require('bcrypt-nodejs');
+var passport = require('passport')
 var db = require('../models');
 
 module.exports = function (passport, signin) {
@@ -13,8 +15,8 @@ module.exports = function (passport, signin) {
 
     // used to deserialize the login
     passport.deserializeUser(function (id, done) {
-        db.Customer.findById(id).then(function (user) {
-            if (user) {
+        Customer.findById(id).then(function (user) {
+            if (Customer) {
                 done(null, user.get());
             } else {
                 done(user.errors, null);
@@ -34,7 +36,7 @@ module.exports = function (passport, signin) {
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
             };
 
-            db.Customer.findOne({
+            Customer.findOne({
                 where: {
                     email: email
                 }
@@ -46,13 +48,19 @@ module.exports = function (passport, signin) {
                 } else {
                     var hashPassword = generateHash(password);
                     var data = {
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName,
+                        addressOne: req.body.addressOne,
+                        addressTwo: req.body.addressTwo,
+                        city: req.body.city,
+                        state: req.body.state,
+                        zip: req.body.zip,
+                        phone: req.body.phone,
                         email: email,
-                        password: hashPassword,
-                        first_name: req.body.first_name,
-                        last_name: req.body.last_name
+                        password: hashPassword
                     };
 
-                    db.Customer.create(data).then(function (newUser, created) {
+                    Customer.create(data).then(function (newUser, created) {
                         if (!newUser) {
                             return done(null, false, {
                                 message: 'an error occured. please try again.'
@@ -88,7 +96,8 @@ module.exports = function (passport, signin) {
                 return bCrypt.compareSync(password, userpass);
             };
 
-            db.Customer.findOne({
+            
+            Customer.findOne({
                 where: {
                     email: email
                 }
