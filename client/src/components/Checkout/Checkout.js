@@ -11,7 +11,7 @@ const fromUSDToCent = amount => amount * 100;
 
 
 const onToken = (amount, description) => token =>
-  axios.post(PAYMENT_SERVER_URL,
+  axios.post(`${PAYMENT_SERVER_URL}/charge`,
     {
       description,
       source: token.id,
@@ -23,11 +23,13 @@ const onToken = (amount, description) => token =>
 
 
 const successPayment = data => {
+  console.log(data);  
   alert('Payment Successful');
 };
 
 const errorPayment = data => {
-  alert('Payment Error');
+  console.log(data);
+  alert('Payment Error ');
 };
 
 

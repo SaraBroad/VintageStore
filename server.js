@@ -6,19 +6,12 @@ const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
 var db = require("./models");
-const cors = require('cors');
+const keyPublishable = process.env.PUBLISHABLE_KEY;
+const keySecret = process.env.SECRET_KEY;
+const stripe = require("stripe")(keySecret);
 const configureRoutes = require('./routes/api/index');
 const SERVER_CONFIGS = require('./constants/server');
-const CORS_WHITELIST = require('./constants/frontend');
 
-const corsOptions = {
-  origin: (origin, callback) =>
-    (CORS_WHITELIST.indexOf(origin) !== -1)
-      ? callback(null, true)
-      : callback(new Error('Not allowed by CORS'))
-};
-
-configureRoutes(app);
 //what is secret code used for?
 app.use(session({
   secret: 'bootcamp project',
@@ -28,7 +21,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-app.use(cors(corsOptions));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

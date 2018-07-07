@@ -8,12 +8,15 @@ const postStripeCharge = res => (stripeErr, stripeRes) => {
   }
 }
 
+
+
 const paymentApi = app => {
+
   app.get('/charge', (req, res) => {
     res.send({ message: 'Hello Stripe checkout server!', timestamp: new Date().toISOString() })
   });
 
-  app.post('/charge', (req, res) => {
+  app.post('/charge', (req, res, next) => {
     stripe.charges.create(req.body, postStripeCharge(res));
   });
 
