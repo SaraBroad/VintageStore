@@ -11,7 +11,7 @@ const SigninBox = props => (
                 <input type="email"
                     className="form-control sign-input"
                     required="required"
-                    // onChange={props.username}
+                    onChange={props.handleUsername}
                     id="email"
                     placeholder="Enter email"
                 />
@@ -22,12 +22,12 @@ const SigninBox = props => (
                 <input type="password"
                     className="form-control sign-input"
                     required="required"
-                    // onChange={props.password}
+                    onChange={props.handlePassword}
                     id="password"
                     placeholder="Enter password"
                 />
             </div>
-            <button type="submit" class="submitsign-btn">Submit</button>
+            <button type="submit" class="submitsign-btn" onClick={props.handleLogInSubmit}>Submit</button>
         </form>
     </div>
 )

@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const passportController = require("../../controllers/passport_controller");
+const passport = require("../../controllers/passport_controller");
 const db = require("../../models")
 
-module.exports = function(router, passport) {
+module.exports = function(router) {
 
     // router.get("/signup", passportController.signup);
 

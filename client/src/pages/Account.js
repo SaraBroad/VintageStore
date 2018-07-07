@@ -10,7 +10,7 @@ import API from "../utils/API";
 class Account extends Component {
 
     state = {
-        username: "",
+        email: "",
         password: "",
         enterSignin: []
     };
@@ -18,7 +18,7 @@ class Account extends Component {
     //componentDidMount?
 
     handleUsername = (event) => {
-        this.setState({ username: event.target.value })
+        this.setState({ email: event.target.value })
     };
 
     handlePassword = (event) => {
@@ -28,13 +28,15 @@ class Account extends Component {
 
     handleLogInSubmit = event => {
         event.preventDefault();
-        API.custLogin(
-            this.state.username,
-            this.state.password
-        )
+        console.log(this.state);
+        API.custLogin({
+            email: this.state.email,
+            password: this.state.password
+        })
             .then(res => {
                 console.log(res);
                 this.setState({ enterSignin: res.data });
+                alert("You are signed in");
             })
             .catch(err => console.log("error entering log-in data"))
     }
@@ -47,7 +49,7 @@ class Account extends Component {
                         <SigninBox 
                         handleUsername={this.handleUsername}
                         handlePassword={this.handlePassword} 
-                        handleLoginSubmit={this.handleLoginSubmit}
+                        handleLogInSubmit={this.handleLogInSubmit}
                         />
 
                     </div>

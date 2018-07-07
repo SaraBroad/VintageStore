@@ -27,13 +27,13 @@ class RegisterPage extends Component {
     //     this.getRegCustomers();
     // }
 
-    getRegCustomers = () => {
-        API.getSavedCust()
-            .then(res =>
-                this.setState({ savedCusts: res.data })
-            )
-            .catch(err => console.log(err));
-    };
+    // getRegCustomers = () => {
+    //     API.getSavedCust()
+    //         .then(res =>
+    //             this.setState({ savedCusts: res.data })
+    //         )
+    //         .catch(err => console.log(err));       
+    // };
 
     handleFirstName = (event) => {
         this.setState({ firstName: event.target.value })
@@ -113,6 +113,10 @@ class RegisterPage extends Component {
     API.saveCustomer(newCustomer)
         .then(() => {
             window.location.href = '/home'
+        })
+        .catch(err => {
+            console.log(err);
+            alert('yo. wtf bro.')
         })
     }
     
