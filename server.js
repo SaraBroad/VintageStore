@@ -6,7 +6,9 @@ const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
 const app = require("express")();
-const stripe = require("stripe")("sk_test_3Gtq6L5rWvB8CJk1qf37TlBn");
+const STRIPE_SECRET_KEY = require('./constants/stripe');
+const stripe = require("stripe")(STRIPE_SECRET_KEY);
+const routes = require("./routes");
 
 //what is secret code used for?
 app.use(session({
@@ -22,20 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(require("body-parser").text());
 
-app.post("/charge", async (req, res) => {
-  try {
-    let {status} = await stripe.charges.create({
-      amount: 2000,
-      currency: "usd",
-      description: "An example charge",
-      source: req.body
-    });
+app.use(routes);
 
-    res.json({status});
-  } catch (err) {
-    res.status(500).end();
-  }
-});
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

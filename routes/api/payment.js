@@ -1,5 +1,7 @@
+const router = require("express").Router();
 
-app.post("/charge", async (req, res) => {
+
+router.post("/charge", async (req, res) => {
   try {
     let {status} = await stripe.charges.create({
       amount: 2000,
@@ -13,3 +15,5 @@ app.post("/charge", async (req, res) => {
     res.status(500).end();
   }
 });
+
+module.exports = router; 

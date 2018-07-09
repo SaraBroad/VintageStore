@@ -35,8 +35,17 @@
     margin-top: 75px;
 }
 
-.stripe {
+.card-details {
+    padding: 10px; 
+}
+
+.button {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
+
+.payment-details {
+    border: 1px solid black; 
+    margin: 10px; 
+}
+

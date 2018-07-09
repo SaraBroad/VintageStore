@@ -1,12 +1,13 @@
 const router = require("express").Router();
-//import individual routes pages here
-//ex. const articleRoutes = require("./articles");
+const payment = require("./payment");
 
+// NYT routes
+router.use("/charge", payment);
 
-//set-up routes here
-//ex. router.use("/articles", articleRoutes);
 
 
 module.exports = router;
+
+
 
 
