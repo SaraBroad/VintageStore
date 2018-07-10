@@ -38,11 +38,16 @@ app.get("*", function(req, res) {
 });
 
 
-
-// add when ready to sync with sequelize
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+if(process.env.NODE_ENV === 'production') {
+  db.sequelize.sync().then(function () {
+    app.listen(PORT, function () {
+      console.log("App listening on PORT " + PORT);
+    });
   });
-});
-
+} else {
+  db.sequelize.sync({ force: true }).then(function () {
+    app.listen(PORT, function () {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
+}
