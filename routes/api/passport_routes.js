@@ -64,7 +64,6 @@ module.exports = function (router) {
   });
 
 
-
   // router.get("/private", isLoggedIn, function (req, res) {
   //   res.render(path.join(__dirname, "../views/private.handlebars"));
   // });

@@ -6,10 +6,14 @@
   "scripts": {
     "server": "node server.js",
     "client": "cd client && npm run start",
-    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
+    "seed": "sequelize db:seed && sequelize db:seed:all",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "npm run seed && concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -18,17 +22,24 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^2.0.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "mdbreact": "^4.5.1",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "sequelize": "^4.38.0",
-    "shippo": "^1.3.1"
+    "shippo": "^1.3.1",
+    "react-stripe-checkout": "^2.6.3",
+    "stripe": "^6.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-social-icons": "^3.0.0",
+    "sequelize": "^4.38.0"
   }
 }

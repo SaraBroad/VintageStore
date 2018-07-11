@@ -1,57 +1,59 @@
-import React from "react";
+import React, {Component} from 'react';
+import axios from 'axios';
 import "./ContactCard.css";
 
-const ContactCard = props => (
-    <div className="container">
-    <h1>Contact Us</h1>
-        <section className="main-section">
-            <form>
-                <div className="form-group row">
-                    <label htmlFor="name">Name</label>
-                    <input
-                        className="input-bar form-control"
-                        name="name"
-                        type="text"
-                        placeholder="Name"
-                        id="name"
-                    />
-                </div>
-                <div className="form-group row">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        className="input-bar form-control"
-                        name="name"
-                        type="email"
-                        placeholder="Email"
-                        id="email"
-                    />
-                </div>
-                <div className="form-group row">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input
-                        className="input-bar form-control"
-                        name="name"
-                        type="text"
-                        placeholder="Phone Number"
-                        id="phone"
-                    />
-                </div>
-                <div className="form-group row">
-                    <label htmlFor="message">Leave a Message</label>
-                    <input
-                        className="input-bar message-form form-control"
-                        name="message"
-                        type="text"
-                        placeholder="Leave a message here"
-                        id="message"
-                        rows="5"
-                    />
-                </div>
-                <button type="submit" id="submit" class="btn btn-primary contact-button">Submit</button>
-            </form>
-        </section>
-    </div>
-)
+class ContactCard extends Component{
+  
+    handleSubmit(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        axios({
+            method: "POST", 
+            url:"http://localhost:3002/send", 
+            data: {
+                name: name,   
+                email: email,  
+                messsage: message
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Thank you for the message! We will get back to you within 24 hours!"); 
+                this.resetForm()
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
+        })
+    }
+
+    resetForm(){
+        document.getElementById('contact-form').reset();
+    }
+
+    render(){
+        return(
+            <div className="col-sm-4 offset-sm-4">
+                <form id="contact-form contactMaster" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                    <div className="contact form-group">
+                        <label for="name">Name</label>
+                        <input type="text" className="form-control" id="name" />
+                    </div>
+                    <div className="contact form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+                    </div>
+                    <div className="contact form-group">
+                        <label for="message">Message</label>
+                        <textarea className="form-control" rows="5" id="message"></textarea>
+                    </div>
+                    <button type="submit" className=" btn btn-primary">Submit</button>
+                </form>
+            </div>
+        )
+    }
+}
+
 
 export default ContactCard;
 
