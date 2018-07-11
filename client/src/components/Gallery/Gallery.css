@@ -6,3 +6,7 @@
 .container {
     width: 100% !important; 
 }
+
+.img-thumbnail {
+  border: 1px solid white;
+}
