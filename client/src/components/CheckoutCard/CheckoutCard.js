@@ -1,7 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import "./CheckoutCard.css";
 
-const CheckoutCard = props => (
+
+class CheckoutCard extends Component {
+    render() {
+    return (
     <div className="checkout-card">
         <div className="cust-info">
             <h3>Shipping Information</h3>
@@ -119,41 +122,12 @@ const CheckoutCard = props => (
             />
         </div>
 
-       
-        <div className="charge-info">
-            <h3>Payment Information</h3>
-            <label htmlFor="card-name">Name on card</label>
-            <input
-                className="custinput-bar form-control"
-                name="card-name"
-                type="text"
-                placeholder="Name on card"
-                id="card-name"
-            />
-            <label htmlFor="card-number">Enter card number</label>
-            <input
-                className="custinput-bar form-control"
-                name="card-number"
-                type="text"
-                placeholder="Card Number"
-                id="card-number"
-            />
-            <label htmlFor="cvv">CVV</label>
-            <input
-                className="custinput-bar form-control"
-                name="cvv"
-                type="text"
-                placeholder="CVV"
-                id="cvv"
-            />
-            {/* Expiration */}
-            <div className="submit">
-            <button type="button" className="btn btn-primary">Submit</button>
-            </div>
-        </div>
-
+        
 
     </div>
+
 );
+    }
+}
 
 export default CheckoutCard;

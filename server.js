@@ -4,10 +4,11 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
-const app = express();
-
 var db = require("./models");
-
+const app = require("express")();
+const STRIPE_SECRET_KEY = require('./constants/stripe');
+const stripe = require("stripe")(STRIPE_SECRET_KEY);
+const routes = require("./routes");
 
 //what is secret code used for?
 app.use(session({
@@ -19,8 +20,12 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(require("body-parser").text());
+
+app.use(routes);
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -33,9 +38,18 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-// add when ready to sync with sequelize
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+
+if(process.env.NODE_ENV === 'production') {
+  db.sequelize.sync().then(function () {
+    app.listen(PORT, function () {
+      console.log("App listening on PORT " + PORT);
+    });
   });
-});
+} else {
+  db.sequelize.sync({ force: true }).then(function () {
+    app.listen(PORT, function () {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
+}
+
