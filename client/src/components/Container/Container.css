@@ -2,11 +2,16 @@ h2 {
     font-size: 6rem !important; 
     text-align: center;
     color: black; 
-    padding: 20px; 
-    background-color: #e9ecef; 
-    margin-bottom: 0; 
+    padding: 0px; 
+    margin: 0; 
 }
 
 .homelink:hover {
     text-decoration: none; 
+}
+
+storeTitle{
+    margin-bottom: none;
+    padding-bottom: none;
+
 }

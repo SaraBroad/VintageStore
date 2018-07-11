@@ -28,12 +28,16 @@
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "mdbreact": "^4.5.1",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "path": "^0.12.7",
     "react-stripe-checkout": "^2.6.3",
     "sequelize": "^4.38.0",
-    "stripe": "^6.2.0"
+    "stripe": "^6.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-social-icons": "^3.0.0",
+    "sequelize": "^4.38.0"
   }
 }

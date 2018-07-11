@@ -12,19 +12,15 @@ import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import FAQs from "./pages/FAQs";
-import Search from "./components/Search";
 import Privacy from "./pages/Privacy"
 import Account from "./pages/Account";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import RegisterPage from "./pages/RegisterPage";
 import Checkout from "./pages/Checkout";
-import Jumbotron from "./components/Jumbotron";
-import Footer from "./components/Footer";
+import FooterPage from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
-import Container from "./components/Container";
-import Gallery from "./components/Gallery";
 
 
 
@@ -35,7 +31,7 @@ const App = () => (
 
     <div className="app">
       <Navbar />
-      <Container />
+      {/* <Container /> */}
       <Wrapper>
         <Redirect from="/" to="/home" />
         <Route exact path="/all" component={All} />
@@ -51,7 +47,7 @@ const App = () => (
         <Route exact path="/privacy" component={Privacy} />
       </Wrapper>
      
-      <Footer/>
+      <FooterPage/>
 
     </div>
   </Router>

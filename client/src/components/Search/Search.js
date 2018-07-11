@@ -3,9 +3,9 @@ import {
   BrowserRouter 
 } from 'react-router-dom'
 import "./Search.css";
+import {FormGroup, FormControl, Button, ButtonToolbar} from "react-bootstrap";
 
-
-class Search extends Component {
+class Search extends React.Component {
  state = {
    query: '',
  }
@@ -16,21 +16,25 @@ class Search extends Component {
    })
  }
 
+
  render() {
    return (
-     <form className="form-inline my-2 my-lg-0">
-       <input
-         className="form-control mr-sm-2" type="search"
-         placeholder="Search for..."
-         ref={input => this.search = input}
-         onChange={this.handleInputChange}
-       />
-       <p>{this.state.query}</p>
-       {' '}
-       <button type="submit" className="searchbtn">Search</button>
-     </form>
+  
+
+    <FormGroup form-inline>
+        <div className="form-group">
+        <FormControl type="text" placeholder="Search" 
+        ref={input => this.search = input}
+        onChange={this.handleInputChange} />
+      <p>{this.state.query}</p>
+      <ButtonToolbar>
+      <Button bsSize="xsmall" bsStyle="xsmall" bsClass="color: black" className="searchbtn pull-right">Submit</Button>
+      </ButtonToolbar>
+      </div>
+      </FormGroup>
+
    )
- }
+}
 }
 
 export default Search; 
