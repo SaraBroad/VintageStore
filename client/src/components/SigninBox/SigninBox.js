@@ -7,10 +7,11 @@ const SigninBox = props => (
             <p className="sign-heading">Sign-in to your account here</p>
             <div className="form-group sign-group">
                 {/* {props.username} */}
-                <label for="email">Email address</label>
+                <label htmlFor="email">Email address</label>
                 <input type="email"
                     className="form-control sign-input"
-                    // onChange={props.username}
+                    required="required"
+                    onChange={props.handleUsername}
                     id="email"
                     placeholder="Enter email"
                 />
@@ -20,12 +21,13 @@ const SigninBox = props => (
                 <label for="password">Password</label>
                 <input type="password"
                     className="form-control sign-input"
-                    // onChange={props.password}
+                    required="required"
+                    onChange={props.handlePassword}
                     id="password"
                     placeholder="Enter password"
                 />
             </div>
-            <button type="submit" class="submitsign-btn">Submit</button>
+            <button type="submit" class="submitsign-btn" onClick={props.handleLogInSubmit}>Submit</button>
         </form>
     </div>
 )

@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect} from "react-router";
+import { Redirect } from "react-router";
 import {
   BrowserRouter as Router,
   Route,
@@ -26,17 +26,17 @@ import Wrapper from "./components/Wrapper";
 
 //this code renders home, cart, and likely any page that contains components
 const App = () => (
-  
-<Router>
+
+  <Router>
 
     <div className="app">
       <Navbar />
       {/* <Container /> */}
       <Wrapper>
-        <Redirect from="/" to="/home" />
+        {/* <Redirect from="/" to="/home" /> */}
         <Route exact path="/all" component={All} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/blog" component={Blog} />
+        {/* <Route exact path="/blog" component={Blog} /> */}
         <Route exact path="/account" component={Account} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/home" component={Home} />
@@ -46,8 +46,8 @@ const App = () => (
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/privacy" component={Privacy} />
       </Wrapper>
-     
-      <FooterPage/>
+
+      <FooterPage />
 
     </div>
   </Router>

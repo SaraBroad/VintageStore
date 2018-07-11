@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const passport = require("passport");
+const passport = require("./controllers/passport_controller");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
@@ -26,6 +26,10 @@ app.use(require("body-parser").text());
 
 app.use(routes);
 
+
+// require('./controllers/passport_controller.js')(passport, db.passports);
+// require("./routes/api/passport_routes.js")(router, passport);
+require('./routes/api/passport_routes.js')(app);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
