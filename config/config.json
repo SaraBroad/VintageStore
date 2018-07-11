@@ -19,10 +19,6 @@
       "database": "database_production",
       "host": "127.0.0.1",
       "dialect": "mysql"
-    },
-    "nodemailer": {
-      "Email": "ZANAvintage@gmail.com", 
-      "Pass": "ZANAvintage2018"
     }
   }
   
