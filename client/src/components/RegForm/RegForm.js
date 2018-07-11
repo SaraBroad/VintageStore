@@ -10,6 +10,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="cust-name"
+                    onChange={props.handleName}
                     type="text"
                     placeholder="Name"
                     id="cust-name"
@@ -17,6 +18,7 @@ const RegForm = props => (
                 <label htmlFor="cust-address">Street Address 1</label>
                 <input
                     className="custinput-bar form-control"
+                    onChange={props.handleAddOne}
                     name="cust-address"
                     type="text"
                     placeholder="Street Address 1"
@@ -26,6 +28,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="cust-addresstwo"
+                    onChange={props.handleAddTwo}
                     type="text"
                     placeholder="Street Address 2"
                     id="cust-addresstwo"
@@ -34,6 +37,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="city"
+                    onChange={props.handleCity}
                     type="text"
                     placeholder="City"
                     id="city"
@@ -98,6 +102,7 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="zip"
+                    onChange={props.handleZip}
                     type="text"
                     placeholder="Zip Code"
                     id="zip"
@@ -106,26 +111,38 @@ const RegForm = props => (
                 <input
                     className="custinput-bar form-control"
                     name="phone"
+                    onChange={props.handlePhone}
                     type="number"
                     placeholder="Phone Number"
+                    required
                     id="phone"
                 />
                 <label htmlFor="email">E-mail</label>
                 <input
                     className="custinput-bar form-control"
                     name="email"
+                    onChange={props.handleEmail}
                     type="email"
                     placeholder="E-mail"
                     id="email"
                 />
-                 <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <input
                     className="custinput-bar form-control"
                     name="password"
+                    onChange={props.handlePassword}
                     type="password"
                     placeholder="Password"
                     id="password"
                 />
+
+                <button
+                    onClick={props.handleFormSubmit}
+                    type="button"
+                    className="btn btn-primary reg-button">
+                    Submit
+                 </button>
+
             </form>
         </div>
     </div>

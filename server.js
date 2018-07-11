@@ -6,8 +6,18 @@ const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-
 var db = require("./models");
+
+
+//what is secret code used for?
+app.use(session({
+  secret: 'bootcamp project',
+  resave: true,
+  saveUninitialized: true
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
