@@ -7,8 +7,7 @@ import "./Container.css";
 const Container = props => (
   <div className="storeTitle">
     <Link className="homelink" to="/home">
-      <h2>Z A N A vintage</h2>
-  
+      <h2>Madeleine</h2>
     </Link>
   </div>
 );

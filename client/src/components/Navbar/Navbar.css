@@ -2,17 +2,11 @@
     background-color: black !important;
     color: white !important; 
     border-bottom: solid black !important; 
-    padding-bottom: 0;
-    margin-bottom: 5px;
-}
-
-.navbar-brand{
-    font-size: 25px !important;
 }
 
 .nav-link:hover {
     color: white!important; 
-    background-color: gray;
+    background-color: lightgray;
 }
 
 .nav-link:visited {
@@ -29,25 +23,13 @@
 
 .navbar-brand {
     font-size: 1.75rem;
-    color: white !important;
 }
 
 .nav-link {
     font-size: 1.15rem;
 }
 
-ul{
-    list-style: none !important;
-    margin: 10px !important;
-    float: right !important;
-}
-
-li{
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-/* nav li {
+nav li {
     padding-right: 10px; 
     padding-left: 8px; 
-} */
+}

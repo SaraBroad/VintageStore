@@ -1,9 +1,8 @@
-Button{
-    background-color: black !important;
-    color: white !important;
-    font-size: 10px;
+.searchbtn {
+    border-radius: .25rem; 
 }
 
-FormGroup{
-    align-content: flex-end;
+.searchbtn:hover {
+    color: black !important; 
+    background-color: lightgray;
 }
