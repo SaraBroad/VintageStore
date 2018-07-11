@@ -6,7 +6,7 @@
   "scripts": {
     "server": "node server.js",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
+    "seed": "sequelize db:seed && sequelize db:seed:all",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "npm run seed && concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
