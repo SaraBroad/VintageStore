@@ -45,5 +45,10 @@ module.exports = function (sequelize, DataTypes) {
     return Customer;
 };
 
+const Customer = Sequelize.model("Customer", CustomerSchema); 
+
+module.exports = Customer;
+
+
 
 //add foreign key of purchase history

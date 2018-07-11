@@ -9,9 +9,9 @@ import ImageGW from "../ImageGW";
 
 const Jumbotron = props => (
   <div className="jumbotron jumbotron-fluid">
-  
-      <ImageGW />
-  
+     <Link to="/all" className="jumbotron-link">
+     <ImageGW />  
+      </Link> 
   </div>
 );
 

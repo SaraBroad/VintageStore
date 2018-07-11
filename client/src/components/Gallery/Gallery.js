@@ -1,33 +1,28 @@
 import React from "react";
 import "./Gallery.css";
+import ControlledCarousel from "./../Carousel/Carousel";
 import {
-  Component,
   Route,
   Link
 } from 'react-router-dom'
 
-
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-  return images;
-}
-
-const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
-
 {/* <img src={images['doggy.png']} /> */ }
 
 const Gallery = props => (
-
+// Slideshow container
   <div className="col-lg-3 col-md-4 col-xs-6" >
-    {/* <img src={images[`${props.src}`]}/> */}
-    <img className="img-fluid img-thumbnail" src={props.src} />
+  
+    <ControlledCarousel  
+      Image1={props.Image1}
+      Image2={props.Image2}
+      Image3={props.Image3}/>
     <span>{props.name}</span>
-    <span>Product Id: {props.id}</span>
+    <br/>
     <span>Size: {props.size}</span>
-    <span>{props.description}</span>
+    <br/>
+    <span>Price: {props.price}</span>
   </div>
+  
 );
 
 export default Gallery;
-
