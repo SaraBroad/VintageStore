@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const payment = require("./payment");
+const products = require("./products"); 
 
-// NYT routes
+
 router.use("/charge", payment);
+router.use("/all", products);
 
 
 
