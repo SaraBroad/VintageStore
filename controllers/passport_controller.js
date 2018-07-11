@@ -119,7 +119,7 @@ passport.use('local-signin', new LocalStrategy({
                 message: 'an error occured. please try again.'
             });
         });
-    }
+    }   
 ));
 
 module.exports = passport;

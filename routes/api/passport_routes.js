@@ -36,6 +36,10 @@ module.exports = function(router) {
     }
   );
 
+  // router.get("/private", isLoggedIn, function (req, res) {
+  //   res.render(path.join(__dirname, "../views/private.handlebars"));
+  // });
+
   // logout, redirect to home page
   router.get('/logout', function (req, res) {
     req.session.destroy(function (err) {

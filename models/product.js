@@ -30,7 +30,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         imageTwo: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
+        },
+        imageThree: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     });
 
