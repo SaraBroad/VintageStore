@@ -17,7 +17,7 @@ export default {
         return axios.get("/api/products");
     }
     //add to cart
-    //
+    //post product to cart
 
 }
 
