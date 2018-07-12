@@ -1,6 +1,7 @@
 import React from "react";
 import {
-  BrowserRouter 
+  BrowserRouter,
+  Link
 } from 'react-router-dom'
 import "./Jumbotron.css";
 import ImageGW from "../ImageGW";

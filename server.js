@@ -4,11 +4,11 @@ const bodyParser = require("body-parser");
 const passport = require("./controllers/passport_controller");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
-var db = require("./models");
-const app = require("express")();
 const STRIPE_SECRET_KEY = require('./constants/stripe');
 const stripe = require("stripe")(STRIPE_SECRET_KEY);
 const routes = require("./routes");
+var db = require("./models");
+const app = require("express")();
 
 //what is secret code used for?
 app.use(session({

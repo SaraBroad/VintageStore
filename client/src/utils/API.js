@@ -12,7 +12,13 @@ export default {
     },
     saveCustomer: function (customerData) {
         return axios.post("/api/signup", customerData);
+    },
+    getProducts: function() {
+        return axios.get("/api/products");
     }
+    //add to cart
+    //post product to cart
+
 }
 
 
