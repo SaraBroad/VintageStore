@@ -24,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(require("body-parser").text());
 
-app.use(routes);
+//passport does not work with app.use(routes);
+// app.use(routes);
 
 
 // require('./controllers/passport_controller.js')(passport, db.passports);

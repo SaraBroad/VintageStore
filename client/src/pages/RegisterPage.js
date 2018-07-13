@@ -116,7 +116,7 @@ class RegisterPage extends Component {
         })
         .catch(err => {
             console.log(err);
-            alert('yo. wtf bro.')
+            alert('customer not registered.')
         })
     }
     

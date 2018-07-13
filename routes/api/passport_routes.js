@@ -36,32 +36,32 @@ module.exports = function (router) {
     }
   );
 
-  router.put('/api/signup', isLoggedIn, function (req, res) {
-    var data = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      addressOne: req.body.addressOne,
-      addressTwo: req.body.addressTwo,
-      city: req.body.city,
-      state: req.body.state,
-      zip: req.body.zip,
-      phone: req.body.phone,
-      email: email,
-      password: hashPassword
-    };
-    db.Customer.update(data, {
-      where: {
-        id: req.user.id
-      },
-      returning: true,
-      plain: true
-    })
-    .then(function (res){
-      res.status(200).send({
-        redirectTo: '/home'
-      });
-    });
-  });
+  // router.put('/api/signup', isLoggedIn, function (req, res) {
+  //   var data = {
+  //     firstName: req.body.firstName,
+  //     lastName: req.body.lastName,
+  //     addressOne: req.body.addressOne,
+  //     addressTwo: req.body.addressTwo,
+  //     city: req.body.city,
+  //     state: req.body.state,
+  //     zip: req.body.zip,
+  //     phone: req.body.phone,
+  //     email: email,
+  //     password: hashPassword
+  //   };
+  //   db.Customer.update(data, {
+  //     where: {
+  //       id: req.user.id
+  //     },
+  //     returning: true,
+  //     plain: true
+  //   })
+  //   .then(function (res){
+  //     res.status(200).send({
+  //       redirectTo: '/home'
+  //     });
+  //   });
+  // });
 
 
   // router.get("/private", isLoggedIn, function (req, res) {
