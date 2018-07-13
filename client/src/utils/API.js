@@ -15,8 +15,11 @@ export default {
     },
     getProducts: function() {
         return axios.get("/api/products");
+    },
+    addToCart: function() {
+        return axios.get("/api/cartProduct");
     }
-    //add to cart
+    
     //post product to cart
 
 }
