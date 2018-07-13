@@ -8,7 +8,9 @@ const products = require("./products");
 router.use("/signup", passportRoutes);
 router.use("/signin", passportRoutes);
 router.use("/charge", payment);
-// router.use("/all", products);
+router.use("/products", products);
+router.use("/products/:id", products);
+router.use("/products/update/:id", products);
 router.use("/customer", customerRoutes);
 
 
