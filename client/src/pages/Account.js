@@ -37,6 +37,7 @@ class Account extends Component {
                 console.log(res);
                 this.setState({ enterSignin: res.data });
                 alert("You are signed in");
+                window.location.href = '/home'
             })
             .catch(err => console.log("error entering log-in data"))
     }

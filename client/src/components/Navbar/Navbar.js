@@ -71,7 +71,7 @@ const Navbar = () => (
             }
           >
             <Link to="/cart" className="nav-link">
-               Cart 
+            <i class="fas fa-shopping-cart"></i>
             </Link>
           </li>
           <li>
