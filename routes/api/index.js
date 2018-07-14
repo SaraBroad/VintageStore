@@ -1,3 +1,4 @@
+var express = require("express");
 const router = require("express").Router();
 const passportRoutes = require("./passport_routes");
 const customerRoutes = require("./customer");

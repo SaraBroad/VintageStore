@@ -6,7 +6,7 @@ import {
   Link
 } from 'react-router-dom'
 
-
+{/* <img src={images['doggy.png']} /> */ }
 
 const Gallery = props => (
 // Slideshow container
@@ -16,8 +16,7 @@ const Gallery = props => (
       Image1={props.Image1}
       Image2={props.Image2}
       Image3={props.Image3}/>
-      <br/>
-    <span>Name: {props.productName}</span>
+    <span>{props.productName}</span>
     <br/>
     <span>Size: {props.size}</span>
     <br/>
