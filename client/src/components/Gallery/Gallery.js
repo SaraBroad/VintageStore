@@ -16,6 +16,7 @@ const Gallery = props => (
       Image1={props.Image1}
       Image2={props.Image2}
       Image3={props.Image3}/>
+
     <span>{props.productName}</span>
     <br/>
     <span>Size: {props.size}</span>

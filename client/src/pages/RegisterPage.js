@@ -111,7 +111,8 @@ class RegisterPage extends Component {
             password: this.state.password
         }
     API.saveCustomer(newCustomer)
-        .then(() => {
+        .then((res) => {
+            console.log(res)
             window.location.href = '/home'
         })
         .catch(err => {

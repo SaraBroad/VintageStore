@@ -4,7 +4,7 @@ var express = require("express");
 
 router.get("/products", function (req, res) {
 
-    db.Products.findAll({}).then(function (dbProducts) {
+    db.Product.findAll({}).then(function (dbProducts) {
         console.log(dbProducts);
         res.json(dbProducts);
     });
@@ -12,7 +12,7 @@ router.get("/products", function (req, res) {
 
 
 router.get("/products/:id", function (req, res) {
-    db.Products.findOne({
+    db.Product.findOne({
             where: {
                 id: req.params.id
             }
@@ -24,7 +24,7 @@ router.get("/products/:id", function (req, res) {
 
 
 router.get("/products/update/:id", function (req, res) {
-    db.Products.update(req.body, {
+    db.Product.update(req.body, {
             where: {
                 id: req.body.id
             }
