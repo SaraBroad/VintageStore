@@ -16,13 +16,12 @@ export default {
     getProducts: function() {
         return axios.get("/api/products");
     },
+    addToCart: function(cartData) {
+        return axios.post("/api/cartProduct", cartData);
+    },
     logOut: function() {
         return axios.get("/logout");
-    },
-    addToCart: function(cartData) {
-        return axios.post("/api/cart", cartData);
     }
-    //add to cart
     //post product to cart
 
 }

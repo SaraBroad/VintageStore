@@ -21,6 +21,9 @@ import Checkout from "./pages/Checkout";
 import FooterPage from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
+import Gallery from "./components/Gallery";
+import GalleryItem from "./components/Gallery";
+import AddToCart from "./components/AddToCart";
 import API from "./utils/API";
 
 import { Z_DEFAULT_STRATEGY } from "zlib";

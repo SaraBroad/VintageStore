@@ -1,35 +1,56 @@
 import React, { Component } from "react";
-import data from "./products.json";
+// import data from "./products.json";
 import Gallery from "../components/Gallery";
+import GalleryItem from "../components/Gallery";
 import {
   Route,
   Link
 } from 'react-router-dom'
+import API from "../utils/API";
+
 
 class All extends Component {
   state = {
-    data
+    products: []
   };
 
   componentDidMount() {
-    this.setState({ data: this.state.data });
+    this.getProducts();
   }
+
+    getProducts = () => {
+      API.getProducts()
+        .then(res => {
+          
+          console.log(res.data);
+          this.setState({
+            products: res.data
+            
+          })
+        }
+        )
+        .catch(err => console.log(err));
+    };
+  
+  
 
   render() {
 
     return (
       <div className="container">
         <div className="row text-center text-lg-left">
-          {this.state.data.map(item => (
+          {this.state.products.map((product, i) => (
+            
             <Gallery
-              Image1={item.Image1}
-              Image2={item.Image2}
-              Image3={item.Image3}
-              name={item.Name}
-              id={item.id}
-              size={item.Size}
-              price={item.Price}
-              description={item.Description}
+              key={i}
+              Image1={product.imageOne}
+              Image2={product.imageTwo}
+              Image3={product.ImageThree}
+              productName={product.productName}
+              id={product.id}
+              size={product.size}
+              price={product.price}
+              description={product.description}
             />
 
           ))}
@@ -38,5 +59,4 @@ class All extends Component {
     );
   }
 }
-
 export default All;

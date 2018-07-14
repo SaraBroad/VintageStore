@@ -28,6 +28,7 @@ app.use(require("body-parser").text());
 // app.use(routes);
 
 
+require("./controllers/productController.js")(app);
 // require('./controllers/passport_controller.js')(passport, db.passports);
 // require("./routes/api/passport_routes.js")(router, passport);
 require('./routes/api/passport_routes.js')(app);
@@ -37,12 +38,13 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+/*
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
+*/
 
 if(process.env.NODE_ENV === 'production') {
   db.sequelize.sync().then(function () {
