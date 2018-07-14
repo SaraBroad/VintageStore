@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import AddToCart from "../AddToCart";
 
 {/* <img src={images['doggy.png']} /> */ }
 
@@ -17,12 +18,14 @@ const Gallery = props => (
       Image2={props.Image2}
       Image3={props.Image3}/>
 
-    <span>{props.productName}</span>
+    <span>Name: {props.productName}</span>
     <br/>
     <span>Size: {props.size}</span>
     <br/>
-    <span>Price: {props.price}</span>
+    <span>Price: ${props.price}</span>
+    <AddToCart/>
   </div>
+  
   
 );
 

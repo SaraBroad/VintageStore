@@ -23,10 +23,10 @@ class All extends Component {
         .then(res => {
           
           console.log(res.data);
-          // this.setState({
-          //   products: res.data
+          this.setState({
+            products: res.data
             
-          // })
+          })
         }
         )
         .catch(err => console.log(err));
@@ -39,18 +39,18 @@ class All extends Component {
     return (
       <div className="container">
         <div className="row text-center text-lg-left">
-          {this.state.products.map(item => (
+          {this.state.products.map((product, i) => (
             
             <Gallery
-              
-              Image1={item.Image1}
-              Image2={item.Image2}
-              Image3={item.Image3}
-              name={item.Name}
-              id={item.id}
-              size={item.Size}
-              price={item.Price}
-              description={item.Description}
+              key={i}
+              Image1={product.imageOne}
+              Image2={product.imageTwo}
+              Image3={product.ImageThree}
+              productName={product.Name}
+              id={product.id}
+              size={product.size}
+              price={product.price}
+              description={product.description}
             />
 
           ))}

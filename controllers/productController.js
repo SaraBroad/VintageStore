@@ -13,7 +13,7 @@ app.get("/api/products", function (req, res) {
 })
 
 
-app.get("/products/:id", function (req, res) {
+app.get("/api/products/:id", function (req, res) {
     db.Products.findOne({
             where: {
                 id: req.params.id
@@ -25,7 +25,7 @@ app.get("/products/:id", function (req, res) {
 });
 
 
-app.get("/products/update/:id", function (req, res) {
+app.get("/api/products/update/:id", function (req, res) {
     db.Products.update(req.body, {
             where: {
                 id: req.body.id
