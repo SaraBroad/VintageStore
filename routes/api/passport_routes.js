@@ -26,9 +26,7 @@ module.exports = function (router) {
     failWithError: true
   }),
     (req, res, next) => {
-      res.status(200).send({
-        redirectTo: '/home'
-      });
+        res.json(true)
     },
     (err, req, res, next) => {
       console.log(err);
@@ -71,7 +69,7 @@ module.exports = function (router) {
   // logout, redirect to home page
   router.get('/logout', function (req, res) {
     req.session.destroy(function (err) {
-      res.redirect('/home');
+      res.json(true);
     });
   });
 
@@ -79,8 +77,12 @@ module.exports = function (router) {
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
       return next();
-    res.redirect('/home');
+    // res.redirect('/home');
   }
+
+  router.get('/api/checkUser', function (req, res) {
+    res.json( req.isAuthenticated() );
+  });
 };
 
 

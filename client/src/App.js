@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Redirect } from "react-router";
 import {
   BrowserRouter as Router,
@@ -21,36 +21,59 @@ import Checkout from "./pages/Checkout";
 import FooterPage from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
+import API from "./utils/API";
+
+import { Z_DEFAULT_STRATEGY } from "zlib";
 
 
 
 //this code renders home, cart, and likely any page that contains components
-const App = () => (
+class App extends Component {
 
-  <Router>
+  state = {
+    isLoggedIn: false
+  }
 
-    <div className="app">
-      <Navbar />
-      {/* <Container /> */}
-      <Wrapper>
-        <Redirect from="/" to="/home" />
-        <Route exact path="/all" component={All} />
-        <Route exact path="/about" component={About} />
-        {/* <Route exact path="/blog" component={Blog} /> */}
-        <Route exact path="/account" component={Account} />
-        <Route exact path="/cart" component={Cart} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/checkout" component={Checkout} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/FAQs" component={FAQs} />
-        <Route exact path="/register" component={RegisterPage} />
-        <Route exact path="/privacy" component={Privacy} />
-      </Wrapper>
+  componentDidMount() {
+    // request to server to check if user is logged in.
+    API.getSavedCust().then( res => {
+      console.log( 'user is logged in?', res.data );
+      this.setState({isLoggedIn: res.data});
+    });
+  } 
 
-      <FooterPage />
+  setLoginState = ( value ) => {
+    this.setState({isLoggedIn: value});
+  }
 
-    </div>
-  </Router>
-);
+  render() {
+    return(
+      <Router>
+
+        <div className="app">
+          <Navbar isLoggedIn={this.state.isLoggedIn} setLoginState={this.setLoginState} />
+          {/* <Container /> */}
+          <Wrapper>
+            {/* <Redirect from="/" to="/home" /> */}
+            <Route exact path="/all" component={All} />
+            <Route exact path="/about" component={About} />
+            {/* <Route exact path="/blog" component={Blog} /> */}
+    <Route exact path="/account" render={props => <Account setLoginState={this.setLoginState}  {...props} /> } />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/FAQs" component={FAQs} />
+            <Route exact path="/register" component={RegisterPage} />
+            <Route exact path="/privacy" component={Privacy} />
+          </Wrapper>
+
+          <FooterPage />
+
+        </div>
+      </Router>
+    );
+  }
+}
 
 export default App;

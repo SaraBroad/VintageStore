@@ -1,12 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Log from "../Log";
 import Search from "../Search";
+import API from '../../utils/API';
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-const Navbar = () => (
-  
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+class Navbar extends Component {
+
+  logoutUser = () => {
+    API.logOut().then( res => {
+      console.log( 'user is logged in?', res.data );
+      this.props.setLoginState( false );
+    });
+  }
+
+  render() {
+    return(
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <Link className="navbar-brand" to="/home">
         Z A N A vintage
       </Link>
@@ -60,7 +71,15 @@ const Navbar = () => (
             }
           >
             <Link to="/account" className="nav-link">
-               Account  
+               {/* Login/Register  */}
+               <div>
+               {
+                this.props.isLoggedIn === false
+                ? <Link to="/account" className="nav-link"><button>Log-in</button></Link>
+                : <button onClick={this.logoutUser}>Log-out</button>
+               }
+                {this.props.chidren}
+               </div>
             </Link>
           </li>
           <li
@@ -84,6 +103,8 @@ const Navbar = () => (
         </ul>
         </div>
     </nav>
-  );
+    );
+  }
+} 
   
   export default Navbar;
