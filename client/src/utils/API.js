@@ -18,6 +18,9 @@ export default {
     },
     logOut: function() {
         return axios.get("/logout");
+    },
+    addToCart: function(cartData) {
+        return axios.post("/api/cart", cartData);
     }
     //add to cart
     //post product to cart
