@@ -13,10 +13,7 @@
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build",
-    "saturday": "concurrently \"nodemon --ignore 'client/*'\" \"npm run nuclient\"",
-    "nuclient": "cd client && npm run start",
-    "nustart": "node server.js"
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
