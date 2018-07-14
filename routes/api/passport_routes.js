@@ -26,9 +26,7 @@ module.exports = function (router) {
     failWithError: true
   }),
     (req, res, next) => {
-      res.status(200).send({
-        redirectTo: '/home'
-      });
+        res.json(true)
     },
     (err, req, res, next) => {
       console.log(err);
@@ -36,32 +34,32 @@ module.exports = function (router) {
     }
   );
 
-  router.put('/api/signup', isLoggedIn, function (req, res) {
-    var data = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      addressOne: req.body.addressOne,
-      addressTwo: req.body.addressTwo,
-      city: req.body.city,
-      state: req.body.state,
-      zip: req.body.zip,
-      phone: req.body.phone,
-      email: email,
-      password: hashPassword
-    };
-    db.Customer.update(data, {
-      where: {
-        id: req.user.id
-      },
-      returning: true,
-      plain: true
-    })
-    .then(function (res){
-      res.status(200).send({
-        redirectTo: '/home'
-      });
-    });
-  });
+  // router.put('/api/signup', isLoggedIn, function (req, res) {
+  //   var data = {
+  //     firstName: req.body.firstName,
+  //     lastName: req.body.lastName,
+  //     addressOne: req.body.addressOne,
+  //     addressTwo: req.body.addressTwo,
+  //     city: req.body.city,
+  //     state: req.body.state,
+  //     zip: req.body.zip,
+  //     phone: req.body.phone,
+  //     email: email,
+  //     password: hashPassword
+  //   };
+  //   db.Customer.update(data, {
+  //     where: {
+  //       id: req.user.id
+  //     },
+  //     returning: true,
+  //     plain: true
+  //   })
+  //   .then(function (res){
+  //     res.status(200).send({
+  //       redirectTo: '/home'
+  //     });
+  //   });
+  // });
 
 
   // router.get("/private", isLoggedIn, function (req, res) {
@@ -71,7 +69,7 @@ module.exports = function (router) {
   // logout, redirect to home page
   router.get('/logout', function (req, res) {
     req.session.destroy(function (err) {
-      res.redirect('/home');
+      res.json(true);
     });
   });
 
@@ -79,8 +77,12 @@ module.exports = function (router) {
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
       return next();
-    res.redirect('/home');
+    // res.redirect('/home');
   }
+
+  router.get('/api/checkUser', function (req, res) {
+    res.json( req.isAuthenticated() );
+  });
 };
 
 

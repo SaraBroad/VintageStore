@@ -2,7 +2,7 @@ import React from 'react';
 import "./SigninBox.css";
 
 const SigninBox = props => (
-    <div className="signin-container">
+    <div className="signin-container" onSubmit={props.handleLogInSubmit}>
         <form className="signin-form">
             <p className="sign-heading">Sign-in to your account here</p>
             <div className="form-group sign-group">
@@ -27,7 +27,7 @@ const SigninBox = props => (
                     placeholder="Enter password"
                 />
             </div>
-            <button type="submit" class="submitsign-btn" onClick={props.handleLogInSubmit}>Submit</button>
+            <button type="submit" className="submitsign-btn" onClick={props.handleLogInSubmit}>Submit</button>
         </form>
     </div>
 )

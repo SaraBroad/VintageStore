@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RegForm from "../components/RegForm";
+import Navbar from "../components/Navbar";
 import API from "../utils/API"
 
 //RegisterPage reroutes to cart
@@ -17,23 +18,12 @@ class RegisterPage extends Component {
         zip: "",
         phone: "",
         email: "",
-        password: "",
-        savedCusts: [],
-        regCust: []
-        
+        password: ""
     }
 
-    // componentDidMount() {
-    //     this.getRegCustomers();
-    // }
+  
 
-    // getRegCustomers = () => {
-    //     API.getSavedCust()
-    //         .then(res =>
-    //             this.setState({ savedCusts: res.data })
-    //         )
-    //         .catch(err => console.log(err));       
-    // };
+
 
     handleFirstName = (event) => {
         this.setState({ firstName: event.target.value })
@@ -75,28 +65,6 @@ class RegisterPage extends Component {
         this.setState({ password: event.target.value })
     };
 
-   
-  
-
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     API.saveCustomer({
-    //         firstName: this.state.firstName,
-    //         lastName: this.state.lastName,
-    //         addressOne: this.state.addressOne,
-    //         addressTwo: this.state.addressTwo,
-    //         city: this.state.city,
-    //         state: this.state.state,
-    //         zip: this.state.zip,
-    //         phone: this.state.phone,
-    //         email: this.state.email,
-    //         password: this.state.password
-    //     })
-    //     .then(res => this.getRegCustomers())
-    //     .catch(err => console.log(err));
-    // }
-
-
     handleFormSubmit = id => {
         let newCustomer = {
             firstName: this.state.firstName,
@@ -110,16 +78,16 @@ class RegisterPage extends Component {
             email: this.state.email,
             password: this.state.password
         }
-    API.saveCustomer(newCustomer)
-        .then(() => {
-            window.location.href = '/home'
-        })
-        .catch(err => {
-            console.log(err);
-            alert('yo. wtf bro.')
-        })
+        API.saveCustomer(newCustomer)
+            .then(() => {
+                window.location.href = '/home'
+            })
+            .catch(err => {
+                console.log(err);
+                alert('customer not registered.')
+            })
     }
-    
+
 
     //WHERE SHOULD THIS BE REDIRECTED TO?
 
@@ -140,6 +108,7 @@ class RegisterPage extends Component {
                     // handleInputChange={this.handleInputChange}
                     // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
+
                 />
             </div>
         )
