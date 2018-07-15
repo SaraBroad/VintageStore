@@ -4,27 +4,71 @@ import "./AddToCart.css";
 
 
 class AddToCart extends Component {
-  state = {
-    products: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      productId: "",
+      customerId: ""
+    };
+  }
+
+  // createCart = () => {
+  //   API.createCart()
+  //     .then(res => {
+        
+  //       this.setState({
+         
+  //       })
+  //     }
+  //     )
+  //     .catch(err => console.log(err));
+  // };
+
+  getProductById = id => {
+   
+    API.getProductById(id)
+    
+    .then(res => 
+      // console.log(res.data.id)
+      this.addToCartProduct({id : res.data.id})
+    )
+    .catch(err => console.log(err));
+}
+
+    // this.addToCart();
+  
 
 //   componentDidMount() {
 //     this.getSavedArticles();
 //   }
 
-  addToCart = () => {
-    API.addToCart()
-      .then(res =>
-        this.setState({
-          products: res.data
-        })
+// getProductById = () => {
+//   API.getProductById()
+//     .then(res => {
+//       console.log(res)
+//       // this.setState({
+//       //   productId: res.data.productId
+//       // })
+//     }
+//     )
+//     .catch(err => console.log(err));
+// };
+
+  addToCartProduct = productId => {
+    API.addToCartProduct(productId)
+      .then(res => {
+        console.log(res)
+        // this.setState({
+        //   products: res.data
+        // })
+      }
       )
       .catch(err => console.log(err));
   };
 
-  handleAddToCart = id => {
-    API.addToCart(id).then(res => this.addToCart());
-  };
+  // handleAddToCart = id => {
+  //   API.addToCart(id).then(res => this.addToCart());
+  // };
 
   render() {
     return (
@@ -33,7 +77,7 @@ class AddToCart extends Component {
             className="addbutton"
             role="button"
             aria-label="click item"
-            onClick={this.handleAddToCart}
+            onClick={() => this.getProductById(this.props.productId)}
             >Add to Cart</button>
         </div>   
     );

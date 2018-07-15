@@ -18,12 +18,16 @@ const Gallery = props => (
       Image2={props.Image2}
       Image3={props.Image3}/>
 
-    <span>Name: {props.productName}</span>
+    <span className="productname">{props.productName}</span>
     <br/>
     <span>Size: {props.size}</span>
     <br/>
     <span>Price: ${props.price}</span>
-    <AddToCart/>
+    
+    <AddToCart  
+    productId={props.productId}
+    />
+    
   </div>
   
   
