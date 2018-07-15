@@ -19,7 +19,7 @@ export default {
     getProductById: function(id) {
         return axios.get("api/products/" + id);
     },
-    addToCart: function(cartData) {
+    addToCartProduct: function(cartData) {
         return axios.post("/api/cartProduct", cartData);
     },
     logOut: function() {

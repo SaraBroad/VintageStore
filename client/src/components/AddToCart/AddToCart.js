@@ -15,8 +15,8 @@ class AddToCart extends Component {
     API.getProductById(id)
     
     .then(res => 
-      console.log(res.data)
-      // this.addToCart()
+      // console.log(res.data.id)
+      this.addToCartProduct(res.data.id)
     )
     .catch(err => console.log(err));
 }
@@ -40,8 +40,8 @@ class AddToCart extends Component {
 //     .catch(err => console.log(err));
 // };
 
-  addToCart = () => {
-    API.addToCart()
+  addToCartProduct = id => {
+    API.addToCartProduct(id)
       .then(res => {
         console.log(res)
         // this.setState({
@@ -52,9 +52,9 @@ class AddToCart extends Component {
       .catch(err => console.log(err));
   };
 
-  handleAddToCart = id => {
-    API.addToCart(id).then(res => this.addToCart());
-  };
+  // handleAddToCart = id => {
+  //   API.addToCart(id).then(res => this.addToCart());
+  // };
 
   render() {
     return (
