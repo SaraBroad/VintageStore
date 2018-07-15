@@ -55,7 +55,7 @@ class All extends Component {
               key={i}
               Image1={product.imageOne}
               Image2={product.imageTwo}
-              Image3={product.ImageThree}
+              Image3={product.imageThree}
               productName={product.productName}
               id={product.id}
               size={product.size}

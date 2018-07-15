@@ -11,7 +11,6 @@ const STRIPE_SECRET_KEY = require('./constants/stripe');
 const stripe = require("stripe")(STRIPE_SECRET_KEY);
 const routes = require("./routes");
 var db = require("./models");
-const app = require("express")();
 
 //what is secret code used for?
 app.use(session({
@@ -56,7 +55,7 @@ if(process.env.NODE_ENV === 'production') {
     });
   });
 } else {
-  db.sequelize.sync({ force: true }).then(function () {
+  db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
       console.log("App listening on PORT " + PORT);
     });
