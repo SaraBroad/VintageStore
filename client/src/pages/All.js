@@ -6,6 +6,16 @@ import {
   Link
 } from 'react-router-dom'
 
+
+// class All extends Component {
+//   state = {
+//     data : []
+//   };
+
+//   componentDidMount() {
+//     API.getProducts().then(data => this.setState({ data }));
+//   }
+
 class All extends Component {
   state = {
     data
@@ -25,7 +35,7 @@ class All extends Component {
               Image1={item.Image1}
               Image2={item.Image2}
               Image3={item.Image3}
-              name={item.Name}
+              name={item.name}
               id={item.id}
               size={item.Size}
               price={item.Price}

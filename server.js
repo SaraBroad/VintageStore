@@ -5,6 +5,7 @@ const passport = require("passport");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const app = express();
+require('dotenv').config();
 
 var db = require("./models");
 

@@ -25,14 +25,14 @@ class Search extends React.Component {
 
     <FormGroup form-inline>
         <div className="form-group">
-        <FormControl type="text" placeholder="Search" 
-        ref={input => this.search = input}
-        onChange={this.handleInputChange} />
-      <p>{this.state.query}</p>
-      <ButtonToolbar>
-      <Button bsSize="xsmall" bsStyle="xsmall" bsClass="color: black" className="searchbtn pull-right">Submit</Button>
-      </ButtonToolbar>
-      </div>
+          <FormControl type="text" placeholder="Search" 
+          ref={input => this.search = input}
+          onChange={this.handleInputChange} />
+            <p>{this.state.query}</p>
+          <ButtonToolbar>
+            <Button bsSize="xsmall" bsStyle="xsmall" bsClass="color: black" className="searchbtn pull-right">Submit</Button>
+          </ButtonToolbar>
+        </div>
       </FormGroup>
 
    )

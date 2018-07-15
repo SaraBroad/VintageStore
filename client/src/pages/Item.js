@@ -1,38 +1,23 @@
 import React, { Component } from "react";
 import data from "./products.json";
-import Gallery from "../components/Gallery";
-import {
-  Route,
-  Link
-} from 'react-router-dom'
 
 class ItemPage extends Component {
   state = {
-    data
+    item: {
+      a: 'b'
+    }
   };
 
   componentDidMount() {
-    this.setState({ data: this.state.data });
+    // make an api call to something like get /api/products/this.props.match.params.id 
+    // set state on success response
   }
 
   render() {
     return (
       <div className="container">
-        <div className="row text-center text-lg-left">
-          {this.state.data.map(item => (
-            <Gallery
-              Image1={item.Image1}
-              Image2={item.Image2}
-              Image3={item.Image3}
-              name={item.Name}
-              id={item.id}
-              size={item.Size}
-              price={item.Price}
-              description={item.Description}
-            />
-
-          ))}
-        </div>
+        {this.props.match.params.id}
+        {this.state.item.a}
       </div>
     );
   }

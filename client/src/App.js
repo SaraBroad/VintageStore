@@ -21,7 +21,7 @@ import Checkout from "./pages/Checkout";
 import FooterPage from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
-
+import Item from "./pages/Item";
 
 
 //this code renders home, cart, and likely any page that contains components
@@ -33,7 +33,6 @@ const App = () => (
       <Navbar />
       {/* <Container /> */}
       <Wrapper>
-        <Redirect from="/" to="/home" />
         <Route exact path="/all" component={All} />
         <Route exact path="/about" component={About} />
         <Route exact path="/blog" component={Blog} />
@@ -45,6 +44,7 @@ const App = () => (
         <Route exact path="/FAQs" component={FAQs} />
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/privacy" component={Privacy} />
+        <Route exact path="/item/:id" component={Item} />
       </Wrapper>
      
       <FooterPage/>
