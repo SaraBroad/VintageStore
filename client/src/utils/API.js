@@ -16,6 +16,9 @@ export default {
     getProducts: function() {
         return axios.get("/api/products");
     },
+    getProductById: function(id) {
+        return axios.get("api/products/" + id);
+    },
     addToCart: function(cartData) {
         return axios.post("/api/cartProduct", cartData);
     },

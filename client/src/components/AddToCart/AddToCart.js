@@ -4,20 +4,50 @@ import "./AddToCart.css";
 
 
 class AddToCart extends Component {
-  state = {
-    products: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      productId: ""
+    };
+  }
+
+  getProductById = id => {
+    API.getProductById(id)
+    
+    .then(res => 
+      console.log(res.data)
+      // this.addToCart()
+    )
+    .catch(err => console.log(err));
+}
+
+    // this.addToCart();
+  
 
 //   componentDidMount() {
 //     this.getSavedArticles();
 //   }
 
+// getProductById = () => {
+//   API.getProductById()
+//     .then(res => {
+//       console.log(res)
+//       // this.setState({
+//       //   productId: res.data.productId
+//       // })
+//     }
+//     )
+//     .catch(err => console.log(err));
+// };
+
   addToCart = () => {
     API.addToCart()
-      .then(res =>
-        this.setState({
-          products: res.data
-        })
+      .then(res => {
+        console.log(res)
+        // this.setState({
+        //   products: res.data
+        // })
+      }
       )
       .catch(err => console.log(err));
   };
@@ -33,7 +63,7 @@ class AddToCart extends Component {
             className="addbutton"
             role="button"
             aria-label="click item"
-            onClick={this.handleAddToCart}
+            onClick={() => this.getProductById(this.props.productId)}
             >Add to Cart</button>
         </div>   
     );

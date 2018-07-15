@@ -29,6 +29,7 @@ app.use(require("body-parser").text());
 
 
 require("./controllers/productController.js")(app);
+require("./controllers/cartProductController.js")(app);
 // require('./controllers/passport_controller.js')(passport, db.passports);
 // require("./routes/api/passport_routes.js")(router, passport);
 require('./routes/api/passport_routes.js')(app);
