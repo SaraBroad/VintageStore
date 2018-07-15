@@ -33,15 +33,7 @@ class All extends Component {
         .catch(err => console.log(err));
     };
   
-    getProductById = id => {
-      API.getProductById(id)
-      
-      .then(res => 
-        console.log(res.data)
-        // this.addToCart()
-      )
-      .catch(err => console.log(err));
-  }
+
 
   render() {
 
@@ -61,7 +53,7 @@ class All extends Component {
               price={product.price}
               description={product.description}
             >
-            {/* <AddToCart onClick={() => this.getProductById(product._id)} /> */}
+           
             </Gallery>
           )
           })}

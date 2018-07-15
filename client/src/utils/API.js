@@ -22,6 +22,12 @@ export default {
     addToCartProduct: function(cartData) {
         return axios.post("/api/cartProduct", cartData);
     },
+    getCustomerByEmail: function(email) {
+        return axios.get("api/customer/" + email);
+    },
+    createCart: function(customerData) {
+        return axios.post("/api/createCart", customerData);
+    },
     logOut: function() {
         return axios.get("/logout");
     }
