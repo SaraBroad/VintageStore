@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
         
         Cart.belongsTo(models.Customer, {
             foreignKey: {
-                allowNull: true
+                allowNull: false
             }
         });
     }

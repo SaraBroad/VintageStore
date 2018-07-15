@@ -30,7 +30,7 @@ class AddToCart extends Component {
     
     .then(res => 
       // console.log(res.data.id)
-      this.addToCartProduct(res.data.id)
+      this.addToCartProduct({id : res.data.id})
     )
     .catch(err => console.log(err));
 }
