@@ -1,10 +1,25 @@
+var express = require("express");
 const router = require("express").Router();
-//import individual routes pages here
-//ex. const articleRoutes = require("./articles");
+const passportRoutes = require("./passport_routes");
+const customerRoutes = require("./customer");
+const payment = require("./payment");
+// const products = require("./products"); 
+// const cartProduct = require("./cartProduct"); 
 
+// Article routes
+router.use("/signup", passportRoutes);
+router.use("/signin", passportRoutes);
+router.use("/charge", payment);
+// router.use("/api/products", products);
+// router.use("/api/products/:id", products);
+// router.use("/api/products/update/:id", products);
+// router.use("/api/add", cartProduct);
+// router.use("/api/customer", customerRoutes);
 
-//set-up routes here
-//ex. router.use("/articles", articleRoutes);
 
 
 module.exports = router;
+
+
+
+

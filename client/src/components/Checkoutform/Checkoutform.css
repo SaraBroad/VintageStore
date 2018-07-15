@@ -34,3 +34,18 @@
 .checkout-btn {
     margin-top: 75px;
 }
+
+.card-details {
+    padding: 10px; 
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.payment-details {
+    border: 1px solid black; 
+    margin: 10px; 
+}
+

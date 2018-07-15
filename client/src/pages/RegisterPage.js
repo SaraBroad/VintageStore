@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RegForm from "../components/RegForm";
+import Navbar from "../components/Navbar";
 import API from "../utils/API"
 
 //RegisterPage reroutes to cart
@@ -8,7 +9,8 @@ import API from "../utils/API"
 class RegisterPage extends Component {
 
     state = {
-        name: "",
+        firstName: "",
+        lastName: "",
         addressOne: "",
         addressTwo: "",
         city: "",
@@ -16,20 +18,19 @@ class RegisterPage extends Component {
         zip: "",
         phone: "",
         email: "",
-        password: "",
-        regInfo: []
+        password: ""
     }
 
-    // state = {
-    //     regData: {
-    //         name
-    //     }
-    // }
+  
 
-    //es6
 
-    handleName = (event) => {
-        this.setState({ name: event.target.value })
+
+    handleFirstName = (event) => {
+        this.setState({ firstName: event.target.value })
+    };
+
+    handleLastName = (event) => {
+        this.setState({ lastName: event.target.value })
     };
 
     handleAddOne = (event) => {
@@ -64,25 +65,27 @@ class RegisterPage extends Component {
         this.setState({ password: event.target.value })
     };
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        API.saveCustomer(
-            this.state.name,
-            this.state.addressOne,
-            this.state.addressTwo,
-            this.state.city,
-            this.state.state,
-            this.state.zip,
-            this.state.phone,
-            this.state.email,
-            this.state.password
-        )
-            .then(res => {
-                console.log(res);
-                alert("hello");
-                this.setState({ regInfo: res.data })
+    handleFormSubmit = id => {
+        let newCustomer = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            addressOne: this.state.addressOne,
+            addressTwo: this.state.addressTwo,
+            city: this.state.city,
+            state: this.state.state,
+            zip: this.state.zip,
+            phone: this.state.phone,
+            email: this.state.email,
+            password: this.state.password
+        }
+        API.saveCustomer(newCustomer)
+            .then(() => {
+                window.location.href = '/home'
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err);
+                alert('customer not registered.')
+            })
     }
 
 
@@ -92,7 +95,8 @@ class RegisterPage extends Component {
         return (
             <div>
                 <RegForm
-                    handleName={this.handleName}
+                    handleFirstName={this.handleFirstName}
+                    handleLastName={this.handleLastName}
                     handleAddOne={this.handleAddOne}
                     handleAddTwo={this.handleAddTwo}
                     handleCity={this.handleCity}
@@ -101,7 +105,10 @@ class RegisterPage extends Component {
                     handlePhone={this.handlePhone}
                     handleEmail={this.handleEmail}
                     handlePassword={this.handlePassword}
+                    // handleInputChange={this.handleInputChange}
+                    // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
+
                 />
             </div>
         )

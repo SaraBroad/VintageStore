@@ -1,53 +1,31 @@
 import axios from 'axios';
+//axios is middleware capability to connect react to server
 
 export default {
+
+    //get customer to see if in DB
+
+    getSavedCust: function () {
+        return axios.get("/api/checkUser")
+    },
     custLogin: function (signinData) {
         return axios.post("/api/signin", signinData);
     },
-    
     saveCustomer: function (customerData) {
-        return axios.post("/api/customer", customerData);
+        return axios.post("/api/signup", customerData);
     },
     getProducts: function() {
         return axios.get("/api/products");
+    },
+    addToCart: function(cartData) {
+        return axios.post("/api/cartProduct", cartData);
+    },
+    logOut: function() {
+        return axios.get("/logout");
     }
-
-    //api/cart
-
-    //addToCart
-
-    //
+    //post product to cart
 
 }
 
 
-// $.ajax("/api/signin", {
-//     type: "POST",
-//     data: signin
-// }).then(
-//     function (response) {
-//         window.location.href = response.redirectTo;
-//     },
-//     function(error) {
-//         $this.find('.message:first').text('Username and/or password incorrect');
-//     }
-// );
 
-
-
-// EXAMPLES
-// getBooks: function() {
-//     return axios.get("/api/books");
-//   },
-//   // Gets the book with the given id
-//   getBook: function(id) {
-//     return axios.get("/api/books/" + id);
-//   },
-//   // Deletes the book with the given id
-//   deleteBook: function(id) {
-//     return axios.delete("/api/books/" + id);
-//   },
-//   // Saves a book to the database
-//   saveBook: function(bookData) {
-//     return axios.post("/api/books", bookData);
-//   }

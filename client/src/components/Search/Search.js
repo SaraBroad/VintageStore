@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import {
-  BrowserRouter as Router,
-  Route,
-  Link
+  BrowserRouter 
 } from 'react-router-dom'
 import "./Search.css";
 import {FormGroup, FormControl, Button, ButtonToolbar} from "react-bootstrap";

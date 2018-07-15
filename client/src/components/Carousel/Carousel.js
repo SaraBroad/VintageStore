@@ -4,7 +4,9 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import "./../../pages/products.json";
+import API from "../../utils/API";
+// import "./../../pages/products.json";
+
 
 class ControlledCarousel extends React.Component {
   constructor(props, context) {
@@ -18,6 +20,7 @@ class ControlledCarousel extends React.Component {
       displayName: true
     };
   }
+
   
     handleSelect(selectedIndex, e) {
       this.setState({
@@ -25,6 +28,8 @@ class ControlledCarousel extends React.Component {
         direction: e.direction
       });
     }
+
+  
     render() {
       const { index, direction } = this.state;
       const Image3 = this.props.Image3 ? <Carousel.Item>
