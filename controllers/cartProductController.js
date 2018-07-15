@@ -7,7 +7,7 @@ module.exports = function(app) {
         console.log(req.body)
 
         db.CartProduct.create({
-            productId: req.body
+            productId: req.body[0]
         })
         .then(function (dbCartProduct) {
             console.log(dbCartProduct)

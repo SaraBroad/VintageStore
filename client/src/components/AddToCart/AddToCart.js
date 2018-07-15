@@ -40,8 +40,8 @@ class AddToCart extends Component {
 //     .catch(err => console.log(err));
 // };
 
-  addToCartProduct = id => {
-    API.addToCartProduct(id)
+  addToCartProduct = productId => {
+    API.addToCartProduct(productId)
       .then(res => {
         console.log(res)
         // this.setState({
