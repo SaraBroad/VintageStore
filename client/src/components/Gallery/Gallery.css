@@ -10,3 +10,8 @@
 .img-thumbnail {
   border: 1px solid white;
 }
+
+.productname {
+    font-size: 15px !important;
+    font-weight: bold !important;
+}
