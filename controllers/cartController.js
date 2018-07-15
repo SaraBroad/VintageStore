@@ -14,5 +14,17 @@ module.exports = function(app) {
         });
     });
 
+    app.delete("/api/deleteCart/:id", function(req, res) {
+        db.Cart.destroy({
+          where: {
+            id: req.params.id
+          }
+        })
+          .then(function(dbCart) {
+            res.json(dbCart);
+          });
+      });
+    
 
 };
+

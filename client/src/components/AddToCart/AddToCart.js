@@ -7,11 +7,25 @@ class AddToCart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: ""
+      productId: "",
+      customerId: ""
     };
   }
 
+  // createCart = () => {
+  //   API.createCart()
+  //     .then(res => {
+        
+  //       this.setState({
+         
+  //       })
+  //     }
+  //     )
+  //     .catch(err => console.log(err));
+  // };
+
   getProductById = id => {
+   
     API.getProductById(id)
     
     .then(res => 

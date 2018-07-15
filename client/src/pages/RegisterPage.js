@@ -67,7 +67,6 @@ class RegisterPage extends Component {
 
     handleFormSubmit = id => {
         let newCustomer = {
-            customerId: this.state.id,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             addressOne: this.state.addressOne,
@@ -80,8 +79,7 @@ class RegisterPage extends Component {
             password: this.state.password
         }
         API.saveCustomer(newCustomer)
-            .then(() => { 
-                
+            .then(() => {
                 window.location.href = '/home'
             })
             .catch(err => {
@@ -89,8 +87,7 @@ class RegisterPage extends Component {
                 alert('customer not registered.')
             })
     }
-    
-    
+
 
     //WHERE SHOULD THIS BE REDIRECTED TO?
 

@@ -9,11 +9,11 @@ module.exports = function (sequelize, DataTypes) {
             through: "CartProduct",
             as: "CartCartProduct",
             foreignKey: "cartId"
-        }),
+        })
         
         Cart.belongsTo(models.Customer, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
     }

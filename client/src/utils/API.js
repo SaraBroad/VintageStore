@@ -28,6 +28,9 @@ export default {
     createCart: function(customerData) {
         return axios.post("/api/createCart", customerData);
     },
+    deleteCart: function(id) {
+        return axios.get("api/deleteCart/" + id);
+    },
     logOut: function() {
         return axios.get("/logout");
     }
