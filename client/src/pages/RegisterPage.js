@@ -81,8 +81,7 @@ class RegisterPage extends Component {
         }
         API.saveCustomer(newCustomer)
             .then(() => {
-                window.location.href = '/home'
-            
+                window.location.href = '/all'
             })
             .catch(err => {
                 console.log(err);

@@ -8,7 +8,8 @@ class AddToCart extends Component {
     super(props);
     this.state = {
       productId: "",
-      customerId: ""
+      customerId: "",
+      isLoggedIn: false
     };
   }
 
@@ -67,6 +68,10 @@ class AddToCart extends Component {
   // handleAddToCart = id => {
   //   API.addToCart(id).then(res => this.addToCart());
   // };
+
+
+  
+
 
   render() {
     return (

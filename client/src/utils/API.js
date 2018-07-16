@@ -37,9 +37,12 @@ export default {
     logOut: function() {
         return axios.get("/logout");
     }
-    //post product to cart
-
+    
+//api/cartremove
 }
 
-
+// cartData = {
+//     user_id: 12345,
+//     product_id: 12345
+// }
 
