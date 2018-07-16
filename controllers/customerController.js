@@ -1,20 +1,30 @@
 const db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
 
     app.get("/api/customer/:email", function (req, res) {
-        console.log(req.body)
         db.Customer.findOne({
                 where: {
                     email: req.body.email
                 }
             })
             .then(function (dbCustomer) {
-                console.log("this is the dbCustomer")
-                console.log(res.json(dbCustomer))
-                // res.json(dbCustomer);
-            });
+                //     console.log("this is the dbCustomer")
+                //   return res.json(dbCustomer)   
+                // console.log(req.user);    
+                db.Cart.create({
+                        CustomerId: req.user.id,
+                    })
+                    .then(function (dbCart) {
+                        // console.log(dbCart);
+                        return res.json({cartId: dbCart.dataValues.id});
+
+
+                    });
+            })
     });
+
+
 
 
 };
