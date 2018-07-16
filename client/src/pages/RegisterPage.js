@@ -9,6 +9,7 @@ import API from "../utils/API"
 class RegisterPage extends Component {
 
     state = {
+        id: "",
         firstName: "",
         lastName: "",
         addressOne: "",
@@ -86,6 +87,7 @@ class RegisterPage extends Component {
                 console.log(err);
                 alert('customer not registered.')
             })
+        
     }
 
 
@@ -108,7 +110,6 @@ class RegisterPage extends Component {
                     // handleInputChange={this.handleInputChange}
                     // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
-
                 />
             </div>
         )
