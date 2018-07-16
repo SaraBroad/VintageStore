@@ -2,8 +2,7 @@ const db = require("../models");
 
 module.exports = function(app) {
 
-    app.get("/api/customer/:email", function (req, res) {
-        console.log(req.body)
+    app.get("/api/customer/:email", function (req, res) {``
         db.Customer.findOne({
                 where: {
                     email: req.body.email
@@ -11,10 +10,20 @@ module.exports = function(app) {
             })
             .then(function (dbCustomer) {
                 console.log("this is the dbCustomer")
-                console.log(res.json(dbCustomer))
-                // res.json(dbCustomer);
-            });
+              return res.json(dbCustomer)        
+            }).then(function (data){
+                
+                db.Cart.create({
+                    customerId: data.req.user.id,
+                })
+                .then(function (dbCart) {
+                    console.log(dbCart)
+                    res.json(dbCart);
+                });
+            } )
     });
+
+   
 
 
 };

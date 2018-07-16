@@ -29,16 +29,7 @@ class Account extends Component {
         this.setState({ password: event.target.value })
     };
 
-    getCustomerByEmail = email => {
-   
-        API.getCustomerByEmail(email)
-        
-        .then(res => 
-          console.log(res.data)
-        //   this.addToCartProduct({id : res.data.id})
-        )
-        .catch(err => console.log(err));
-    }
+    
 
     handleLogInSubmit = event => {
 
@@ -55,13 +46,22 @@ class Account extends Component {
                 this.setState({ enterSignin: res.data, isLoggedIn: true });
                 this.props.setLoginState(true);      
                 alert("You are signed in");
-                console.log(this.props.email); 
-                // this.getCustomerByEmail(this.props.email);
+                this.getCustomerByEmail(this.state.email)
                 // window.location.href = '/home'
             })
-            .catch(err => console.log("error entering log-in data"))
-
+            .catch(err => console.log("error entering log-in data"))      
             
+    }
+
+    getCustomerByEmail = email => {
+   
+        API.getCustomerByEmail(this.state.email)
+        
+        .then(res => {
+          console.log(res.data)
+        //   this.addToCartProduct({id : res.data.id})
+        })
+        .catch(err => console.log(err));
     }
 
     logInButton = props => {

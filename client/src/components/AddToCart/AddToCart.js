@@ -57,7 +57,7 @@ class AddToCart extends Component {
   addToCartProduct = productId => {
     API.addToCartProduct(productId)
       .then(res => {
-        console.log(res)
+        console.log(res.data)
         // this.setState({
         //   products: res.data
         // })
