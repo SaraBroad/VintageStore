@@ -17,14 +17,17 @@ export default {
         return axios.get("/api/products");
     },
     addToCart: function(cartData) {
-        return axios.post("/api/cartProduct", cartData);
+        return axios.post("/api/cartadd", cartData);
     },
     logOut: function() {
         return axios.get("/logout");
     }
-    //post product to cart
-
+    
+//api/cartremove
 }
 
-
+// cartData = {
+//     user_id: 12345,
+//     product_id: 12345
+// }
 

@@ -61,7 +61,7 @@ class App extends Component {
             <Route exact path="/all" component={All} />
             <Route exact path="/about" component={About} />
             {/* <Route exact path="/blog" component={Blog} /> */}
-    <Route exact path="/account" render={props => <Account setLoginState={this.setLoginState}  {...props} /> } />
+            <Route exact path="/account" render={props => <Account setLoginState={this.setLoginState}  {...props} /> } />
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/checkout" component={Checkout} />
