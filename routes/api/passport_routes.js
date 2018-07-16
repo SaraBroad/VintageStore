@@ -26,7 +26,7 @@ module.exports = function (router) {
     failWithError: true
   }),
     (req, res, next) => {
-        res.json(true)
+        res.json(true);
     },
     (err, req, res, next) => {
       console.log(err);
@@ -81,6 +81,7 @@ module.exports = function (router) {
   }
 
   router.get('/api/checkUser', function (req, res) {
+    console.log("this is api checker", req)
     res.json( req.isAuthenticated() );
   });
 };

@@ -12,52 +12,50 @@ class AddToCart extends Component {
     };
   }
 
-  // createCart = () => {
-  //   API.createCart()
-  //     .then(res => {
-        
-  //       this.setState({
-         
-  //       })
-  //     }
-  //     )
-  //     .catch(err => console.log(err));
-  // };
-
-  getProductById = id => {
-   
-    API.getProductById(id)
-    
-    .then(res => 
-      // console.log(res.data.id)
-      this.addToCartProduct({id : res.data.id})
-    )
-    .catch(err => console.log(err));
-}
-
-    // this.addToCart();
+  componentDidMount() {
+    // request to server to check if user is logged in.
+    API.getSavedCust().then( res => {
+      console.log( 'user is logged in?', res.data );
+      this.setState({isLoggedIn: res.data});
+    });
+  }
   
+  checkLogin = () => {
+    if (this.state.isLoggedIn) {
+      return (window.location.href = "/account")
+    } else {
+      return (window.location.href = "/cart")
+    }
+   }
 
-//   componentDidMount() {
-//     this.getSavedArticles();
-//   }
-
-// getProductById = () => {
-//   API.getProductById()
-//     .then(res => {
-//       console.log(res)
-//       // this.setState({
-//       //   productId: res.data.productId
-//       // })
-//     }
+   getCartById = id => {
+   
+        API.getCartById(id)
+        
+        .then(res => 
+          // console.log(res.data.id)
+          this.addToCartProduct({CartId : res.data.id})
+        )
+        .catch(err => console.log(err));
+    }
+ 
+//   getProductById = id => {
+   
+//     API.getProductById(id)
+    
+//     .then(res => 
+//       // console.log(res.data.id)
+//       this.addToCartProduct(res.data.id)
 //     )
 //     .catch(err => console.log(err));
-// };
+// }
+
+ 
 
   addToCartProduct = productId => {
     API.addToCartProduct(productId)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         // this.setState({
         //   products: res.data
         // })
@@ -77,7 +75,7 @@ class AddToCart extends Component {
             className="addbutton"
             role="button"
             aria-label="click item"
-            onClick={() => this.getProductById(this.props.productId)}
+            onClick={() => this.addToCartProduct(this.props.productId)}
             >Add to Cart</button>
         </div>   
     );

@@ -19,14 +19,17 @@ export default {
     getProductById: function(id) {
         return axios.get("api/products/" + id);
     },
-    addToCartProduct: function(cartData) {
-        return axios.post("/api/cartProduct", cartData);
+    addToCartProduct: function(productId) {
+        return axios.post("/api/cartProduct", {productId, cartId: sessionStorage.getItem('cartId')});
     },
     getCustomerByEmail: function(email) {
         return axios.get("api/customer/" + email);
     },
-    createCart: function(customerData) {
-        return axios.post("/api/createCart", customerData);
+    createCart: function(customerId) {
+        return axios.post("/api/createCart", customerId);
+    },
+    getCartById: function(id) {
+        return axios.get("api/cart/" + id);
     },
     deleteCart: function(id) {
         return axios.get("api/deleteCart/" + id);

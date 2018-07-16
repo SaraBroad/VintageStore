@@ -53,16 +53,34 @@ class Account extends Component {
             
     }
 
+    // addToCartProduct = productId => {
+    //     API.addToCartProduct(productId)
+    //       .then(res => {
+    //         console.log(res.data)
+    //         // this.setState({
+    //         //   products: res.data
+    //         // })
+    //       }
+    //       )
+    //       .catch(err => console.log(err));
+    //   };
+
+    
+
     getCustomerByEmail = email => {
    
         API.getCustomerByEmail(this.state.email)
         
         .then(res => {
-          console.log(res.data)
+            console.log(res.data);
+            sessionStorage.setItem('cartId', res.data.cartId);
+        //   console.log("customer email res-data", res.data)
         //   this.addToCartProduct({id : res.data.id})
         })
         .catch(err => console.log(err));
     }
+
+    
 
     logInButton = props => {
         return (
