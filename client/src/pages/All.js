@@ -7,7 +7,6 @@ import {
   Link
 } from 'react-router-dom'
 import API from "../utils/API";
-import AddToCart from "../components/AddToCart/AddToCart";
 
 
 
@@ -33,7 +32,7 @@ class All extends Component {
       API.getProducts()
         .then(res => {
           
-          // console.log(res.data);
+          console.log(res.data);
           this.setState({
             products: res.data
             
@@ -43,30 +42,28 @@ class All extends Component {
         .catch(err => console.log(err));
     };
   
-
+  
 
   render() {
 
     return (
       <div className="container">
         <div className="row text-center text-lg-left">
-          {this.state.products.map(product => {
-            return (
+          {this.state.products.map((product, i) => (
+            
             <Gallery
-              key={product.id}
+              key={i}
               Image1={product.imageOne}
               Image2={product.imageTwo}
               Image3={product.imageThree}
               productName={product.productName}
-              productId={product.id}
+              id={product.id}
               size={product.size}
               price={product.price}
               description={product.description}
-            >
-           
-            </Gallery>
-          )
-          })}
+            />
+
+          ))}
         </div>
       </div>
     );

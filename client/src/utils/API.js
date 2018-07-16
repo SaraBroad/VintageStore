@@ -17,20 +17,11 @@ export default {
     getProducts: function() {
         return axios.get("/api/products");
     },
-    getProductById: function(id) {
-        return axios.get("api/products/" + id);
+    getProductsID: function(id) {
+        return axios.get(`/api/products/${id}`)
     },
-    addToCartProduct: function(cartData) {
+    addToCart: function(cartData) {
         return axios.post("/api/cartProduct", cartData);
-    },
-    getCustomerByEmail: function(email) {
-        return axios.get("api/customer/" + email);
-    },
-    createCart: function(customerData) {
-        return axios.post("/api/createCart", customerData);
-    },
-    deleteCart: function(id) {
-        return axios.get("api/deleteCart/" + id);
     },
     logOut: function() {
         return axios.get("/logout");
