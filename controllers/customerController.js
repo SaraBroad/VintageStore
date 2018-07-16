@@ -14,7 +14,7 @@ module.exports = function(app) {
             }).then(function (data){
                 
                 db.Cart.create({
-                    customerId: data.req.user.id,
+                    CustomerId: data.req.user.id,
                 })
                 .then(function (dbCart) {
                     console.log(dbCart)
