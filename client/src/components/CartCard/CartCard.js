@@ -6,18 +6,16 @@ const CartCard = props => (
         <h1 className="items">Your Items</h1>
 
         <div className="item-container">
-            {/* <div className="img-container">
-        <img alt="{props.imagename"} src={props.image} />
-        </div> */}
+           
         <div className="item-list">
-            {/* {prop.item} */}
-            <p>Item</p>
-            {/* {prop.size} */}
-            <p>Size</p>
-            {/* {prop.description} */}
-            <p>Description</p>
-            {/* {prop.price} */}
-            <p>Price</p>
+            
+            <span>Item: {props.productName}</span>
+           
+            <span>Size: {props.size}</span>
+           
+            <span>Description: {props.description}</span>
+            
+            <span>Price: {props.price}</span>
             </div>
          
         </div>

@@ -40,37 +40,16 @@ class AddToCart extends Component {
         .catch(err => console.log(err));
     }
  
-//   getProductById = id => {
-   
-//     API.getProductById(id)
-    
-//     .then(res => 
-//       // console.log(res.data.id)
-//       this.addToCartProduct(res.data.id)
-//     )
-//     .catch(err => console.log(err));
-// }
-
- 
 
   addToCartProduct = productId => {
     API.addToCartProduct(productId)
       .then(res => {
         // console.log(res.data)
-        // this.setState({
-        //   products: res.data
-        // })
+        alert("This has been added to your cart!")
       }
       )
       .catch(err => console.log(err));
   };
-
-  handleAddToCart = id => {
-    API.addToCart(id).then(res => this.addToCart());
-  };
-
-
-  
 
 
   render() {
@@ -80,11 +59,7 @@ class AddToCart extends Component {
             className="addbutton"
             role="button"
             aria-label="click item"
-<<<<<<< HEAD
-            onClick={this.handleAddToCart}
-=======
             onClick={() => this.addToCartProduct(this.props.productId)}
->>>>>>> 8c9a269e75dbade15d8513e412d6bb9ac1b38dc1
             >Add to Cart</button>
         </div>   
     );
