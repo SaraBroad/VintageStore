@@ -16,9 +16,6 @@ export default {
     getProducts: function() {
         return axios.get("/api/products");
     },
-    getProductById: function(id) {
-        return axios.get("api/products/" + id);
-    },
     addToCartProduct: function(productId) {
         return axios.post("/api/cartProduct", {productId, cartId: sessionStorage.getItem('cartId')});
     },
@@ -36,6 +33,9 @@ export default {
     },
     logOut: function() {
         return axios.get("/logout");
+    },
+    getPurchaseHistory: function() {
+        return axios.get("api/producthistory")
     }
     
 //api/cartremove

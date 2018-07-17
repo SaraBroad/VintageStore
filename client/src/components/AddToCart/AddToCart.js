@@ -11,6 +11,7 @@ class AddToCart extends Component {
       customerId: "",
       isLoggedIn: false
     };
+    this.checkLogin = this.checkLogin.bind(this);
   }
 
   componentDidMount() {
@@ -23,9 +24,10 @@ class AddToCart extends Component {
   
   checkLogin = () => {
     if (this.state.isLoggedIn) {
-      return (window.location.href = "/account")
+      this.addToCartProduct(this.state.productId);
     } else {
-      return (window.location.href = "/cart")
+      return (window.location.href = "/account");
+      //return (window.location.href = "/cart")
     }
    }
 
@@ -56,10 +58,12 @@ class AddToCart extends Component {
   addToCartProduct = productId => {
     API.addToCartProduct(productId)
       .then(res => {
+        
         // console.log(res.data)
         // this.setState({
         //   products: res.data
         // })
+        window.location.href('/cart')
       }
       )
       .catch(err => console.log(err));
@@ -80,7 +84,7 @@ class AddToCart extends Component {
             className="addbutton"
             role="button"
             aria-label="click item"
-            onClick={() => this.addToCartProduct(this.props.productId)}
+            onClick={this.checkLogin}
             >Add to Cart</button>
         </div>   
     );
