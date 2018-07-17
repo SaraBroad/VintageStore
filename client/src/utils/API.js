@@ -40,6 +40,9 @@ export default {
     },
     logOut: function() {
         return axios.get("/logout");
+    },
+    getPurchaseHistory: function() {
+        return axios.get("api/producthistory")
     }
     
 //api/cartremove

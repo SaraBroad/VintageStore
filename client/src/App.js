@@ -58,7 +58,7 @@ class App extends Component {
           <Navbar isLoggedIn={this.state.isLoggedIn} setLoginState={this.setLoginState} />
           {/* <Container /> */}
           <Wrapper>
-            <Redirect from="/" to="/home" />
+            {/* <Redirect exact from="/" to="/home" /> */}
             <Route exact path="/all" component={All} />
             <Route exact path="/item/:id" component={ProductDetail} />
             <Route exact path="/about" component={About} />
