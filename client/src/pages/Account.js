@@ -44,13 +44,19 @@ class Account extends Component {
             .then(res => {
                 console.log(res);
                 this.setState({ enterSignin: res.data, isLoggedIn: true });
-                this.props.setLoginState(true);      
+                this.props.setLoginState(true);
                 alert("You are signed in");
+<<<<<<< HEAD
+                // window.location.href = '/home'
+            })
+            .catch(err => console.log("error entering log-in data"))
+=======
                 this.getCustomerByEmail(this.state.email)
                 // window.location.href = '/home'
             })
             .catch(err => console.log("error entering log-in data"))      
             
+>>>>>>> 8c9a269e75dbade15d8513e412d6bb9ac1b38dc1
     }
 
     // addToCartProduct = productId => {
