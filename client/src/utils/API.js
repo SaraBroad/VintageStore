@@ -20,15 +20,30 @@ export default {
     getProductsID: function(id) {
         return axios.get(`/api/products/${id}`)
     },
-    addToCart: function(cartData) {
-        return axios.post("/api/cartProduct", cartData);
+    addToCartProduct: function(productId) {
+        return axios.post("/api/cartProduct", {productId, cartId: sessionStorage.getItem('cartId')});
+    },
+    getCustomerByEmail: function(email) {
+        return axios.get("api/customer/" + email);
+    },
+    createCart: function(customerId) {
+        return axios.post("/api/createCart", customerId);
+    },
+    getCartById: function(id) {
+        return axios.get("api/cart/" + id);
+    },
+    deleteCart: function(id) {
+        return axios.get("api/deleteCart/" + id);
     },
     logOut: function() {
         return axios.get("/logout");
     }
-    //post product to cart
-
+    
+//api/cartremove
 }
 
-
+// cartData = {
+//     user_id: 12345,
+//     product_id: 12345
+// }
 

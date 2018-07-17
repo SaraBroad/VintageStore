@@ -29,6 +29,7 @@ class Account extends Component {
         this.setState({ password: event.target.value })
     };
 
+    
 
     handleLogInSubmit = event => {
 
@@ -45,10 +46,47 @@ class Account extends Component {
                 this.setState({ enterSignin: res.data, isLoggedIn: true });
                 this.props.setLoginState(true);
                 alert("You are signed in");
+<<<<<<< HEAD
                 // window.location.href = '/home'
             })
             .catch(err => console.log("error entering log-in data"))
+=======
+                this.getCustomerByEmail(this.state.email)
+                // window.location.href = '/home'
+            })
+            .catch(err => console.log("error entering log-in data"))      
+            
+>>>>>>> 8c9a269e75dbade15d8513e412d6bb9ac1b38dc1
     }
+
+    // addToCartProduct = productId => {
+    //     API.addToCartProduct(productId)
+    //       .then(res => {
+    //         console.log(res.data)
+    //         // this.setState({
+    //         //   products: res.data
+    //         // })
+    //       }
+    //       )
+    //       .catch(err => console.log(err));
+    //   };
+
+    
+
+    getCustomerByEmail = email => {
+   
+        API.getCustomerByEmail(this.state.email)
+        
+        .then(res => {
+            console.log(res.data);
+            sessionStorage.setItem('cartId', res.data.cartId);
+        //   console.log("customer email res-data", res.data)
+        //   this.addToCartProduct({id : res.data.id})
+        })
+        .catch(err => console.log(err));
+    }
+
+    
 
     logInButton = props => {
         return (
@@ -121,66 +159,3 @@ class Account extends Component {
 
 export default Account;
 
-// class Account extends Component {
-//     state = {
-//         email: "",
-//         password: "",
-//         enterSignin: [],
-//         // isLoggedIn: false
-//     };
-
-
-
-//     handleUsername = (event) => {
-//         this.setState({ email: event.target.value })
-//     };
-
-//     handlePassword = (event) => {
-//         this.setState({ password: event.target.value })
-//     };
-
-
-//     handleLogInSubmit = event => {
-//         event.preventDefault();
-//         console.log(this.state);
-//         API.custLogin({
-//             email: this.state.email,
-//             password: this.state.password
-//         })
-//             .then(res => {
-//                 console.log(res);
-//                 this.setState({ enterSignin: res.data, isLoggedIn: true });
-//                 // this.setState({ isLoggedIn: true });
-//                 alert("You are signed in");
-//                 window.location.href = '/home'
-//             })
-//             .catch(err => console.log("error entering log-in data"))
-//     }
-
-//     render() {
-//         return (
-//             <div className="account-container">
-//                 <div className="regbox-container">
-//                     <div className="row">
-//                         <div className="col-md-6">
-//                             <SigninBox>
-//                                 handleUsername={this.handleUsername}
-//                                 handlePassword={this.handlePassword}
-//                                 handleLogInSubmit={this.handleLogInSubmit}
-//                             </SigninBox>
-
-//                         </div>
-//                         <div className="col-md-6">
-
-//                             <RegisterBox />
-
-//                         </div>
-//                     </div>
-//                 </div>
-
-//             </div>
-//         )
-//     }
-// }
-
-// export default Account;

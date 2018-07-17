@@ -26,7 +26,7 @@ module.exports = function (router) {
     failWithError: true
   }),
     (req, res, next) => {
-        res.json(true)
+        res.json(true);
     },
     (err, req, res, next) => {
       console.log(err);

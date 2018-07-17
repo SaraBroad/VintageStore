@@ -9,6 +9,7 @@ import API from "../utils/API"
 class RegisterPage extends Component {
 
     state = {
+        id: "",
         firstName: "",
         lastName: "",
         addressOne: "",
@@ -80,12 +81,13 @@ class RegisterPage extends Component {
         }
         API.saveCustomer(newCustomer)
             .then(() => {
-                window.location.href = '/home'
+                window.location.href = '/all'
             })
             .catch(err => {
                 console.log(err);
                 alert('customer not registered.')
             })
+        
     }
 
 
@@ -108,7 +110,6 @@ class RegisterPage extends Component {
                     // handleInputChange={this.handleInputChange}
                     // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
-
                 />
             </div>
         )

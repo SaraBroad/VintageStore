@@ -12,6 +12,7 @@ const SigninBox = props => (
                     className="form-control sign-input"
                     required="required"
                     onChange={props.handleUsername}
+                    autoComplete="email"
                     id="email"
                     placeholder="Enter email"
                 />
@@ -22,6 +23,7 @@ const SigninBox = props => (
                 <input type="password"
                     className="form-control sign-input"
                     required="required"
+                    autoComplete="password"
                     onChange={props.handlePassword}
                     id="password"
                     placeholder="Enter password"

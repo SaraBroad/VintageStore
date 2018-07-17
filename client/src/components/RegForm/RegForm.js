@@ -12,6 +12,7 @@ const RegForm = props => (
                     className="custinput-bar form-control"
                     required="required"
                     name="cust-firstname"
+                    autocomplete="first-name"
                     onChange={props.handleFirstName}
                     // onChange={props.handleInputChange}
                     type="text"
@@ -23,6 +24,7 @@ const RegForm = props => (
                     className="custinput-bar form-control"
                     required="required"
                     name="cust-lastname"
+                    autocomplete="last-name"
                     onChange={props.handleLastName}
                     type="text"
                     placeholder="Name"
@@ -35,6 +37,7 @@ const RegForm = props => (
                     // onChange={props.handleInputChange}
                     required="required"
                     name="cust-address"
+                    autocomplete="street-1"
                     type="text"
                     placeholder="Street Address 1"
                     id="cust-address"
@@ -47,6 +50,7 @@ const RegForm = props => (
                     // onChange={props.handleInputChange}
                     type="text"
                     placeholder="Street Address 2"
+                    autocomplete="street-2"
                     id="cust-addresstwo"
                 />
                 <label htmlFor="city">City</label>
@@ -58,10 +62,11 @@ const RegForm = props => (
                     // onChange={props.handleInputChange}
                     type="text"
                     placeholder="City"
+                    autocomplete="city"
                     id="city"
                 />
                 <label htmlFor="state">State</label>
-                <select className="form-control" id="state" name="state" required="required" onChange={props.handleState}>
+                <select className="form-control" id="state" name="state" required="required" autocomplete="state" onChange={props.handleState}>
 
                     <option value="">N/A</option>
                     <option value="AK">Alaska</option>
@@ -122,6 +127,7 @@ const RegForm = props => (
                     className="custinput-bar form-control"
                     required="required"
                     name="zip"
+                    autocomplete="zip"
                     onChange={props.handleZip}
                     // onChange={props.handleInputChange}
                     type="text"
@@ -133,6 +139,7 @@ const RegForm = props => (
                     className="custinput-bar form-control"
                     required="required"
                     name="phone"
+                    autocomplete="phone"
                     onChange={props.handlePhone}
                     // onChange={props.handleInputChange}
                     type="number"
@@ -144,6 +151,7 @@ const RegForm = props => (
                     className="custinput-bar form-control"
                     required="required"
                     name="email"
+                    autocomplete="email"
                     onChange={props.handleEmail}
                     // onChange={props.handleInputChange}
 
@@ -159,6 +167,7 @@ const RegForm = props => (
                     onChange={props.handlePassword}
                     type="password"
                     placeholder="Password"
+                    autocomplete="password"
                     id="password"
                 />
 
