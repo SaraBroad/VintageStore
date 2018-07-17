@@ -94,7 +94,7 @@ class Navbar extends Component {
             </Link>
           </li>
           <li>
-              <div>
+              <div className="searchdiv">
               <span>
                    < Search />
               </span>
