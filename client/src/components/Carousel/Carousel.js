@@ -49,7 +49,7 @@ class ControlledCarousel extends React.Component {
           <img className="d-block h-400 w-100" src={this.props.Image2} />
           </Carousel.Item>
           {Image3}
-        </Carousel>
+          </Carousel>
       );
     }
 

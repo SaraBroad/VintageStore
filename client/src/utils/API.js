@@ -1,4 +1,5 @@
 import axios from 'axios';
+//axios is middleware capability to connect react to server
 
 export default {
 
@@ -16,8 +17,8 @@ export default {
     getProducts: function() {
         return axios.get("/api/products");
     },
-    getProductById: function(id) {
-        return axios.get("api/products/" + id);
+    getProductsID: function(id) {
+        return axios.get(`/api/products/${id}`)
     },
     addToCartProduct: function(productId) {
         return axios.post("/api/cartProduct", {productId, cartId: sessionStorage.getItem('cartId')});

@@ -81,8 +81,7 @@ module.exports = function (router) {
   }
 
   router.get('/api/checkUser', function (req, res) {
-    console.log("this is api checker", req)
-    res.json( req.isAuthenticated() );
+    res.json( req.isAuthenticated());
   });
 };
 

@@ -65,9 +65,9 @@ class AddToCart extends Component {
       .catch(err => console.log(err));
   };
 
-  // handleAddToCart = id => {
-  //   API.addToCart(id).then(res => this.addToCart());
-  // };
+  handleAddToCart = id => {
+    API.addToCart(id).then(res => this.addToCart());
+  };
 
 
   
@@ -80,7 +80,11 @@ class AddToCart extends Component {
             className="addbutton"
             role="button"
             aria-label="click item"
+<<<<<<< HEAD
+            onClick={this.handleAddToCart}
+=======
             onClick={() => this.addToCartProduct(this.props.productId)}
+>>>>>>> 8c9a269e75dbade15d8513e412d6bb9ac1b38dc1
             >Add to Cart</button>
         </div>   
     );
