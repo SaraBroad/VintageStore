@@ -31,6 +31,9 @@ export default {
     getCartById: function(id) {
         return axios.get("api/cart/" + id);
     },
+    getCartProducts: function() {
+        return axios.get("api/allCartProducts");
+    },
     deleteCart: function(id) {
         return axios.get("api/deleteCart/" + id);
     },
