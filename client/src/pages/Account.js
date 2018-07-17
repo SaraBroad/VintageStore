@@ -44,7 +44,7 @@ class Account extends Component {
             .then(res => {
                 console.log(res);
                 this.setState({ enterSignin: res.data, isLoggedIn: true });
-                this.props.setLoginState(true);      
+                this.props.setLoginState(true);
                 alert("You are signed in");
                 this.getCustomerByEmail(this.state.email)
                 // window.location.href = '/home'

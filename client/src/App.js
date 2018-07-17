@@ -25,6 +25,7 @@ import Gallery from "./components/Gallery";
 import GalleryItem from "./components/Gallery";
 import AddToCart from "./components/AddToCart";
 import API from "./utils/API";
+import ProductDetail from './pages/productDetail';
 
 import { Z_DEFAULT_STRATEGY } from "zlib";
 
@@ -59,6 +60,7 @@ class App extends Component {
           <Wrapper>
             {/* <Redirect exact from="/" to="/home" /> */}
             <Route exact path="/all" component={All} />
+            <Route exact path="/item/:id" component={ProductDetail} />
             <Route exact path="/about" component={About} />
             {/* <Route exact path="/blog" component={Blog} /> */}
             <Route exact path="/account" render={props => <Account setLoginState={this.setLoginState}  {...props} /> } />

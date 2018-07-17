@@ -26,13 +26,14 @@ class FooterPage extends React.Component {
              			        FAQs </Link></p>
                       <p><Link to="/About" className="nav-link">
              			        About Us </Link></p>
+                           
                   </Col>
                   <hr className="w-100 clearfix d-md-none"/>
-                  <Col md="3" lg="2" xl="2" className="mx-auto mt-3">
-                      <p>{Ad}</p>
+                  <Col md="3" lg="3" xl="3" className="mx-auto mt-3">
+                      <Ad />
                   </Col>
                   <hr className="w-100 clearfix d-md-none"/>
-                  <Col md="4" lg="3" xl="3" className="mx-auto mt-3">
+                  <Col md="3" lg="3" xl="3" className="mx-auto mt-3">
                       <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
                       <p><i className="fa fa-home mr-3 mb-4 font-weight-bold"></i> Philadelphia, PA 19102, US</p>
                       <p><i className="fa fa-envelope mr-3"></i> ZANAvintage@gmail.com</p>

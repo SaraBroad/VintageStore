@@ -42,18 +42,6 @@ class AddToCart extends Component {
         .catch(err => console.log(err));
     }
  
-//   getProductById = id => {
-   
-//     API.getProductById(id)
-    
-//     .then(res => 
-//       // console.log(res.data.id)
-//       this.addToCartProduct(res.data.id)
-//     )
-//     .catch(err => console.log(err));
-// }
-
- 
 
   addToCartProduct = productId => {
     API.addToCartProduct(productId)
@@ -64,17 +52,11 @@ class AddToCart extends Component {
         //   products: res.data
         // })
         window.location.href('/cart')
+        alert("This has been added to your cart!")
       }
       )
       .catch(err => console.log(err));
   };
-
-  // handleAddToCart = id => {
-  //   API.addToCart(id).then(res => this.addToCart());
-  // };
-
-
-  
 
 
   render() {
