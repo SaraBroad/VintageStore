@@ -3,8 +3,8 @@
     padding-top: 30px;
     padding-bottom: 30px;
     border: 1px solid black;
-    margin-left: 360px;
     margin-top: 40px;
+    margin-left: 20px;
     margin-bottom: 100px;
 
 }
@@ -17,3 +17,86 @@
 .reg-heading {
     text-align: center;
 }
+.reg{
+    margin-top: 45px;
+    margin-left: 20px;
+}
+
+.reg-button{
+    background-color: black;
+    align-content: center;
+    margin-left: 180px !important;
+}
+
+@media screen and (max-width: 1201px) {
+    .reg-button{
+        margin-left: 180px !important;
+    }
+    .reg-form {
+        margin-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .reg-info {
+        width: 600px;
+        margin: unset;
+    }
+    .reg-button{
+        margin-left: 100px !important;
+    }
+    .reg-form {
+        width: 570px;
+        margin-left: 20px;
+        position: relative;
+    }
+      .reg{
+          align-self: left;
+          height: 400px;
+          width: relative;
+          
+      }
+  }
+
+  @media screen and (max-width: 990px) {
+    .reg-info {
+        width: 500px;
+        margin: unset;
+    }
+    .reg-button{
+        margin-left: 100px !important;
+    }
+    .reg-form {
+        width: 470px;
+        margin-left: 20px;
+        position: relative;
+    }
+      .reg{
+          height: 200px;
+          align-self: left;
+          width: relative;
+          
+      }
+  }
+
+  @media screen and (max-width: 767px) {
+    .reg-info {
+        width: 500px;
+        margin: unset;
+    }
+    .reg-button{
+        margin-left: 100px !important;
+    }
+    .reg-form {
+        width: 470px;
+        margin-left: 20px;
+        position: relative;
+        padding-right: 20px;
+    }
+      .reg{
+          height: 0px;
+          align-self: left;
+          width: relative;
+          
+      }
+  }

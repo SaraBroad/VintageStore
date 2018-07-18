@@ -9,7 +9,7 @@ import API from "../utils/API";
 
 class ProductDetail extends Component {
   state = {
-    product: null
+    product: [] 
   };
 
   componentDidMount() {
@@ -45,7 +45,7 @@ class ProductDetail extends Component {
                 Image2={product.imageTwo}
                 Image3={product.imageThree}
                 productName={product.productName}
-                id={product.id}
+                productId={product.id}
                 size={product.size}
                 price={product.price}
                 description={product.description}

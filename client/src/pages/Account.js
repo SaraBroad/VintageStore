@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-// import { Link } from "react-router-dom";
 import SigninBox from "../components/SigninBox";
 import RegisterBox from "../components/RegisterBox";
 import API from "../utils/API";
+import "./Account.css";
 
 //sign-in box
 //register link
@@ -21,17 +21,15 @@ class Account extends Component {
         this.logOutClick = this.logOutClick.bind(this);
     }
 
-    handleUsername = (event) => {
-        this.setState({ email: event.target.value })
-    };
+        handleUsername = (event) => {
+            this.setState({ email: event.target.value })
+        };
 
-    handlePassword = (event) => {
-        this.setState({ password: event.target.value })
-    };
+        handlePassword = (event) => {
+            this.setState({ password: event.target.value })
+        };
 
-    
-
-    handleLogInSubmit = event => {
+        handleLogInSubmit = event => {
 
         console.log( "THIS IS RUNNING" );
          
@@ -81,8 +79,6 @@ class Account extends Component {
         .catch(err => console.log(err));
     }
 
-    
-
     logInButton = props => {
         return (
             <button onClick={props.onClick}>
@@ -119,21 +115,13 @@ class Account extends Component {
             button = <logInButton onClick={this.logInClick} />
         }
         return (
-            // <div>
-            //     {/* <Account
-            //         onClick={() => props.handleLogInSubmit}
-            //     /> */}
-                
-            //     <Navbar>
-            //     {button}
-            //     </Navbar>
-            // </div>
-
-            <div className="account-container">
-                <div className="regbox-container">
-                    <div className="row">
-                        <div className="col-md-6">
-                            <SigninBox
+            <div className="dritaContainer account-container">
+                <div className="col-lg-5">  
+                    <img className="girlsLaughing" alt="laughing" src="images/9.jpg" height="700px" width="relative" border="5px"/>
+                </div>
+            <div className="regbox-container"> 
+                <div className="col-md-6 boxes">
+                        <SigninBox
                                 handleUsername={this.handleUsername}
                                 handlePassword={this.handlePassword}
                                 handleLogInSubmit={this.handleLogInSubmit}
@@ -144,7 +132,7 @@ class Account extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+                
         )
     }
 
@@ -153,3 +141,29 @@ class Account extends Component {
 
 export default Account;
 
+// notes to use for later:
+
+
+    // addToCartProduct = productId => {
+    //     API.addToCartProduct(productId)
+    //       .then(res => {
+    //         console.log(res.data)
+    //         // this.setState({
+    //         //   products: res.data
+    //         // })
+    //       }
+    //       )
+    //       .catch(err => console.log(err));
+    //   };
+
+        //in render
+
+            // <div>
+            //     {/* <Account
+            //         onClick={() => props.handleLogInSubmit}
+            //     /> */}
+                
+            //     <Navbar>
+            //     {button}
+            //     </Navbar>
+            // </div>

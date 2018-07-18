@@ -22,7 +22,7 @@ import FooterPage from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 import Gallery from "./components/Gallery";
-import GalleryItem from "./components/Gallery";
+import GalleryProduct from "./components/GalleryProduct";
 import AddToCart from "./components/AddToCart";
 import API from "./utils/API";
 import ProductDetail from './pages/productDetail';

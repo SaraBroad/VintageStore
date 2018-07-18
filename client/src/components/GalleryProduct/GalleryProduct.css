@@ -10,3 +10,8 @@
 .img-thumbnail {
   border: 1px solid white;
 }
+
+.detailCarousel{
+    height: 400px;
+    width: relative;
+}
