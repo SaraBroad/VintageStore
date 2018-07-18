@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 // import data from "./products.json";
 import Gallery from "../components/Gallery";
-import GalleryItem from "../components/Gallery";
 import {
   Route,
   Link
 } from 'react-router-dom';
 import API from "../utils/API";
-
-
 
 // class All extends Component {
 //   state = {
@@ -43,12 +40,11 @@ class All extends Component {
     };
   
 
-  
-
   render() {
 
     return (
-      <div className="container">
+      <div className="container dritaContainer">
+      <br/>
         <div className="row text-center text-lg-left">
           {this.state.products.map((product, i) => (
             
@@ -65,6 +61,7 @@ class All extends Component {
             />
           ))}
         </div>
+        <br/>
       </div>
     );
   }
