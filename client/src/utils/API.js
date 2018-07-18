@@ -47,8 +47,8 @@ export default {
     getSubTotal: function(customerId) {
         return axios.get("/api/subtotal" + customerId);
     },
-    getTotalPrice: function(customerId) {
-        return axios.get("/api/total" + customerId);
+    getTotalPrice: function() {
+        return axios.get("/api/total");
     }
     
 //api/cartremove

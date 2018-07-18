@@ -10,16 +10,28 @@ import Product from "../components/Product";
 
 
 class Cart extends Component {
+  constructor(props) {
+    super(props)
     state = {
         cartProducts: [],
         total: "0.00",
         subtotal: "",
         shipping: "5.00",
       };
-
+    this.calcSubTotal=this.calcSubTotal.bind(this);
+    this.calcTotalPrice=this.calcTotalPrice.bind(this);
+    }
     componentDidMount() {
         this.getCartProducts();     
       }
+    
+    componentDidMount() {
+      this.getTotalPrice();
+    }
+
+    componentDidMount() {
+      this.getSubTotal();
+    }
 
     getCartProducts = () => {
       API.getCartProducts()
@@ -31,6 +43,13 @@ class Cart extends Component {
     )
     .catch(err => console.log(err));
 }
+
+    calcSubTotal = () =>
+    API.getTotalPrice()
+
+    calcTotalPrice = (customerId) =>
+    API.getSubTotal(customerId)
+
 
 
     render() {
