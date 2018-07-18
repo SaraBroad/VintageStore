@@ -34,8 +34,6 @@ require("./controllers/productController.js")(app);
 require("./controllers/cartProductController.js")(app);
 require("./controllers/cartController.js")(app);
 require("./controllers/customerController.js")(app);
-// require('./controllers/passport_controller.js')(passport, db.passports);
-// // require("./routes/api/passport_routes.js")(router, passport);
 require('./routes/api/passport_routes.js')(app);
 
 /*
@@ -53,7 +51,7 @@ if(process.env.NODE_ENV === 'production') {
     });
   });
 } else {
-  db.sequelize.sync({ force: true }).then(function () {
+  db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
       console.log("App listening on PORT " + PORT);
     });

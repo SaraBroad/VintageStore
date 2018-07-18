@@ -5,7 +5,7 @@ import GalleryItem from "../components/Gallery";
 import {
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 import API from "../utils/API";
 
 
@@ -63,7 +63,6 @@ class All extends Component {
               price={product.price}
               description={product.description}
             />
-
           ))}
         </div>
       </div>

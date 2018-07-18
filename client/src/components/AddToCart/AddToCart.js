@@ -25,12 +25,13 @@ class AddToCart extends Component {
  
 
    getCartById = id => {
-   
+    console.log(id);
         API.getCartById(id)
-        
+        console.log(id)
         .then(res => 
+       
           // console.log(res.data.id)
-          this.addToCartProduct({CartId : res.data.id})
+          this.addToCartProduct({cartId : res.data.id})
         )
         .catch(err => console.log(err));
     }
