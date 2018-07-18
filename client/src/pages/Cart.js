@@ -3,9 +3,10 @@ import {
     Route,
     Link
   } from 'react-router-dom'
-import CartCard from "../components/CartCard";
 import CartCheckoutBar from "../components/CartCheckoutBar"
 import API from "../utils/API";
+import { List } from "../components/List";
+import Product from "../components/Product";
 
 
 class Cart extends Component {
@@ -19,34 +20,25 @@ class Cart extends Component {
 
     getCartProducts = () => {
       API.getCartProducts()
-      .then( res => {
-        //   var data = res.data.productId
-        //   console.log(res.data[0].productId)
-        //   Object.keys(res).map(function(keyName, keyIndex) {
-        //     // use keyName to get current key's name
-        //     // and a[keyName] to get its value
-        //   }) 
-         
-          // this.getProductById(i)
-    })
+      .then( res => 
+        this.setState({
+            cartProducts: res.data
+            
+          })
+    )
+    .catch(err => console.log(err));
 }
-
-    getProductById = id => {
-        API.getProductById(id).then( res => {
-            console.log(res.data)
-            // this.setState = {
-            //     cartProducts: res.data[0].productId
-            //   };
-    })
-    }
 
 
     render() {
         return (
-        <div>
-            {this.state.cartProducts.map(cartProduct => {
-                return (
-                <CartCard 
+        <div className="container">
+           
+            {this.state.cartProducts.length ? (
+                <List>
+                {this.state.cartProducts.map(cartProduct => (
+                   <Product
+                
                   key={cartProduct.id}
                   Image1={cartProduct.imageOne}
                   Image2={cartProduct.imageTwo}
@@ -56,12 +48,15 @@ class Cart extends Component {
                   size={cartProduct.size}
                   price={cartProduct.price}
                   description={cartProduct.description}
-                >
-                </CartCard>
-
-                )
-            })}
-            <CartCheckoutBar />
+                />
+                 ))}
+                </List>
+              ) : (
+                <h2 className="text-center">No Items in Cart</h2>
+              )}
+               
+           <CartCheckoutBar/>
+            
         </div>
            
         )

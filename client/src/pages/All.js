@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import data from "./products.json";
 import Gallery from "../components/Gallery";
-import GalleryItem from "../components/Gallery";
 import {
   Route,
   Link
