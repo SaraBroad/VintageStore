@@ -3,7 +3,7 @@ import "./CartCard.css";
 
 const CartCard = props => (
     <div className="cart-card">
-        <h1 className="items">Your Items</h1>
+        <h1 className="items"><b>Your Items</b></h1>
 
         <div className="item-container">
            
@@ -17,9 +17,8 @@ const CartCard = props => (
             
             <span>Price: {props.price}</span>
             </div>
-         
+         </div>
         </div>
-    </div>
 
 
 );

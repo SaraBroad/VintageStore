@@ -11,22 +11,27 @@ import AddToCart from "../AddToCart";
 
 const GalleryProduct = props => (
 // Slideshow container
-  <div className="col-lg-3 col-md-4 col-xs-6" >
-  
+  <div className="product dritaContainer">
+  <div className="col-lg-5 col-md-5 col-xs-6" >
+    <br/>
     <ControlledCarousel  
       Image1={props.Image1}
       Image2={props.Image2}
       Image3={props.Image3}/>
-
-    <span>Name: {props.productName}</span>
+    </div>
+    
+    <div className="col-lg-4 col-md-4 col-xs-6">
+    <br/>
+    <span><b> {props.productName}</b></span>
     <br/>
     <span>Size: {props.size}</span>
     <br/>
     <span>Price: ${props.price}</span>
     <br/>
+    <span>{props.description}</span>
     <AddToCart/>
     <br/>
-    
+    </div>
   </div>
   
   
