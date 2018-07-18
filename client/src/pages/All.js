@@ -5,7 +5,7 @@ import GalleryItem from "../components/Gallery";
 import {
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 import API from "../utils/API";
 
 
@@ -59,7 +59,7 @@ class All extends Component {
               Image2={product.imageTwo}
               Image3={product.imageThree}
               productName={product.productName}
-              id={product.id}
+              productId={product.id}
               size={product.size}
               price={product.price}
               description={product.description}

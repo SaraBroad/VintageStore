@@ -31,14 +31,10 @@ app.use(require("body-parser").text());
 
 
 require("./controllers/productController.js")(app);
-// require('./controllers/passport_controller.js')(passport, db.passports);
-// require("./routes/api/passport_routes.js")(router, passport);
+require("./controllers/cartProductController.js")(app);
+require("./controllers/cartController.js")(app);
+require("./controllers/customerController.js")(app);
 require('./routes/api/passport_routes.js')(app);
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
 /*
 // Send every request to the React app
