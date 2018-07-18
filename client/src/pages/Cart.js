@@ -18,7 +18,8 @@ class Cart extends Component {
       }
 
     getCartProducts = () => {
-      API.getCartProducts().then( res => {
+      API.getCartProducts()
+      .then( res => {
         //   var data = res.data.productId
         //   console.log(res.data[0].productId)
         //   Object.keys(res).map(function(keyName, keyIndex) {
@@ -45,7 +46,7 @@ class Cart extends Component {
         <div>
             {this.state.cartProducts.map(cartProduct => {
                 return (
-                    <CartCard 
+                <CartCard 
                   key={cartProduct.id}
                   Image1={cartProduct.imageOne}
                   Image2={cartProduct.imageTwo}
