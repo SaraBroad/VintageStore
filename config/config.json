@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "password",
+      "password": "Fiction1912",
       "database": "vintagestore",
       "host": "127.0.0.1",
       "dialect": "mysql"
@@ -14,10 +14,10 @@
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": "password",
-      "database": "database_production",
-      "host": "127.0.0.1",
+      "username": "uz8ua5akhsfsr5e9",
+      "password": "fsnvtes497wa6g86",
+      "database": "zp3vtq81ctlz4emd",
+      "host": "j1r4n2ztuwm0bhh5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "dialect": "mysql"
     }
   }

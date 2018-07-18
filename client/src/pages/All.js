@@ -4,10 +4,8 @@ import Gallery from "../components/Gallery";
 import {
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 import API from "../utils/API";
-
-
 
 // class All extends Component {
 //   state = {
@@ -42,12 +40,11 @@ class All extends Component {
     };
   
 
-  
-
   render() {
 
     return (
-      <div className="container">
+      <div className="container dritaContainer">
+      <br/>
         <div className="row text-center text-lg-left">
           {this.state.products.map((product, i) => (
             
@@ -62,9 +59,9 @@ class All extends Component {
               price={product.price}
               description={product.description}
             />
-
           ))}
         </div>
+        <br/>
       </div>
     );
   }
