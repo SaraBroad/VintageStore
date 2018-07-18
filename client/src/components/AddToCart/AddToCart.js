@@ -11,8 +11,7 @@ class AddToCart extends Component {
       customerId: "",
       isLoggedIn: false
     };
-    this.checkLogin = this.checkLogin.bind(this);
-    this.addToCartProduct = this.addToCartProduct.bind(this);
+    
   }
 
   componentDidMount() {
@@ -23,14 +22,7 @@ class AddToCart extends Component {
     });
   }
   
-  checkLogin = () => {
-    if (this.state.isLoggedIn) {
-      this.addToCartProduct(this.state.productId);
-    } else {
-      return (window.location.href = "/account");
-      //return (window.location.href = "/cart")
-    }
-   }
+ 
 
    getCartById = id => {
     console.log(id);
@@ -43,18 +35,38 @@ class AddToCart extends Component {
         )
         .catch(err => console.log(err));
     }
+ 
+//   getProductById = id => {
+   
+//     API.getProductById(id)
+    
+//     .then(res => 
+//       // console.log(res.data.id)
+//       this.addToCartProduct(res.data.id)
+//     )
+//     .catch(err => console.log(err));
+// }
 
+ 
 
-    addToCartProduct = productId => {
-      console.log("hello" + productId + "bye")
-      API.addToCartProduct(productId)
-        .then(res => {
-          // console.log(res.data)
-          alert("This has been added to your cart!")
-        }
-        )
-        .catch(err => console.log(err));
-    };
+  addToCartProduct = productId => {
+    if (this.state.isLoggedIn) {
+      alert("you are logged in and product was added to cart!")
+    } else {
+      return (window.location.href = "/account");
+      //return (window.location.href = "/cart")
+    }
+    API.addToCartProduct(productId)
+      .then(res => {
+        
+      }
+      )
+      .catch(err => console.log(err));
+  };
+
+  // handleAddToCart = id => {
+  //   API.addToCart(id).then(res => this.addToCart());
+  // };
 
   render() {
     return (
@@ -63,7 +75,7 @@ class AddToCart extends Component {
             className="addbutton"
             role="button"
             aria-label="click item"
-            onClick={this.checkLogin}
+            onClick={() => this.addToCartProduct(this.props.productId)}
             >Add to Cart</button>
         </div>   
     );
