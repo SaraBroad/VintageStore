@@ -48,7 +48,8 @@ class All extends Component {
   render() {
 
     return (
-      <div className="container">
+      <div className="container dritaContainer">
+      <br/>
         <div className="row text-center text-lg-left">
           {this.state.products.map((product, i) => (
             
@@ -63,9 +64,9 @@ class All extends Component {
               price={product.price}
               description={product.description}
             />
-
           ))}
         </div>
+        <br/>
       </div>
     );
   }

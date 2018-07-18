@@ -1,5 +1,4 @@
 import React from "react";
-import Wrapper from '../components/Wrapper/Wrapper';
 
 const Privacy = props => (
     <div className="container dritaContainer">
@@ -7,7 +6,6 @@ const Privacy = props => (
     <b><h1>Privacy Policy</h1></b>
 
         <p>Effective date: June 30, 2018</p>
-
 
         <p>ZANA vintage ("us", "we", or "our") operates the www.ZANAvintage.com website (the "Service").</p>
 
@@ -25,10 +23,8 @@ const Privacy = props => (
         <h4>Personal Data</h4>
 
         <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
-
-        <ul>
+ 
         <li>Email address</li><li>First name and last name</li><li>Phone number</li><li>Address, State, Province, ZIP/Postal code, City</li><li>Cookies and Usage Data</li>
-        </ul>
 
         <h4>Usage Data</h4>
 
@@ -39,16 +35,13 @@ const Privacy = props => (
         <p>Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.</p>
         <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
         <p>Examples of Cookies we use:</p>
-        <ul>
             <li><strong>Session Cookies.</strong> We use Session Cookies to operate our Service.</li>
             <li><strong>Preference Cookies.</strong> We use Preference Cookies to remember your preferences and various settings.</li>
             <li><strong>Security Cookies.</strong> We use Security Cookies for security purposes.</li>
-        </ul>
 
         <h2>Use of Data</h2>
             
-        <p>Vintage Store uses the collected data for various purposes:</p>    
-        <ul>
+        <p>ZANA vintage uses the collected data for various purposes:</p> 
             <li>To provide and maintain the Service</li>
             <li>To notify you about changes to our Service</li>
             <li>To allow you to participate in interactive features of our Service when you choose to do so</li>
@@ -56,25 +49,22 @@ const Privacy = props => (
             <li>To provide analysis or valuable information so that we can improve the Service</li>
             <li>To monitor the usage of the Service</li>
             <li>To detect, prevent and address technical issues</li>
-        </ul>
 
         <h2>Transfer Of Data</h2>
         <p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
         <p>If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.</p>
         <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
-        <p>Vintage Store will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+        <p>ZANA vintage will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
 
         <h2>Disclosure Of Data</h2>
 
         <h3>Legal Requirements</h3>
-        <p>Vintage Store may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
-        <ul>
+        <p>ZANA vintage may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
             <li>To comply with a legal obligation</li>
-            <li>To protect and defend the rights or property of Vintage Store</li>
+            <li>To protect and defend the rights or property of ZANA vintage </li>
             <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
             <li>To protect the personal safety of users of the Service or the public</li>
             <li>To protect against legal liability</li>
-        </ul>
 
         <h2>Security Of Data</h2>
         <p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
@@ -89,7 +79,8 @@ const Privacy = props => (
                 <li>
                 <p><strong>Google Analytics</strong></p>
                 <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
-                <p>You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.</p>                <p>For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="https://policies.google.com/privacy?hl=en">https://policies.google.com/privacy?hl=en</a></p>
+                <p>You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.</p>                
+                <p>For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="https://policies.google.com/privacy?hl=en">https://policies.google.com/privacy?hl=en</a></p>
             </li>
                                     </ul>
 
@@ -112,9 +103,7 @@ const Privacy = props => (
 
         <h2>Contact Us</h2>
         <p>If you have any questions about this Privacy Policy, please contact us:</p>
-        <ul>
             <li>By visiting this page on our website: www.ZANAvintage.com/contact</li>
-        </ul> 
     </div>
     </div>
 );
