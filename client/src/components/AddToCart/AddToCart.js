@@ -57,9 +57,10 @@ class AddToCart extends Component {
       return (window.location.href = "/account");
       //return (window.location.href = "/cart")
     }
+
     API.addToCartProduct(productId)
       .then(res => {
-        
+     
       }
       )
       .catch(err => console.log(err));

@@ -31,25 +31,40 @@ class Account extends Component {
 
         handleLogInSubmit = event => {
 
-            console.log( "THIS IS RUNNING" );
-            
-            event.preventDefault();
-            console.log(this.state);
-            API.custLogin({
-                email: this.state.email,
-                password: this.state.password
+        console.log( "THIS IS RUNNING" );
+         
+        event.preventDefault();
+        console.log(this.state);
+        API.custLogin({
+            email: this.state.email,
+            password: this.state.password
+        })
+            .then(res => {
+                console.log(res);
+                this.setState({ enterSignin: res.data });
+                this.props.setLoginState(true);
+                alert("You are signed in");
+                this.getCustomerByEmail(this.state.email)
+                window.location.href = '/home'
             })
-                .then(res => {
-                    console.log(res);
-                    this.setState({ enterSignin: res.data, isLoggedIn: true });
-                    this.props.setLoginState(true);
-                    alert("You are signed in");
-                    this.getCustomerByEmail(this.state.email)
-                    // window.location.href = '/home'
-                })
-                .catch(err => console.log("error entering log-in data"))      
-                
-        }
+            .catch(err => console.log("error entering log-in data"))              
+    }
+
+
+
+    // addToCartProduct = productId => {
+    //     API.addToCartProduct(productId)
+    //       .then(res => {
+    //         console.log(res.data)
+    //         // this.setState({
+    //         //   products: res.data
+    //         // })
+    //       }
+    //       )
+    //       .catch(err => console.log(err));
+    //   };
+
+    
 
     getCustomerByEmail = email => {
    
@@ -111,10 +126,12 @@ class Account extends Component {
                                 handlePassword={this.handlePassword}
                                 handleLogInSubmit={this.handleLogInSubmit}
                             />
-                        <RegisterBox />
+                        </div>
+                        <div className="col-md-6">
+                            <RegisterBox />
+                        </div>
                     </div>
                 </div>
-        </div>
                 
         )
     }
