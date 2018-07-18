@@ -10,13 +10,18 @@ import Product from "../components/Product";
 
 
 class Cart extends Component {
+
+  
   constructor(props) {
     super(props)
-    state = {
+
+    var payday = new Date();
+    this.state = {
         cartProducts: [],
-        total: "0.00",
-        subtotal: "",
-        shipping: "5.00",
+        TotalCost: "0",
+        SubtotalCost: "",
+        ShippingCost: "5.00",
+        PaymentDate: payday
       };
     this.calcSubTotal=this.calcSubTotal.bind(this);
     this.calcTotalPrice=this.calcTotalPrice.bind(this);
@@ -30,6 +35,14 @@ class Cart extends Component {
     }
 
     componentDidMount() {
+      this.getSubTotal();
+    }
+
+    componentWillUpdate() {
+      this.getTotalPrice();
+    }
+
+    componentWillUpdate() {
       this.getSubTotal();
     }
 
@@ -50,7 +63,14 @@ class Cart extends Component {
     calcTotalPrice = (customerId) =>
     API.getSubTotal(customerId)
 
-
+    handleCheckout = customerId => {
+      let customerData = {
+        TotalCost: this.props.TotalCost,
+        SubtotalCost: this.props.SubtotalCost,
+        ShippingCost: this.state.ShippingCost,
+        PaymentDate: this.state.PaymentDate
+      }
+    }
 
     render() {
         return (
@@ -78,7 +98,11 @@ class Cart extends Component {
               )}
                
            <CartCheckoutBar
-           
+           subTotal={this.state.subTotal}
+           shippingCost={this.state.shippingCost}
+           TotalCost={this.state.TotalCost}
+           PaymentDate={this.state.PaymentDate}
+           handleCheckout={this.state.handleCheckout}
            />
             
         </div>
