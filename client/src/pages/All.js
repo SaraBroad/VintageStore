@@ -8,8 +8,6 @@ import {
 } from 'react-router-dom';
 import API from "../utils/API";
 
-
-
 // class All extends Component {
 //   state = {
 //     data : []
@@ -41,8 +39,6 @@ class All extends Component {
         )
         .catch(err => console.log(err));
     };
-  
-
   
 
   render() {
