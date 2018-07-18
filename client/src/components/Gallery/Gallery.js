@@ -24,7 +24,10 @@ const Gallery = props => (
     <br/>
     <span>Price: ${props.price}</span>
     <br/>
-    <AddToCart/> <button><Link className="addButton" to={"/item/" + props.id}>Details</Link></button>
+    <AddToCart  
+    productId={props.productId}
+    />
+     <button><Link className="addButton" to={"/item/" + props.id}>Details</Link></button>
     <br/>
 
   </div>
