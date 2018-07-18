@@ -11,7 +11,10 @@ import Product from "../components/Product";
 
 class Cart extends Component {
     state = {
-        cartProducts: []
+        cartProducts: [],
+        total: "0.00",
+        subtotal: "",
+        shipping: "5.00",
       };
 
     componentDidMount() {
@@ -55,7 +58,9 @@ class Cart extends Component {
                 <h2 className="text-center">No Items in Cart</h2>
               )}
                
-           <CartCheckoutBar/>
+           <CartCheckoutBar
+           
+           />
             
         </div>
            

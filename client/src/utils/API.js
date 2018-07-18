@@ -43,6 +43,12 @@ export default {
     },
     getPurchaseHistory: function() {
         return axios.get("api/producthistory")
+    },
+    getSubTotal: function(customerId) {
+        return axios.get("/api/subtotal" + customerId);
+    },
+    getTotalPrice: function(customerId) {
+        return axios.get("/api/total" + customerId);
     }
     
 //api/cartremove
