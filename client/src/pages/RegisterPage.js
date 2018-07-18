@@ -19,8 +19,12 @@ class RegisterPage extends Component {
         zip: "",
         phone: "",
         email: "",
-        password: "",
+        password: ""
     }
+
+  
+
+
 
     handleFirstName = (event) => {
         this.setState({ firstName: event.target.value })
@@ -77,12 +81,13 @@ class RegisterPage extends Component {
         }
         API.saveCustomer(newCustomer)
             .then(() => {
-                alert("you are registered") 
+                window.location.href = '/all'
             })
             .catch(err => {
                 console.log(err);
                 alert('customer not registered.')
-            }) 
+            })
+        
     }
 
 
@@ -102,6 +107,8 @@ class RegisterPage extends Component {
                     handlePhone={this.handlePhone}
                     handleEmail={this.handleEmail}
                     handlePassword={this.handlePassword}
+                    // handleInputChange={this.handleInputChange}
+                    // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
             </div>
