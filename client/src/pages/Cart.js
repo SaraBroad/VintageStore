@@ -53,6 +53,7 @@ class Cart extends Component {
     getTotalPrice = (customerId) =>
     API.calcSubTotal(customerId)
 
+    
     handleCheckout = customerId => {
       let customerData = {
         TotalCost: this.props.TotalCost,
@@ -60,19 +61,12 @@ class Cart extends Component {
         ShippingCost: this.state.ShippingCost,
         PaymentDate: this.state.PaymentDate
       }
-      // API.
-
+      API.createCheckout(customerData)
+      .then(() => {
+        window.location.href = "/"
+      })
     }
 
-
-    // API.saveCustomer(newCustomer)
-    // .then(() => {
-    //     window.location.href = '/all'
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    //     alert('customer not registered.')
-    // })
     render() {
         return (
         <div className="container">
