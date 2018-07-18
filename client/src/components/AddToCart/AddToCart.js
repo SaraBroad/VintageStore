@@ -12,6 +12,7 @@ class AddToCart extends Component {
       isLoggedIn: false
     };
     this.checkLogin = this.checkLogin.bind(this);
+    this.addToCartProduct = this.addToCartProduct.bind(this);
   }
 
   componentDidMount() {
@@ -32,32 +33,28 @@ class AddToCart extends Component {
    }
 
    getCartById = id => {
-   
+    console.log(id);
         API.getCartById(id)
-        
+        console.log(id)
         .then(res => 
+       
           // console.log(res.data.id)
-          this.addToCartProduct({CartId : res.data.id})
+          this.addToCartProduct({cartId : res.data.id})
         )
         .catch(err => console.log(err));
     }
- 
 
-  addToCartProduct = productId => {
-    API.addToCartProduct(productId)
-      .then(res => {
-        
-        // console.log(res.data)
-        // this.setState({
-        //   products: res.data
-        // })
-        window.location.href('/cart')
-        alert("This has been added to your cart!")
-      }
-      )
-      .catch(err => console.log(err));
-  };
 
+    addToCartProduct = productId => {
+      console.log("hello" + productId + "bye")
+      API.addToCartProduct(productId)
+        .then(res => {
+          // console.log(res.data)
+          alert("This has been added to your cart!")
+        }
+        )
+        .catch(err => console.log(err));
+    };
 
   render() {
     return (

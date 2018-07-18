@@ -20,7 +20,7 @@ export default {
     getProductsID: function(id) {
         return axios.get(`/api/products/${id}`)
     },
-    addToCartProduct: function(productId) {
+    addToCartProduct: function(productId, cartId) {
         return axios.post("/api/cartProduct", {productId, cartId: sessionStorage.getItem('cartId')});
     },
     getCustomerByEmail: function(email) {
