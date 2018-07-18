@@ -8,15 +8,10 @@ const CartCheckoutBar = props => (
     <div className="checkout-bar">
         <h1 className="total-heading">Total</h1>
         <div className="sub-total">
-            {/* // {props.subtotal} */}
-            <p>Subtotal: </p>
-            {/* // {props.shipping} */}
-            <p>Shipping: </p>
-            {/* // {props.tax} */}
-            <p>Tax: </p>
+            <p>Subtotal: {props.subTotal} </p>
+            <p>Shipping: {props.shippingCost} </p>
         </div>
-        {/* {props.total} */}
-        <p className="total">Total: </p>
+        <p className="total">Total: {props.TotalCost} </p>
 
         <div className="promo-bar">
             <p>Enter a promo code</p>
