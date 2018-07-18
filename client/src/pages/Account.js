@@ -43,15 +43,16 @@ class Account extends Component {
         })
             .then(res => {
                 console.log(res);
-                this.setState({ enterSignin: res.data, isLoggedIn: true });
+                this.setState({ enterSignin: res.data });
                 this.props.setLoginState(true);
                 alert("You are signed in");
                 this.getCustomerByEmail(this.state.email)
-                // window.location.href = '/home'
+                window.location.href = '/home'
             })
-            .catch(err => console.log("error entering log-in data"))      
-            
+            .catch(err => console.log("error entering log-in data"))              
     }
+
+
 
     // addToCartProduct = productId => {
     //     API.addToCartProduct(productId)
@@ -137,7 +138,6 @@ class Account extends Component {
                                 handlePassword={this.handlePassword}
                                 handleLogInSubmit={this.handleLogInSubmit}
                             />
-
                         </div>
                         <div className="col-md-6">
                             <RegisterBox />
