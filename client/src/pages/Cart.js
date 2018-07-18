@@ -10,42 +10,32 @@ import Product from "../components/Product";
 
 
 class Cart extends Component {
-
-  
   constructor(props) {
     super(props)
 
     var payday = new Date();
     this.state = {
         cartProducts: [],
-        TotalCost: "0",
-        SubtotalCost: "",
+        TotalCost: "0.00",
+        SubtotalCost: "0.00",
         ShippingCost: "5.00",
         PaymentDate: payday
       };
-    this.calcSubTotal=this.calcSubTotal.bind(this);
-    this.calcTotalPrice=this.calcTotalPrice.bind(this);
+    this.getSubTotal=this.getSubTotal.bind(this);
+    this.getTotalPrice=this.getTotalPrice.bind(this);
     }
+
     componentDidMount() {
-        this.getCartProducts();     
+        this.getCartProducts();  
+        this.getTotalPrice();
+        this.getSubTotal();   
       }
     
-    componentDidMount() {
-      this.getTotalPrice();
-    }
-
-    componentDidMount() {
-      this.getSubTotal();
-    }
-
     componentWillUpdate() {
       this.getTotalPrice();
-    }
-
-    componentWillUpdate() {
       this.getSubTotal();
     }
-
+    
     getCartProducts = () => {
       API.getCartProducts()
       .then( res => 
@@ -57,11 +47,11 @@ class Cart extends Component {
     .catch(err => console.log(err));
 }
 
-    calcSubTotal = () =>
-    API.getTotalPrice()
+    getSubTotal = () =>
+    API.calcTotalPrice()
 
-    calcTotalPrice = (customerId) =>
-    API.getSubTotal(customerId)
+    getTotalPrice = (customerId) =>
+    API.calcSubTotal(customerId)
 
     handleCheckout = customerId => {
       let customerData = {
@@ -70,8 +60,19 @@ class Cart extends Component {
         ShippingCost: this.state.ShippingCost,
         PaymentDate: this.state.PaymentDate
       }
+      // API.
+
     }
 
+
+    // API.saveCustomer(newCustomer)
+    // .then(() => {
+    //     window.location.href = '/all'
+    // })
+    // .catch(err => {
+    //     console.log(err);
+    //     alert('customer not registered.')
+    // })
     render() {
         return (
         <div className="container">
@@ -98,11 +99,11 @@ class Cart extends Component {
               )}
                
            <CartCheckoutBar
-           subTotal={this.state.subTotal}
-           shippingCost={this.state.shippingCost}
+           SubtotalCost={this.state.SubtotalCost}
+           ShippingCost={this.state.ShippingCost}
            TotalCost={this.state.TotalCost}
            PaymentDate={this.state.PaymentDate}
-           handleCheckout={this.state.handleCheckout}
+           handleCheckout={this.handleCheckout}
            />
             
         </div>

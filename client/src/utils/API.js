@@ -44,10 +44,10 @@ export default {
     getPurchaseHistory: function() {
         return axios.get("api/producthistory")
     },
-    getSubTotal: function() {
+    calcSubTotal: function() {
         return axios.put("/api/subtotal");
     },
-    getTotalPrice: function() {
+    calcTotalPrice: function() {
         return axios.put("/api/total");
     },
     createCheckout: function(checkoutData) {

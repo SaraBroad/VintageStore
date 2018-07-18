@@ -22,10 +22,6 @@ class RegisterPage extends Component {
         password: ""
     }
 
-  
-
-
-
     handleFirstName = (event) => {
         this.setState({ firstName: event.target.value })
     };
@@ -86,8 +82,7 @@ class RegisterPage extends Component {
             .catch(err => {
                 console.log(err);
                 alert('customer not registered.')
-            })
-        
+            })   
     }
 
 

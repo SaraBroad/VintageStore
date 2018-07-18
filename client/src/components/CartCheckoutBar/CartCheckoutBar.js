@@ -8,8 +8,8 @@ const CartCheckoutBar = props => (
     <div className="checkout-bar">
         <h1 className="total-heading">Total</h1>
         <div className="sub-total">
-            <p>Subtotal: {props.subTotal} </p>
-            <p>Shipping: {props.shippingCost} </p>
+            <p>Subtotal: {props.SubtotalCost} </p>
+            <p>Shipping: {props.ShippingCost} </p>
         </div>
         <p className="total">Total: {props.TotalCost} </p>
 
@@ -17,8 +17,7 @@ const CartCheckoutBar = props => (
             <p>Enter a promo code</p>
             <input className="promo-input" />
         </div>
-        <Link to="/checkout" type="button" class="btn btn-outline-primary checkout-button">Checkout</Link>
-
+        <button type="submit" class="btn btn-outline-primary checkout-button"  onClick={() => props.handleCheckout}>Checkout</button>
     </div>
 );
 
