@@ -45,14 +45,14 @@ export default {
         return axios.get("api/producthistory")
     },
     calcSubTotal: function() {
-        return axios.put("/api/subtotal");
-    },
-    calcTotalPrice: function() {
-        return axios.put("/api/total");
-    },
-    createCheckout: function(checkoutData) {
-        return axios.post("/api/checkout", checkoutData)
+        return axios.get("/api/allsubtotal");
     }
+    // calcTotalPrice: function(id) {
+    //     return axios.get("/api/total" + id);
+    // },
+    // createCheckout: function(checkoutData) {
+    //     return axios.post("/api/checkout", checkoutData)
+    // }
     
 //api/cartremove
 }

@@ -16,26 +16,18 @@ class Cart extends Component {
     var payday = new Date();
     this.state = {
         cartProducts: [],
-        TotalCost: "0.00",
-        SubtotalCost: "0.00",
-        ShippingCost: "5.00",
+        TotalCost: 0.00,
+        SubtotalCost: 0.00,
+        ShippingCost: "10.00",
         PaymentDate: payday
       };
-    this.getSubTotal=this.getSubTotal.bind(this);
-    this.getTotalPrice=this.getTotalPrice.bind(this);
     }
 
     componentDidMount() {
         this.getCartProducts();  
-        this.getTotalPrice();
         this.getSubTotal();   
       }
-    
-    componentWillUpdate() {
-      this.getTotalPrice();
-      this.getSubTotal();
-    }
-    
+
     getCartProducts = () => {
       API.getCartProducts()
       .then( res => 
@@ -47,27 +39,28 @@ class Cart extends Component {
     .catch(err => console.log(err));
 }
 
-    getSubTotal = () =>
-    API.calcTotalPrice()
+getSubTotal = () => {
+API.calcSubTotal()
+.then(res => {
+  // console.log(res);
+  let subTotal = 0;
+  for (var i = 0; i < res.data.length; i++) {
+    subTotal += parseFloat(res.data[i].price)
+    console.log("Price: " + res.data[i].price)
+  };
+ 
+  this.setState({
+    SubtotalCost: subTotal, TotalCost: subTotal + parseFloat(this.state.ShippingCost)
+  })
+})
+}
 
-    getTotalPrice = (customerId) =>
-    API.calcSubTotal(customerId)
-
-    
-    handleCheckout = customerId => {
-      let customerData = {
-        TotalCost: this.props.TotalCost,
-        SubtotalCost: this.props.SubtotalCost,
-        ShippingCost: this.state.ShippingCost,
-        PaymentDate: this.state.PaymentDate
-      }
-      API.createCheckout(customerData)
-      .then(() => {
-        window.location.href = "/"
-      })
-    }
 
     render() {
+
+
+
+
         return (
         <div className="container">
            
@@ -96,8 +89,6 @@ class Cart extends Component {
            SubtotalCost={this.state.SubtotalCost}
            ShippingCost={this.state.ShippingCost}
            TotalCost={this.state.TotalCost}
-           PaymentDate={this.state.PaymentDate}
-           handleCheckout={this.handleCheckout}
            />
             
         </div>
