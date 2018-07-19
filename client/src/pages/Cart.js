@@ -114,8 +114,8 @@ class Cart extends Component {
         <CartCheckoutBar
           SubtotalCost={this.state.SubtotalCost.toFixed(2)}
           ShippingCost={this.state.ShippingCost}
-          TotalCost={this.state.TotalCost}
-          handleCheckout={this.handleCheckout.toFixed(2)}
+          TotalCost={this.state.TotalCost.toFixed(2)}
+          handleCheckout={this.handleCheckout.toFixed}
         />
       </div>
 
