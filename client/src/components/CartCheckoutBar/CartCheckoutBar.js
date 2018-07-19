@@ -17,7 +17,7 @@ const CartCheckoutBar = props => (
             <p>Enter a promo code</p>
             <input className="promo-input" />
         </div>
-        <button type="submit" class="btn btn-outline-primary checkout-button"  onClick={() => props.handleCheckout}>Checkout</button>
+        <button type="submit" class="btn btn-outline-primary checkout-button"  onClick={props.handleCheckout}>Checkout</button>
     </div>
 );
 

@@ -15,6 +15,7 @@ class Cart extends Component {
 
     var payday = new Date();
     this.state = {
+        CustomerId: null,
         cartProducts: [],
         TotalCost: 0.00,
         SubtotalCost: 0.00,
@@ -26,18 +27,31 @@ class Cart extends Component {
     componentDidMount() {
         this.getCartProducts();  
         this.getSubTotal();   
+        this.getCustomerId();
       }
+
+      // 
+
+      getCustomerId = () => {
+            API.getCartById(sessionStorage.getItem('cartId'))
+            .then(res => 
+              // console.log(res.data.id)
+              this.setState({CustomerId : res.data.CustomerId})
+            )
+            .catch(err => console.log(err));
+        }
 
     getCartProducts = () => {
       API.getCartProducts()
       .then( res => 
         this.setState({
-            cartProducts: res.data
-            
+            cartProducts: res.data  
           })
     )
     .catch(err => console.log(err));
 }
+
+
 
 getSubTotal = () => {
 API.calcSubTotal()
@@ -55,11 +69,25 @@ API.calcSubTotal()
 })
 }
 
+handleCheckout = () => {
+  alert("hello")
+  let checkoutData = {
+    CustomerId: this.state.CustomerId,
+    ShippingCost: this.state.ShippingCost,
+    SubtotalCost: this.state.SubtotalCost,
+    TotalCost: this.state.TotalCost,
+    PaymentDate: this.state.PaymentDate
+  }
+  API.postCheckout(checkoutData)
+  .then(() => {
+        alert("Thank you for your order")
+        window.location.href="/"
+  })
+  .catch(err => console.log(err));
+}
+
 
     render() {
-
-
-
 
         return (
         <div className="container">

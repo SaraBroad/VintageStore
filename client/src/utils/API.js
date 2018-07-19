@@ -49,11 +49,11 @@ export default {
     },
     postCheckout: function(checkoutData) {
         return axios.post("/api/checkout", checkoutData)
+    },
+    getCustByCartId: function(id) {
+        return axios.get("/api/customerbycartid/" + id)
     }
 }
 
-// cartData = {
-//     user_id: 12345,
-//     product_id: 12345
-// }
+
 
