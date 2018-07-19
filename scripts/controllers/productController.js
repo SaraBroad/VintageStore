@@ -1,17 +1,19 @@
-const db = require("../../models")
-const router = require("express").Router();
-var express = require("express");
+const db = require("../models")
 
-router.get("/products", function (req, res) {
+
+module.exports = function(app) {
+
+app.get("/api/products", function (req, res) {
 
     db.Product.findAll({}).then(function (dbProducts) {
-        console.log(dbProducts);
+      
         res.json(dbProducts);
-    });
+    })
+    .catch( err => res.json(err) );
 })
 
 
-router.get("/products/:id", function (req, res) {
+app.get("/api/products/:id", function (req, res) {
     db.Product.findOne({
             where: {
                 id: req.params.id
@@ -23,7 +25,7 @@ router.get("/products/:id", function (req, res) {
 });
 
 
-router.get("/products/update/:id", function (req, res) {
+app.get("/api/products/update/:id", function (req, res) {
     db.Product.update(req.body, {
             where: {
                 id: req.body.id
@@ -35,5 +37,4 @@ router.get("/products/update/:id", function (req, res) {
 });
 
 
-
-module.exports = router;
+}

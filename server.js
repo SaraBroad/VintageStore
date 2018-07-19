@@ -4,11 +4,13 @@ const bodyParser = require("body-parser");
 const passport = require("./controllers/passport_controller");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
+const app = express();
+require('dotenv').config();
+
 const STRIPE_SECRET_KEY = require('./constants/stripe');
 const stripe = require("stripe")(STRIPE_SECRET_KEY);
 const routes = require("./routes");
 var db = require("./models");
-const app = require("express")();
 
 //what is secret code used for?
 app.use(session({
@@ -32,14 +34,7 @@ require("./controllers/productController.js")(app);
 require("./controllers/cartProductController.js")(app);
 require("./controllers/cartController.js")(app);
 require("./controllers/customerController.js")(app);
-// require('./controllers/passport_controller.js')(passport, db.passports);
-// // require("./routes/api/passport_routes.js")(router, passport);
 require('./routes/api/passport_routes.js')(app);
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
 /*
 // Send every request to the React app
@@ -56,7 +51,7 @@ if(process.env.NODE_ENV === 'production') {
     });
   });
 } else {
-  db.sequelize.sync({ force: true }).then(function () {
+  db.sequelize.sync({force:true}).then(function () {
     app.listen(PORT, function () {
       console.log("App listening on PORT " + PORT);
     });

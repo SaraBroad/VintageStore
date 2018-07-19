@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-const creds = require('../config/configNM');
 
 var transport = {
   host: 'smtp.gmail.com',
   auth: {
-    user: creds.USER,
-    pass: creds.PASS
+    user: process.env.USER,
+    pass: process.env.PASS
   }
 }
 

@@ -9,6 +9,7 @@ import API from "../utils/API"
 class RegisterPage extends Component {
 
     state = {
+        id: "",
         firstName: "",
         lastName: "",
         addressOne: "",
@@ -80,12 +81,14 @@ class RegisterPage extends Component {
         }
         API.saveCustomer(newCustomer)
             .then(() => {
-                window.location.href = '/home'
+                alert("You are registered! Please log-in!")
+                window.location.href = '/account'
             })
             .catch(err => {
                 console.log(err);
                 alert('customer not registered.')
             })
+        
     }
 
 
@@ -93,7 +96,7 @@ class RegisterPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container dritaContainer">
                 <RegForm
                     handleFirstName={this.handleFirstName}
                     handleLastName={this.handleLastName}
@@ -108,8 +111,8 @@ class RegisterPage extends Component {
                     // handleInputChange={this.handleInputChange}
                     // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
-
                 />
+                <br/>
             </div>
         )
     }

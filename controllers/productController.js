@@ -6,7 +6,7 @@ module.exports = function(app) {
 app.get("/api/products", function (req, res) {
 
     db.Product.findAll({}).then(function (dbProducts) {
-        // console.log(dbProducts);
+      
         res.json(dbProducts);
     })
     .catch( err => res.json(err) );

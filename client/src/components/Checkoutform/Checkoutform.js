@@ -43,13 +43,14 @@ class Checkoutform extends Component {
                <p className="total">Total: {/* {props.total} */}</p>
               </div>
               <div className="payment-details">
-              Payment Details: 
+              <b>Payment Details:</b> 
               <div className="card-details">                
                 <CardElement />
               </div>
-              <div className="button">
-                <button onClick={this.submit}>Pay</button>
+              <div className="payButton">
+                <button onClick={this.submit}><b>Pay</b></button>
               </div> 
+              <br/>
               </div>   
             </div>
           </div>

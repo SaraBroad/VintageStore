@@ -2,11 +2,16 @@ import React from 'react';
 import "./RegForm.css";
 
 const RegForm = props => (
-    <div className="reg-container">
+   <div className="regForm"> 
+    <div className="col-lg-3 col-md-3 col-sm-2">
+    <img className="reg" alt="reg" src="images/reg.png" width="relative"/>
+    </div>
+    <br/>
+    <div className="col-lg-8 col-md-8 col-sm-6">
        {props.children}
         <div className="reg-info">
             <form className="reg-form">
-                <h3 className="reg-heading">Register</h3>
+                <h3 className="reg-heading"><b>Register</b></h3>
                 <label htmlFor="cust-firstname">First Name</label>
                 <input
                     className="custinput-bar form-control"
@@ -165,11 +170,12 @@ const RegForm = props => (
                 <button
                     onClick={() => props.handleFormSubmit(props.id)}
                     type="button"
-                    className="btn btn-primary reg-button">
+                    className="btn reg-button" >
                     Submit
                  </button>
-
             </form>
+        </div>
+        <br/>
         </div>
     </div>
 )

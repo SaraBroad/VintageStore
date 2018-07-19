@@ -16,7 +16,7 @@ const CartCheckoutBar = props => (
             <p>Tax: </p>
         </div>
         {/* {props.total} */}
-        <p className="total">Total: </p>
+        <p className="total"><b>Total: </b></p>
 
         <div className="promo-bar">
             <p>Enter a promo code</p>
