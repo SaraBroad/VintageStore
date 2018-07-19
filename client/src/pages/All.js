@@ -24,11 +24,9 @@ class All extends Component {
   componentDidMount() {
     this.getProducts();
   }
-
     getProducts = () => {
       API.getProducts()
         .then(res => {
-          
           console.log(res.data);
           this.setState({
             products: res.data
