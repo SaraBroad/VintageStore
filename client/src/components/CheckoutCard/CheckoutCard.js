@@ -120,6 +120,7 @@ class CheckoutCard extends Component {
                 placeholder="E-mail"
                 id="email"
             />
+            <br/>
         </div>
 
         

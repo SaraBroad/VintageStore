@@ -10,3 +10,23 @@
 .img-thumbnail {
   border: 1px solid white;
 }
+
+.dButton{
+    color: white;
+    text-align: center;
+}
+
+.buttons{
+    align-content: flex-end;
+}
+
+.detailsButton{
+    width: 75px !important;
+    height: 30px !important;
+    color: white;
+}
+
+
+.content{
+    margin-bottom: 15px;
+}

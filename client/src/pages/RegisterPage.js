@@ -77,7 +77,8 @@ class RegisterPage extends Component {
         }
         API.saveCustomer(newCustomer)
             .then(() => {
-                window.location.href = '/all'
+                alert("You are registered! Please log-in!")
+                window.location.href = '/account'
             })
             .catch(err => {
                 console.log(err);
@@ -90,7 +91,7 @@ class RegisterPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container dritaContainer">
                 <RegForm
                     handleFirstName={this.handleFirstName}
                     handleLastName={this.handleLastName}
@@ -106,6 +107,7 @@ class RegisterPage extends Component {
                     // handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
+                <br/>
             </div>
         )
     }
