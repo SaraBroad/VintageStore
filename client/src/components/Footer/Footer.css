@@ -1,11 +1,39 @@
 Footer{
-    margin-top: none !important;
-    padding-top: none !important;
     background-color: black !important;
     color: lightgrey !important;
+    font-size: 14px;
+}
+
+Container{
+    margin-top: 0%;
+}
+
+.col2{
+    text-indent: 40px;
+}
+Link{
+    color: lightgrey;
+}
+
+img{
+    vertical-align: baseline;
+}
+
+.ads{
+    padding-right: 60px;
+}
+h6{
     font-size: 15px;
 }
 
-Link{
-    color: lightgrey;
+nav-link{
+    font-size: 12px;
+}
+
+.pt-4, .py-4 {
+    padding-top: 0!important;
+}
+
+.mt-4, .my-4 {
+    margin-top: 4px !important;
 }

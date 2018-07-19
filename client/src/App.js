@@ -22,9 +22,10 @@ import FooterPage from "./components/Footer";
 import Contact from "./pages/Contact";
 import Wrapper from "./components/Wrapper";
 import Gallery from "./components/Gallery";
-import GalleryItem from "./components/Gallery";
+import GalleryProduct from "./components/GalleryProduct";
 import AddToCart from "./components/AddToCart";
 import API from "./utils/API";
+import ProductDetail from './pages/productDetail';
 
 import { Z_DEFAULT_STRATEGY } from "zlib";
 
@@ -57,13 +58,14 @@ class App extends Component {
           <Navbar isLoggedIn={this.state.isLoggedIn} setLoginState={this.setLoginState} />
           {/* <Container /> */}
           <Wrapper>
-            <Redirect from="/" to="/home" />
+            {/* <Redirect exact from="/" to="/home" /> */}
             <Route exact path="/all" component={All} />
+            <Route exact path="/item/:id" component={ProductDetail} />
             <Route exact path="/about" component={About} />
             {/* <Route exact path="/blog" component={Blog} /> */}
-    <Route exact path="/account" render={props => <Account setLoginState={this.setLoginState}  {...props} /> } />
+            <Route exact path="/account" render={props => <Account setLoginState={this.setLoginState}  {...props} /> } />
             <Route exact path="/cart" component={Cart} />
-            <Route exact path="/home" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/checkout" component={Checkout} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/FAQs" component={FAQs} />

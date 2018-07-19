@@ -1,14 +1,20 @@
 import React, { Component } from "react";
 // import data from "./products.json";
 import Gallery from "../components/Gallery";
-import GalleryItem from "../components/Gallery";
 import {
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 import API from "../utils/API";
-import AddToCart from "../components/AddToCart/AddToCart";
 
+// class All extends Component {
+//   state = {
+//     data : []
+//   };
+
+//   componentDidMount() {
+//     API.getProducts().then(data => this.setState({ data }));
+//   }
 
 class All extends Component {
   state = {
@@ -23,7 +29,7 @@ class All extends Component {
       API.getProducts()
         .then(res => {
           
-          // console.log(res.data);
+          console.log(res.data);
           this.setState({
             products: res.data
             
@@ -34,30 +40,28 @@ class All extends Component {
     };
   
 
-
   render() {
 
     return (
-      <div className="container">
+      <div className="container dritaContainer">
+      <br/>
         <div className="row text-center text-lg-left">
-          {this.state.products.map(product => {
-            return (
+          {this.state.products.map((product, i) => (
+            
             <Gallery
-              key={product.id}
+              key={i}
               Image1={product.imageOne}
               Image2={product.imageTwo}
-              Image3={product.ImageThree}
+              Image3={product.imageThree}
               productName={product.productName}
               productId={product.id}
               size={product.size}
               price={product.price}
               description={product.description}
-            >
-           
-            </Gallery>
-          )
-          })}
+            />
+          ))}
         </div>
+        <br/>
       </div>
     );
   }

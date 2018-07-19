@@ -2,9 +2,8 @@ import React from "react";
 import "./Gallery.css";
 import ControlledCarousel from "./../Carousel/Carousel";
 import {
-  Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 import AddToCart from "../AddToCart";
 
 {/* <img src={images['doggy.png']} /> */ }
@@ -17,17 +16,16 @@ const Gallery = props => (
       Image1={props.Image1}
       Image2={props.Image2}
       Image3={props.Image3}/>
-
-    <span className="productname">{props.productName}</span>
+    <div className="content">
+    <span><b>{props.productName}</b></span>
     <br/>
     <span>Size: {props.size}</span>
     <br/>
     <span>Price: ${props.price}</span>
-    
-    <AddToCart  
-    productId={props.productId}
-    />
-    
+    <br/>
+    <AddToCart productId={props.productId} />
+    <button className="detailsButton"><Link className="dButton" to={"/item/" + props.productId}>Details..</Link></button>
+    </div>
   </div>
   
   

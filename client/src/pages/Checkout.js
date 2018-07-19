@@ -4,6 +4,10 @@ import CheckoutForm from '../components/Checkoutform';
 
 
 class Checkout extends Component {
+
+
+  
+
   render() {
     return (
       <StripeProvider apiKey={STRIPE_PUBLISHABLE}>

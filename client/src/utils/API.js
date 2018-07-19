@@ -1,4 +1,5 @@
 import axios from 'axios';
+//axios is middleware capability to connect react to server
 
 export default {
 
@@ -16,27 +17,39 @@ export default {
     getProducts: function() {
         return axios.get("/api/products");
     },
-    getProductById: function(id) {
-        return axios.get("api/products/" + id);
+    getProductsID: function(id) {
+        return axios.get(`/api/products/${id}`)
     },
-    addToCartProduct: function(cartData) {
-        return axios.post("/api/cartProduct", cartData);
+    addToCartProduct: function(productId) {
+        return axios.post("/api/cartProduct", {productId, cartId: sessionStorage.getItem('cartId')});
     },
     getCustomerByEmail: function(email) {
         return axios.get("api/customer/" + email);
     },
-    createCart: function(customerData) {
-        return axios.post("/api/createCart", customerData);
+    createCart: function(customerId) {
+        return axios.post("/api/createCart", customerId);
+    },
+    getCartById: function(id) {
+        return axios.get("api/cart/" + id);
+    },
+    getCartProducts: function() {
+        return axios.get("api/allCartProducts");
     },
     deleteCart: function(id) {
         return axios.get("api/deleteCart/" + id);
     },
     logOut: function() {
         return axios.get("/logout");
+    },
+    getPurchaseHistory: function() {
+        return axios.get("api/producthistory")
     }
-    //post product to cart
-
+    
+//api/cartremove
 }
 
-
+// cartData = {
+//     user_id: 12345,
+//     product_id: 12345
+// }
 

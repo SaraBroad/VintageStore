@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
+  "engines": {
+    "node": "9.3.0"
+  },
   "scripts": {
     "server": "node server.js",
     "client": "npm run seed & cd client && npm run start",
@@ -13,6 +16,7 @@
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd client && yarn install",
     "heroku-postbuild": "npm run build"
   },
   "author": "",
