@@ -8,7 +8,7 @@ const app = express();
 require('dotenv').config();
 
 // const STRIPE_SECRET_KEY = require('./constants/stripe');
-const stripe = require("stripe")(STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const routes = require("./routes");
 var db = require("./models");
 

@@ -10,7 +10,7 @@ class Checkout extends Component {
 
   render() {
     return (
-      <StripeProvider apiKey={STRIPE_PUBLISHABLE}>
+      <StripeProvider apiKey={process.env.STRIPE_PUBLISHABLE}>
         <div className="example">
           <Elements>
             <CheckoutForm />
