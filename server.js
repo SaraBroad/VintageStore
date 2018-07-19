@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 require('dotenv').config();
 
-const STRIPE_SECRET_KEY = require('./constants/stripe');
+// const STRIPE_SECRET_KEY = require('./constants/stripe');
 const stripe = require("stripe")(STRIPE_SECRET_KEY);
 const routes = require("./routes");
 var db = require("./models");
