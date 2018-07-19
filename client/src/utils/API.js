@@ -46,15 +46,10 @@ export default {
     },
     calcSubTotal: function() {
         return axios.get("/api/allsubtotal");
+    },
+    postCheckout: function(checkoutData) {
+        return axios.post("/api/checkout", checkoutData)
     }
-    // calcTotalPrice: function(id) {
-    //     return axios.get("/api/total" + id);
-    // },
-    // createCheckout: function(checkoutData) {
-    //     return axios.post("/api/checkout", checkoutData)
-    // }
-    
-//api/cartremove
 }
 
 // cartData = {

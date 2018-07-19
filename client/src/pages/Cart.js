@@ -89,8 +89,8 @@ API.calcSubTotal()
            SubtotalCost={this.state.SubtotalCost}
            ShippingCost={this.state.ShippingCost}
            TotalCost={this.state.TotalCost}
-           />
-            
+           handleCheckout={this.handleCheckout}
+           /> 
         </div>
            
         )
