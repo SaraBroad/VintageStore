@@ -68,7 +68,7 @@ class Cart extends Component {
   }
 
   handleCheckout = () => {
-    alert("hello")
+   
     let checkoutData = {
       CustomerId: this.state.CustomerId,
       ShippingCost: this.state.ShippingCost,
@@ -115,7 +115,7 @@ class Cart extends Component {
           SubtotalCost={this.state.SubtotalCost.toFixed(2)}
           ShippingCost={this.state.ShippingCost}
           TotalCost={this.state.TotalCost.toFixed(2)}
-          handleCheckout={this.handleCheckout.toFixed}
+          handleCheckout={this.handleCheckout}
         />
       </div>
 
