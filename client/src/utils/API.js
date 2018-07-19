@@ -32,8 +32,8 @@ export default {
     getCartById: function(id) {
         return axios.get("api/cart/" + id);
     },
-    getCartProducts: function() {
-        return axios.get("api/allCartProducts");
+    getCartProductsByCartId: function(id) {
+        return axios.get("api/allCartProducts/" + id);
     },
     deleteCart: function(id) {
         return axios.get("api/deleteCart/" + id);
@@ -43,13 +43,17 @@ export default {
     },
     getPurchaseHistory: function() {
         return axios.get("api/producthistory")
+    },
+    calcSubTotalByCartId: function(id) {
+        return axios.get("/api/subtotalbycartid/" + id);
+    },
+    postCheckout: function(checkoutData) {
+        return axios.post("/api/checkout", checkoutData)
+    },
+    getCustByCartId: function(id) {
+        return axios.get("/api/customerbycartid/" + id)
     }
-    
-//api/cartremove
 }
 
-// cartData = {
-//     user_id: 12345,
-//     product_id: 12345
-// }
+
 

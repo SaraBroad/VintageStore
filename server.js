@@ -7,8 +7,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 require('dotenv').config();
 
-const STRIPE_SECRET_KEY = require('./constants/stripe');
-const stripe = require("stripe")(STRIPE_SECRET_KEY);
+// const STRIPE_SECRET_KEY = require('./constants/stripe');
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const routes = require("./routes");
 var db = require("./models");
 
@@ -36,13 +36,13 @@ require("./controllers/cartController.js")(app);
 require("./controllers/customerController.js")(app);
 require('./routes/api/passport_routes.js')(app);
 
-/*
+
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-*/
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 
 if(process.env.NODE_ENV === 'production') {
   db.sequelize.sync().then(function () {

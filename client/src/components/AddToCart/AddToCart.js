@@ -60,7 +60,7 @@ class AddToCart extends Component {
 
     API.addToCartProduct(productId)
       .then(res => {
-     
+     if(productId){}
       }
       )
       .catch(err => console.log(err));

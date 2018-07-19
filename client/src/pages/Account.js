@@ -45,7 +45,7 @@ class Account extends Component {
                 this.props.setLoginState(true);
                 alert("You are signed in");
                 this.getCustomerByEmail(this.state.email)
-                window.location.href = '/home'
+                window.location.href = '/'
             })
             .catch(err => console.log("error entering log-in data"))              
     }
