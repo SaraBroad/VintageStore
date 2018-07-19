@@ -33,23 +33,29 @@ class ContactCard extends Component{
 
     render(){
         return(
-            <div className="col-sm-4 offset-sm-4">
+        <div className="contactContainer">  
+            <div className="col-lg-5 col-md-5 col-sm-5">
+                <img className="cart" alt="cart" src="images/cart.jpg" width="relative"/>
+            </div> 
+            <div className="col-lg-2 col-md-2 col-sm-2"></div>
+            <div className="col-sm-5 offset-sm-5">
                 <form id="contact-form contactMaster" onSubmit={this.handleSubmit.bind(this)} method="POST">
                     <div className="contact form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Name</label><br/>
                         <input type="text" className="form-control" id="name" />
                     </div>
                     <div className="contact form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">Email address</label><br/>
                         <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
                     </div>
                     <div className="contact form-group">
-                        <label for="message">Message</label>
+                        <label for="message">Message</label><br/>
                         <textarea className="form-control" rows="5" id="message"></textarea>
-                    </div>
+                    </div><br/>
                     <button type="submit" className=" btn btn-primary">Submit</button>
                 </form>
             </div>
+        </div>    
         )
     }
 }

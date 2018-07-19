@@ -4,7 +4,7 @@ import ContactCard from "../components/ContactCard";
 class Contact extends Component {
     render () {
         return (
-            <div>
+            <div class container dritaContainer>
                 <ContactCard />
             </div>
         )
