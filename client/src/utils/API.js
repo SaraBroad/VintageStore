@@ -32,8 +32,8 @@ export default {
     getCartById: function(id) {
         return axios.get("api/cart/" + id);
     },
-    getCartProducts: function() {
-        return axios.get("api/allCartProducts");
+    getCartProductsByCartId: function(id) {
+        return axios.get("api/allCartProducts/" + id);
     },
     deleteCart: function(id) {
         return axios.get("api/deleteCart/" + id);
@@ -44,8 +44,8 @@ export default {
     getPurchaseHistory: function() {
         return axios.get("api/producthistory")
     },
-    calcSubTotal: function() {
-        return axios.get("/api/allsubtotal");
+    calcSubTotalByCartId: function(id) {
+        return axios.get("/api/subtotalbycartid/" + id);
     },
     postCheckout: function(checkoutData) {
         return axios.post("/api/checkout", checkoutData)

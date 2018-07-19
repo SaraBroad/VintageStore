@@ -16,10 +16,12 @@ module.exports = function (app) {
             });
     });
 
-    app.get("/api/allCartProducts", function (req, res) {
+    app.get("/api/allCartProducts/:id", function (req, res) {
 
         db.CartProduct.findAll({
-
+            where: {
+                cartId: req.params.id
+            }
         }).then(function (dbCartProducts) {
             var productsArray = [];
             for (var i = 0; i < dbCartProducts.length; i++) {
@@ -39,10 +41,11 @@ module.exports = function (app) {
             .catch(err => res.json(err));
     })
 
-    app.get("/api/allsubtotal", function (req, res) {
-
+    app.get("/api/subtotalbycartid/:id", function (req, res) {
         db.CartProduct.findAll({
-
+            where: {
+                cartId: req.params.id
+            }
         }).then(function (dbCartProducts) {
             var productIds = [];
             for (var i = 0; i < dbCartProducts.length; i++) {
