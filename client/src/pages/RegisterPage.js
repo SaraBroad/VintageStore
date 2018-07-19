@@ -81,7 +81,8 @@ class RegisterPage extends Component {
         }
         API.saveCustomer(newCustomer)
             .then(() => {
-                window.location.href = '/all'
+                alert("You are registered! Please log-in!")
+                window.location.href = '/account'
             })
             .catch(err => {
                 console.log(err);
