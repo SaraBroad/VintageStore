@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import SigninBox from "../components/SigninBox";
+import {
+    Route,
+    Link
+  } from 'react-router-dom'
 import RegisterBox from "../components/RegisterBox";
 import API from "../utils/API";
 import "./Account.css";
