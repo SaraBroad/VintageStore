@@ -64,7 +64,7 @@ class Navbar extends Component {
             </Link>
           </li>
           <li>
-            <Link href="/styling" className="nav-link">
+            <Link to="/styling" className="nav-link">
                Styling Services  
             </Link>
           </li>
