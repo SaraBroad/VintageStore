@@ -63,6 +63,11 @@ class Navbar extends Component {
                Blog  
             </Link>
           </li>
+          <li>
+            <Link href="/styling" className="nav-link">
+               Styling Services  
+            </Link>
+          </li>
           <li
             className={
               window.location.pathname === "/account" 

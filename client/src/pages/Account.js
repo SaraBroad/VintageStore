@@ -119,6 +119,7 @@ class Account extends Component {
                 <div className="col-lg-5">  
                     <img className="girlsLaughing" alt="laughing" src="images/9.jpg" height="700px" width="relative" border="5px"/>
                 </div>
+                
             <div className="regbox-container"> 
                 <div className="col-md-6 boxes">
                         <SigninBox
